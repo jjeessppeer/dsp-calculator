@@ -1,0 +1,36 @@
+#tabs {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.tab-btn {
+    color: var(--accent);
+    background-color: var(--dark);
+    margin: 0;
+    padding: 8px;
+    border: none;
+    float: left;
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+}
+
+.tab-btn:hover {
+    background-color: var(--light);
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background-color: var(--medium);
+}
+
+
+.tab-page {
+    display: none;
+    background-color: var(--medium);
+    padding: 20px;
+}
+
+.tab-page.active {
+    display: block;
+}

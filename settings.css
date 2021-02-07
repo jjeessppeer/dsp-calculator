@@ -1,0 +1,23 @@
+#settings-page table {
+    
+    vertical-align: center;
+}
+
+#settings-page img {
+    height: 2.5em;
+    background-color: var(--dark);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--light);
+    border-radius: 0.3em;
+}
+
+#settings-page img:hover {
+    border-color: var(--dark);
+    cursor: pointer;
+    
+}
+
+#settings-page img.active {
+    border-color: var(--accent);
+}

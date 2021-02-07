@@ -1,0 +1,38 @@
+
+.item-row img {
+    height: 2.5em;
+}
+
+.resultsTable {
+    /* text-align: right; */
+    font-family: 'Courier New', Courier, monospace;
+    /* margin: 0; */
+    /* padding: 0; */
+    min-width: 400px;
+    vertical-align: center;
+}
+
+.resultsTable .header-row {
+    text-align: center;
+    padding-right: 50px;
+}
+
+.header-row th{
+    text-align: center;
+}
+
+
+
+.resultsTable {
+    border-collapse: collapse;
+}
+
+.resultsTable td {
+    padding: 10px 0;
+    border-width: 1px 0;
+    border-color: var(--light);
+    border-style: solid;
+}
+.resultsTable td.pad {
+    padding-right: 40px;
+}
