@@ -67,7 +67,7 @@ class ResultRowElement extends HTMLTableSectionElement  {
     
   }
 
-  updateItemRow(item, rate){
+  updateItemRow(name, rate){
     // this.innerHTML = `
     //   <tr>
     //     <td><img></td>
@@ -79,16 +79,45 @@ class ResultRowElement extends HTMLTableSectionElement  {
     //     <td>100kW</td>
     //   </tr>
     // `.trim();
-    this.innerHTML = `
-      <tr>
-      <td><img src="item_images/copper-ore.png"></td>
-      <td class="pad">1.5</td>
-      <td><img src="item_images/belt-1.png"></td>
-      <td class="pad">&times; 1.5</td>
-      <td><img src="item_images/assembler-1.png"></td>
-      <td class="pad">&times; 1.5</td>
-      <td>100kW</td>
-      </tr>`.trim();
+
+    let recepie = recepies[name];
+
+    let length = Object.keys(recepie.creates).length;
+    let i = 0;
+    for (const item in recepie.creates){
+      let items_per_s = recepie.creates[item]*rate;
+      if (item in recepie.ingredients) items_per_s -= recepie.ingredients[item]*rate;
+      if (items_per_s <= 0) continue;
+      items_per_s = items_per_s
+      let belts = items_per_s / active_belt.speed; 
+      
+      let machines = rate * recepie.time / active_machines[recepie.machine].speed;
+      let power = active_machines[recepie.machine]["power-active"] * machines;
+
+      if (i == 0){
+        this.innerHTML += `
+          <tr>
+            <td><img src="`+recepies[item].image+`"></td>
+            <td class="pad">`+formatNumber(items_per_s)+`</td>
+            <td><img src="`+active_belt.image+`"></td>
+            <td class="pad">&times; `+formatNumber(belts)+`</td>
+            <td rowspan="`+length+`"><img src="`+active_machines[recepie.machine].image+`"></td>
+            <td rowspan="`+length+`" class="pad">&times; `+formatNumber(machines)+`</td>
+            <td rowspan="`+length+`">`+math.unit(power, 'W').toString()+`</td>
+          </tr>`;
+      }
+      else {
+        this.innerHTML += `
+          <tr>
+            <td><img src="`+recepies[item].image+`"></td>
+            <td class="pad">`+formatNumber(items_per_s)+`</td>
+            <td><img src="`+active_belt.image+`"></td>
+            <td class="pad">&times; `+formatNumber(belts)+`</td>
+          </tr>`;
+      }
+      i++;
+    }
+
     // let imgs = this.querySelectorAll('img');
     // this.item_img = imgs[0];
     // this.belt_img = imgs[1];
@@ -167,8 +196,6 @@ function getRecepies(item){
 }
 
 function recurseRecepies(item, used_items, used_recepies, order, previous){
-  // console.log("ITEM: ", item)
-  // console.log("prev: ", previous)
   let recepies = getRecepies(item);
   for (const [name, recepie] of Object.entries(recepies)){
     order[previous].push(name);
@@ -178,88 +205,24 @@ function recurseRecepies(item, used_items, used_recepies, order, previous){
   
   for (const [name, recepie] of Object.entries(recepies)){
     if (recepie in used_recepies) continue;
-    // if (previous) order[previous].push(item);
     order[name] = [];
     used_recepies[name] = recepie;
     for (const [item, count] of Object.entries(recepie.ingredients)){
-      // order[name].push(item);
-      // order[name] = item;
       recurseRecepies(item, used_items, used_recepies, order, name)
     }
   }
-  
-
 }
 
-function loadRecepies(ingredients){
-  // let used_recepies = {};
-  // let ingredients_next = [];
-  // let used_items = [];
-  // while(ingredients.length > 0){
-  //   console.log("loop")
-  //   for (const [name, recepie] of Object.entries(recepies)){
-  //     console.log(name)
-  //     ingredients.forEach(item => {
-  //       if (used_items.includes(item)) return;
-  //       if (item in recepie.creates) {
-  //         used_recepies[name] = recepie; 
-  //         for (const [item, count] of Object.entries(recepie.ingredients)){
-  //           used_items.push(item);
-  //           ingredients_next.push(item);
-  //         }
-  //         for (const [item, count] of Object.entries(recepie.creates)){
-  //           used_items.push(item);
-  //         }
-  //       }
-  //     });
-  //   }
-  //   ingredients = ingredients_next;
-  // }
-  let used_items = new Set();
-  let used_recepies = recepies;
-  for (const [name, recepie] of Object.entries(recepies)){
-    for (const [item, count] of Object.entries(recepie.ingredients)){
-      used_items.add(item)
-    }
-    for (const [item, count] of Object.entries(recepie.creates)){
-      used_items.add(item)
-    }
-  }
-  
-  return [used_recepies, used_items]
+function createRows(name, order, result, parents){
+  if (parents.includes(name)) return;
+  if (result.includes(name)) result.splice(result.indexOf(name), 1);
+  result.push(name);
+  order[name].forEach(next_name => {
+    let tmp = parents.slice();
+    tmp.push(name)
+    createRows(next_name, order, result, tmp)
+  });
 }
-
-// function recurseRecepies(item, used_recepies, used_items, recepies_order, previous){
-//   if (!used_items.includes(item)) used_items.push(item);
-//   for (const [name, recepie] of Object.entries(recepies)){
-//     if (item in recepie.creates){
-//       if(!(name in used_recepies)){
-//         used_recepies[name] = recepie;
-//         recepie.previous = previous;
-//         recepies_order.push(name);
-//         for (const [item, count] of Object.entries(recepie.creates)){
-//           if (!used_items.includes(item)) used_items.push(item);
-//         }
-//         for (const [item, count] of Object.entries(recepie.ingredients)){
-//           // if (!used_items.includes(item)) used_items.push(item);
-//           recurseRecepies(item, used_recepies, used_items, recepies_order, name)
-//         }
-//       }
-//       else {
-//         if (previous){
-//           recepie.previous = name
-//         }
-//         // console.log("RESHUFFLE", name)
-//         // let index = recepies_order.indexOf(name);
-//         // if (index != -1) recepies_order.splice(index, 1);
-//         // recepies_order.push(name);
-//       }
-//     }
-//     if (!(name in used_recepies) && item in recepie.creates) {
-      
-//     }
-//   }
-// }
 
 function reloadResultsTable(){
   console.log("__RELOADING RESULTS__")
@@ -334,14 +297,3 @@ function reloadResultsTable(){
 
 }
 
-function createRows(name, order, result, parents){
-  if (parents.includes(name)) return;
-  if (result.includes(name)) result.splice(result.indexOf(name), 1);
-  result.push(name);
-  order[name].forEach(next_name => {
-    let tmp = parents.slice();
-    tmp.push(name)
-    createRows(next_name, order, result, tmp)
-  });
-
-}

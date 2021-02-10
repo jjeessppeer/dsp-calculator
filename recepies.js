@@ -43,7 +43,7 @@ machines = {
         speed: 1,
         "power-idle": 24000,
         "power-active": 960000,
-        image: ""
+        image: "/item_images/oil-refinery.png"
     },
     "Assembler": [
         {
