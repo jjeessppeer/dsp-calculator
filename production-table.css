@@ -27,12 +27,23 @@
     border-collapse: collapse;
 }
 
-.resultsTable td {
-    padding: 10px 0;
+/* .resultsTable td {
+    padding: 1px 0;
+    border-width: 10px 0;
+    border-color: var(--light);
+    border-style: solid;
+    
+} */
+
+.item-row {
+    /* border: 2px solid var(--light); */
     border-width: 1px 0;
     border-color: var(--light);
     border-style: solid;
+    border-collapse: separate;
+    /* border-spacing: 4px; */
 }
+
 .resultsTable td.pad {
     padding-right: 40px;
 }

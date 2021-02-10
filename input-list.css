@@ -34,6 +34,7 @@
 
 .dropdown > img {
     height: 2em;
+    width: 2em;
     border: solid;
     border-color: var(--accent);
     border-width: 1px;
@@ -62,7 +63,11 @@
 .dropdown-content img {
     margin: 2px;
     height: 2em;
+    width: 2em;
     border-radius: 0.3em;
+    /* min-height: 2em;
+    min-width: 2em;
+    background-color: var(--light); */
 }
 
 .dropdown-content img:hover {
