@@ -19,7 +19,8 @@ MINE_TYPES = {
         1011, 1012, 1013, 1014, 1015, 1016],
     'PUMP': [1000, 1116],
     'ORBITAL_COLLECT': [1120, 1121, 1011],
-    'OIL_EXTRACT': [1007]
+    'OIL_EXTRACT': [1007],
+    'PHOTON_STORE': [1208]
 }
 
 RECEPIE_TYPES = {
@@ -114,7 +115,7 @@ while line:
         item_type = ITEM_TYPES[item_type]
         mined = getMineType(item_id)
         icon = readValue(itemProtoSet, 'IconPath')
-        icon = os.path.basename(icon)
+        icon = 'icons/'+os.path.basename(icon)+'.png'
         items[item_id] = {'name': name, 'type': item_type, 'mined': mined, 'icon': icon}
     line = itemProtoSet.readline()
 
@@ -147,11 +148,12 @@ while line:
             recepie['items_out'][items_out[i]] = count_out[i]
 
         recepie['grid_index'] = readValue(recepieProtoSet, 'GridIndex')
-
         if explicit == 1:
             recepie['icon'] = os.path.basename(readValue(recepieProtoSet, 'IconPath'))
         else:
             recepie['icon'] = items[items_out[0]]['icon']
+        recepie['icon'] = 'icons/'+recepie['icon']+'.png'
+        recepie['cost'] = 1
         recepies[recepie['id']] = recepie
     line = recepieProtoSet.readline()
 
@@ -165,11 +167,12 @@ for key, item in items.items():
             'id': recepie_idx,
             'type': mine_type,
             'handcraft': 0,
-            'time': 1,
+            'time': 60,
             'items_in': {},
             'items_out': {key: 1},
             'grid_index': -1,
-            'icon': item['icon']
+            'icon': item['icon'],
+            'cost': 100
         }
         recepie_idx += 1
 
