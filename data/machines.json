@@ -51,8 +51,8 @@
 
   "GATHER": {
     "name": "Mecha",
-    "buildings": [],
-    "speeds": []
+    "buildings": [1001],
+    "speeds": [1]
   },
   "MINE": {
     "name": "Miner",
