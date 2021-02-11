@@ -1,21 +1,26 @@
-
-
-
-
-
 import re
 import json
 import os
 import errno
 
-stringProtoSet = open("test/StringProtoSet-resources.assets-20186-MonoBehaviour.txt", "r", encoding='utf-8')
-itemProtoSet = open("test/ItemProtoSet-resources.assets-20181-MonoBehaviour.txt", "r", encoding='utf-8')
-recepieProtoSet = open("test/RecipeProtoSet-resources.assets-20185-MonoBehaviour.txt", "r", encoding='utf-8')
+stringProtoSet = open("dumps\datasets\StringProtoSet-resources.assets-20287-MonoBehaviour.txt", "r", encoding='utf-8')
+itemProtoSet = open("dumps\datasets\ItemProtoSet-resources.assets-20282-MonoBehaviour.txt", "r", encoding='utf-8')
+recepieProtoSet = open("dumps\datasets\RecipeProtoSet-resources.assets-20286-MonoBehaviour.txt", "r", encoding='utf-8')
 
 
 translations = {}
 items = {}
 recepies = {}
+
+MINE_TYPES = {
+    'GATHER': [1030, 1031],
+    'MINE': [
+        1001, 1002, 1003, 1004, 1005, 1006, 
+        1011, 1012, 1013, 1014, 1015, 1016],
+    'PUMP': [1000, 1116],
+    'ORBITAL_COLLECT': [1120, 1121, 1011],
+    'OIL_EXTRACT': [1007]
+}
 
 RECEPIE_TYPES = {
     0: 'NONE',
@@ -50,8 +55,6 @@ DATA_CONV = {
     'string': lambda v: str(v).replace('"', '')
 }
 
-
-
 # Read lines until a match is found. Return that line.
 def skipToLine(expr, f):
     line = f.readline()
@@ -78,6 +81,12 @@ def readArray(f, name):
         # v = re.search(r'(?<=data = ).+$', line)[0]
         out.append(v)
     return out
+
+def getMineType(item_id):
+    types = []
+    for key, items in MINE_TYPES.items():
+        if item_id in items: types.append(key)
+    return types
     
 # PARSE TRANSLATION DATASET
 print('Parsing translations...')
@@ -103,8 +112,7 @@ while line:
         item_id = readValue(itemProtoSet, 'ID')
         item_type = readValue(itemProtoSet, 'Type')
         item_type = ITEM_TYPES[item_type]
-        mined = readValue(itemProtoSet, 'MiningFrom')
-        if mined != '': mined = translations[mined]
+        mined = getMineType(item_id)
         icon = readValue(itemProtoSet, 'IconPath')
         icon = os.path.basename(icon)
         items[item_id] = {'name': name, 'type': item_type, 'mined': mined, 'icon': icon}
@@ -147,6 +155,25 @@ while line:
         recepies[recepie['id']] = recepie
     line = recepieProtoSet.readline()
 
+# Insert pseudo recepies for mined resources
+print("Inserting miner recepies...")
+recepie_idx = max(recepies.keys()) + 1
+for key, item in items.items():
+    for mine_type in item['mined']:
+        recepies[recepie_idx] = {
+            'name': item['name']+' '+mine_type.lower().replace('_', ' '),
+            'id': recepie_idx,
+            'type': mine_type,
+            'handcraft': 0,
+            'time': 1,
+            'items_in': {},
+            'items_out': {key: 1},
+            'grid_index': -1,
+            'icon': item['icon']
+        }
+        recepie_idx += 1
+
+# Write parsed dictionaries to json files
 print('Dumping json...')
 
 if os.path.exists("data/items.json"):
@@ -158,9 +185,5 @@ if os.path.exists("data/recepies.json"):
   os.remove("data/recepies.json")
 recepies_out = open('data/recepies.json', 'a')
 recepies_out.write(json.dumps(recepies, indent=2))
-
-print("Done. Files dum")
-# jsonobj = json.dumps(items, indent=2)
-# print(jsonobj)
 
 

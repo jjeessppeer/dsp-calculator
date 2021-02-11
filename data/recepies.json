@@ -1866,7 +1866,7 @@
     "id": 115,
     "type": "FRACTIONATE",
     "handcraft": 0,
-    "time": 0,
+    "time": 1,
     "items_in": {
       "1120": 100
     },
@@ -1875,5 +1875,265 @@
     },
     "grid_index": 1307,
     "icon": "deuterium-formula"
+  },
+  "116": {
+    "name": "Iron ore mine",
+    "id": 116,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1001": 1
+    },
+    "grid_index": -1,
+    "icon": "iron-ore"
+  },
+  "117": {
+    "name": "Copper ore mine",
+    "id": 117,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1002": 1
+    },
+    "grid_index": -1,
+    "icon": "copper-ore"
+  },
+  "118": {
+    "name": "Silicon ore mine",
+    "id": 118,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1003": 1
+    },
+    "grid_index": -1,
+    "icon": "silicium-ore"
+  },
+  "119": {
+    "name": "Titanium ore mine",
+    "id": 119,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1004": 1
+    },
+    "grid_index": -1,
+    "icon": "titanium-ore"
+  },
+  "120": {
+    "name": "Stone mine",
+    "id": 120,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1005": 1
+    },
+    "grid_index": -1,
+    "icon": "stone-ore"
+  },
+  "121": {
+    "name": "Coal mine",
+    "id": 121,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1006": 1
+    },
+    "grid_index": -1,
+    "icon": "coal-ore"
+  },
+  "122": {
+    "name": "Log gather",
+    "id": 122,
+    "type": "GATHER",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1030": 1
+    },
+    "grid_index": -1,
+    "icon": "wood"
+  },
+  "123": {
+    "name": "Plant fuel gather",
+    "id": 123,
+    "type": "GATHER",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1031": 1
+    },
+    "grid_index": -1,
+    "icon": "plant-fuel"
+  },
+  "124": {
+    "name": "Fire ice mine",
+    "id": 124,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1011": 1
+    },
+    "grid_index": -1,
+    "icon": "gas-hydrate"
+  },
+  "125": {
+    "name": "Fire ice orbital collect",
+    "id": 125,
+    "type": "ORBITAL_COLLECT",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1011": 1
+    },
+    "grid_index": -1,
+    "icon": "gas-hydrate"
+  },
+  "126": {
+    "name": "Kimberlite ore mine",
+    "id": 126,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1012": 1
+    },
+    "grid_index": -1,
+    "icon": "diamond-ore"
+  },
+  "127": {
+    "name": "Fractal silicon mine",
+    "id": 127,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1013": 1
+    },
+    "grid_index": -1,
+    "icon": "fractal-silica"
+  },
+  "128": {
+    "name": "Optical grating crystal mine",
+    "id": 128,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1014": 1
+    },
+    "grid_index": -1,
+    "icon": "grating-ore"
+  },
+  "129": {
+    "name": "Spiniform stalagmite crystal mine",
+    "id": 129,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1015": 1
+    },
+    "grid_index": -1,
+    "icon": "bamboo-crystal"
+  },
+  "130": {
+    "name": "Unipolar magnet mine",
+    "id": 130,
+    "type": "MINE",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1016": 1
+    },
+    "grid_index": -1,
+    "icon": "mono-mag-ore"
+  },
+  "131": {
+    "name": "Water pump",
+    "id": 131,
+    "type": "PUMP",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1000": 1
+    },
+    "grid_index": -1,
+    "icon": "water"
+  },
+  "132": {
+    "name": "Crude oil oil extract",
+    "id": 132,
+    "type": "OIL_EXTRACT",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1007": 1
+    },
+    "grid_index": -1,
+    "icon": "oil"
+  },
+  "133": {
+    "name": "Sulfuric acid pump",
+    "id": 133,
+    "type": "PUMP",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1116": 1
+    },
+    "grid_index": -1,
+    "icon": "sulphuric-acid"
+  },
+  "134": {
+    "name": "Hydrogen orbital collect",
+    "id": 134,
+    "type": "ORBITAL_COLLECT",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1120": 1
+    },
+    "grid_index": -1,
+    "icon": "hydrogen"
+  },
+  "135": {
+    "name": "Deuterium orbital collect",
+    "id": 135,
+    "type": "ORBITAL_COLLECT",
+    "handcraft": 0,
+    "time": 1,
+    "items_in": {},
+    "items_out": {
+      "1121": 1
+    },
+    "grid_index": -1,
+    "icon": "deuterium"
   }
 }

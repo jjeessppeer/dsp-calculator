@@ -47,5 +47,31 @@
     "name": "Research facility",
     "buildings": [2901],
     "speeds": [1]
+  },
+
+  "GATHER": {
+    "name": "Mecha",
+    "buildings": [],
+    "speeds": []
+  },
+  "MINE": {
+    "name": "Miner",
+    "buildings": [2301],
+    "speeds": [1]
+  },
+  "PUMP": {
+    "name": "Pump",
+    "buildings": [2306],
+    "speeds": [1]
+  },
+  "ORBITAL_COLLECT": {
+    "name": "Orbital Collector",
+    "buildings": [2105],
+    "speeds": [1]
+  },
+  "OIL_EXTRACT": {
+    "name": "Oil extractor",
+    "buildings":  [2307],
+    "speeds": [1]
   }
 }
