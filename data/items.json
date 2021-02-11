@@ -1,0 +1,728 @@
+{
+  "1001": {
+    "name": "Iron ore",
+    "type": "RESOURCE",
+    "mined": "Iron veins",
+    "icon": "iron-ore"
+  },
+  "1002": {
+    "name": "Copper ore",
+    "type": "RESOURCE",
+    "mined": "Copper veins",
+    "icon": "copper-ore"
+  },
+  "1003": {
+    "name": "Silicon ore",
+    "type": "RESOURCE",
+    "mined": "Silicon veins",
+    "icon": "silicium-ore"
+  },
+  "1004": {
+    "name": "Titanium ore",
+    "type": "RESOURCE",
+    "mined": "Titanium veins",
+    "icon": "titanium-ore"
+  },
+  "1005": {
+    "name": "Stone",
+    "type": "RESOURCE",
+    "mined": "Stone veins",
+    "icon": "stone-ore"
+  },
+  "1006": {
+    "name": "Coal",
+    "type": "RESOURCE",
+    "mined": "Coal veins",
+    "icon": "coal-ore"
+  },
+  "1030": {
+    "name": "Log",
+    "type": "RESOURCE",
+    "mined": "Tree",
+    "icon": "wood"
+  },
+  "1031": {
+    "name": "Plant fuel",
+    "type": "RESOURCE",
+    "mined": "Plant",
+    "icon": "plant-fuel"
+  },
+  "1011": {
+    "name": "Fire ice",
+    "type": "RESOURCE",
+    "mined": "Fire ice vein <color=#FFFFFFC1>(rare)</color>",
+    "icon": "gas-hydrate"
+  },
+  "1012": {
+    "name": "Kimberlite ore",
+    "type": "RESOURCE",
+    "mined": "Kimberlite vein <color=#B9DFFFC4>(rare)</color>",
+    "icon": "diamond-ore"
+  },
+  "1013": {
+    "name": "Fractal silicon",
+    "type": "RESOURCE",
+    "mined": "Fractal silicium vein <color=#43FF89D4>(rare)</color>",
+    "icon": "fractal-silica"
+  },
+  "1014": {
+    "name": "Optical grating crystal",
+    "type": "RESOURCE",
+    "mined": "Optical grating crystal vein <color=#E37AFFDA>(rare)</color>",
+    "icon": "grating-ore"
+  },
+  "1015": {
+    "name": "Spiniform stalagmite crystal",
+    "type": "RESOURCE",
+    "mined": "Spiniform stalagmite crystal vein <color=#7AF0FFC8>(rare)</color>",
+    "icon": "bamboo-crystal"
+  },
+  "1016": {
+    "name": "Unipolar magnet",
+    "type": "RESOURCE",
+    "mined": "Unipolar magnet vein <color=#FFA086C8>(rare)</color>",
+    "icon": "mono-mag-ore"
+  },
+  "1101": {
+    "name": "Iron ingot",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "iron-plate"
+  },
+  "1104": {
+    "name": "Copper ingot",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "copper-plate"
+  },
+  "1105": {
+    "name": "High-purity silicon",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "silicium-single-crystal"
+  },
+  "1106": {
+    "name": "Titanium ingot",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "titanium-plate"
+  },
+  "1108": {
+    "name": "Stone brick",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "stone-brick"
+  },
+  "1109": {
+    "name": "Energetic graphite",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "graphite"
+  },
+  "1103": {
+    "name": "Steel",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "steel-plate"
+  },
+  "1107": {
+    "name": "Titanium alloy",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "titanium-alloy"
+  },
+  "1110": {
+    "name": "Glass",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "glass"
+  },
+  "1119": {
+    "name": "Titanium glass",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "titan-glass"
+  },
+  "1111": {
+    "name": "Prism",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "prism"
+  },
+  "1112": {
+    "name": "Diamond",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "diamond"
+  },
+  "1113": {
+    "name": "Crystal silicon",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "silicium-high-purity"
+  },
+  "1201": {
+    "name": "Gear",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "gear-wheel"
+  },
+  "1102": {
+    "name": "Magnet",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "magnet"
+  },
+  "1202": {
+    "name": "Magnetic coil",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "magnetism-wire"
+  },
+  "1203": {
+    "name": "Electric motor",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "electric-motor"
+  },
+  "1204": {
+    "name": "Electromagnetic turbine",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "mag-turbine"
+  },
+  "1205": {
+    "name": "Super-magnetic ring",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "hyper-magnetism-ring"
+  },
+  "1206": {
+    "name": "Particle container",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "partical-capacitor"
+  },
+  "1127": {
+    "name": "Strange matter",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "strange-matter-generator"
+  },
+  "1301": {
+    "name": "Circuit board",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "circuit-board"
+  },
+  "1303": {
+    "name": "Processor",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "processor"
+  },
+  "1305": {
+    "name": "Quantum chip",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "quantum-processor"
+  },
+  "1302": {
+    "name": "Microcrystalline component",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "micro-component"
+  },
+  "1304": {
+    "name": "Plane filter",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "plane-filter"
+  },
+  "1402": {
+    "name": "Particle broadband",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "particle-wide-band"
+  },
+  "1401": {
+    "name": "Plasma exciter",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "plasma-generator"
+  },
+  "1404": {
+    "name": "Photon combiner",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "photo-shifter"
+  },
+  "1501": {
+    "name": "Solar sail",
+    "type": "PRODUCT",
+    "mined": "",
+    "icon": "solar-collector"
+  },
+  "1000": {
+    "name": "Water",
+    "type": "RESOURCE",
+    "mined": "Ocean",
+    "icon": "water"
+  },
+  "1007": {
+    "name": "Crude oil",
+    "type": "RESOURCE",
+    "mined": "Crude oil seep",
+    "icon": "oil"
+  },
+  "1114": {
+    "name": "Refined oil",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "refined-oil"
+  },
+  "1116": {
+    "name": "Sulfuric acid",
+    "type": "MATERIAL",
+    "mined": "Sulfuric acid ocean",
+    "icon": "sulphuric-acid"
+  },
+  "1120": {
+    "name": "Hydrogen",
+    "type": "MATERIAL",
+    "mined": "Gas giant orbit",
+    "icon": "hydrogen"
+  },
+  "1121": {
+    "name": "Deuterium",
+    "type": "MATERIAL",
+    "mined": "Gas giant orbit",
+    "icon": "deuterium"
+  },
+  "1122": {
+    "name": "Antimatter",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "anti-matter"
+  },
+  "1208": {
+    "name": "Critical photon",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "photon-capacitor-full"
+  },
+  "1801": {
+    "name": "Hydrogen fuel rod",
+    "type": "PRODUCT",
+    "mined": "",
+    "icon": "hydrogen-energy-fuel"
+  },
+  "1802": {
+    "name": "Deuteron fuel rod",
+    "type": "PRODUCT",
+    "mined": "",
+    "icon": "deuterium-energy-fuel"
+  },
+  "1803": {
+    "name": "Antimatter fuel rod",
+    "type": "PRODUCT",
+    "mined": "",
+    "icon": "antimatter-energy-fuel"
+  },
+  "1115": {
+    "name": "Plastic",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "plastic"
+  },
+  "1123": {
+    "name": "Graphene",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "graphene"
+  },
+  "1124": {
+    "name": "Carbon nanotube",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "nanotube"
+  },
+  "1117": {
+    "name": "Organic crystal",
+    "type": "MATERIAL",
+    "mined": "Organic crystal vein <color=#F5FF4FC1>(rare)</color>",
+    "icon": "crystal-rubber"
+  },
+  "1118": {
+    "name": "Titanium crystal",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "titan-crystal"
+  },
+  "1126": {
+    "name": "Casimir crystal",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "casimir-crystal"
+  },
+  "1209": {
+    "name": "Graviton lens",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "gravity-lens"
+  },
+  "1210": {
+    "name": "Space warper",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "space-warper"
+  },
+  "1403": {
+    "name": "Annihilation constraint sphere",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "fusion-capacitor"
+  },
+  "1405": {
+    "name": "Thruster",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "fuel-thruster"
+  },
+  "1406": {
+    "name": "Reinforced thruster",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "ion-thruster"
+  },
+  "5001": {
+    "name": "Logistics drone",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "logistic-drone"
+  },
+  "5002": {
+    "name": "Logistics vessel",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "logistic-vessel"
+  },
+  "1125": {
+    "name": "Frame material",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "frame-material"
+  },
+  "1502": {
+    "name": "Dyson sphere component",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "dyson-sphere-component"
+  },
+  "1503": {
+    "name": "Small carrier rocket",
+    "type": "PRODUCT",
+    "mined": "",
+    "icon": "rocket"
+  },
+  "1131": {
+    "name": "Foundation",
+    "type": "COMPONENT",
+    "mined": "",
+    "icon": "terrain-tool"
+  },
+  "1141": {
+    "name": "Accelerant Mk.I",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "accelerator-1"
+  },
+  "1142": {
+    "name": "Accelerant Mk.II",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "accelerator-2"
+  },
+  "1143": {
+    "name": "Accelerant Mk.III",
+    "type": "MATERIAL",
+    "mined": "",
+    "icon": "accelerator-3"
+  },
+  "2001": {
+    "name": "Conveyor belt MK.I",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "belt-1"
+  },
+  "2002": {
+    "name": "Conveyor belt MK.II",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "belt-2"
+  },
+  "2003": {
+    "name": "Conveyor belt MK.III",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "belt-3"
+  },
+  "2011": {
+    "name": "Sorter MK.I",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "inserter-1"
+  },
+  "2012": {
+    "name": "Sorter MK.II",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "inserter-2"
+  },
+  "2013": {
+    "name": "Sorter MK.III",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "inserter-3"
+  },
+  "2020": {
+    "name": "Splitter(4-direction)",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "splitter-4dir"
+  },
+  "2101": {
+    "name": "Storage MK.I",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "storage-1"
+  },
+  "2102": {
+    "name": "Storage MK.II",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "storage-2"
+  },
+  "2106": {
+    "name": "Storage tank",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "storage-tank"
+  },
+  "2303": {
+    "name": "Assembling machine Mk.I",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "assembler-1"
+  },
+  "2304": {
+    "name": "Assembling machine Mk.II",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "assembler-2"
+  },
+  "2305": {
+    "name": "Assembling machine Mk.III",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "assembler-3"
+  },
+  "2201": {
+    "name": "Tesla tower",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "tesla-coil"
+  },
+  "2202": {
+    "name": "Wireless power tower",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "charging-pole"
+  },
+  "2212": {
+    "name": "Satellite substation",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "orbital-substation"
+  },
+  "2203": {
+    "name": "Wind turbine",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "wind-turbine"
+  },
+  "2204": {
+    "name": "Thermal power station",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "fuel-plant"
+  },
+  "2211": {
+    "name": "Mini fusion power station",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "fusion-power-station"
+  },
+  "2301": {
+    "name": "Mining machine",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "mining-drill"
+  },
+  "2302": {
+    "name": "Smelter",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "smelter"
+  },
+  "2307": {
+    "name": "Oil extractor",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "oil-extractor"
+  },
+  "2308": {
+    "name": "Oil refinery",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "oil-refinery"
+  },
+  "2306": {
+    "name": "Water pump",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "water-pump"
+  },
+  "2309": {
+    "name": "Chemical plant",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "chemical-plant"
+  },
+  "2314": {
+    "name": "Fractionator",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "fractionator"
+  },
+  "2313": {
+    "name": "Spray coater",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "spray-coater"
+  },
+  "2205": {
+    "name": "Solar panel",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "solar-panel"
+  },
+  "2206": {
+    "name": "Accumulator",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "accumulator"
+  },
+  "2207": {
+    "name": "Accumulator(full)",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "accumulator-full"
+  },
+  "2311": {
+    "name": "EM-Rail Ejector",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "em-rail-ejector"
+  },
+  "2208": {
+    "name": "Ray receiver",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "ray-receiver"
+  },
+  "2312": {
+    "name": "Vertical launching silo",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "vertical-launching-silo"
+  },
+  "2209": {
+    "name": "Energy exchanger",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "energy-exchanger"
+  },
+  "2310": {
+    "name": "Miniature particle collider",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "hadron-collider"
+  },
+  "2210": {
+    "name": "Artificial star",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "fusion-reactor"
+  },
+  "2103": {
+    "name": "Planetary Logistics Station",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "logistic-station"
+  },
+  "2104": {
+    "name": "Interstellar Logistics Station",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "interstellar-logistic-station"
+  },
+  "2105": {
+    "name": "Orbital Collector",
+    "type": "LOGISTICS",
+    "mined": "",
+    "icon": "orbital-collector"
+  },
+  "2901": {
+    "name": "Matrix lab",
+    "type": "PRODUCTION",
+    "mined": "",
+    "icon": "lab"
+  },
+  "6001": {
+    "name": "Electromagnetic matrix",
+    "type": "MATRIX",
+    "mined": "",
+    "icon": "t-matrix"
+  },
+  "6002": {
+    "name": "Energy matrix",
+    "type": "MATRIX",
+    "mined": "",
+    "icon": "e-matrix"
+  },
+  "6003": {
+    "name": "Structure matrix",
+    "type": "MATRIX",
+    "mined": "",
+    "icon": "c-matrix"
+  },
+  "6004": {
+    "name": "Information matrix",
+    "type": "MATRIX",
+    "mined": "",
+    "icon": "i-matrix"
+  },
+  "6005": {
+    "name": "Gravity matrix",
+    "type": "MATRIX",
+    "mined": "",
+    "icon": "g-matrix"
+  },
+  "6006": {
+    "name": "Universe matrix",
+    "type": "MATRIX",
+    "mined": "",
+    "icon": "u-matrix"
+  }
+}

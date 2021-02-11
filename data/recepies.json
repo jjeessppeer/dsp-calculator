@@ -1,0 +1,1879 @@
+{
+  "1": {
+    "name": "Iron ingot",
+    "id": 1,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1001": 1
+    },
+    "items_out": {
+      "1101": 1
+    },
+    "grid_index": 1101,
+    "icon": "iron-plate"
+  },
+  "2": {
+    "name": "Magnet",
+    "id": 2,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 90,
+    "items_in": {
+      "1001": 1
+    },
+    "items_out": {
+      "1102": 1
+    },
+    "grid_index": 1201,
+    "icon": "magnet"
+  },
+  "3": {
+    "name": "Copper ingot",
+    "id": 3,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1002": 1
+    },
+    "items_out": {
+      "1104": 1
+    },
+    "grid_index": 1102,
+    "icon": "copper-plate"
+  },
+  "4": {
+    "name": "Stone brick",
+    "id": 4,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1005": 1
+    },
+    "items_out": {
+      "1108": 1
+    },
+    "grid_index": 1105,
+    "icon": "stone-brick"
+  },
+  "5": {
+    "name": "Gear",
+    "id": 5,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1101": 1
+    },
+    "items_out": {
+      "1201": 1
+    },
+    "grid_index": 1401,
+    "icon": "gear-wheel"
+  },
+  "6": {
+    "name": "Magnetic coil",
+    "id": 6,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1102": 2,
+      "1104": 1
+    },
+    "items_out": {
+      "1202": 2
+    },
+    "grid_index": 1202,
+    "icon": "magnetism-wire"
+  },
+  "7": {
+    "name": "Wind turbine",
+    "id": 7,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1101": 6,
+      "1201": 1,
+      "1202": 3
+    },
+    "items_out": {
+      "2203": 1
+    },
+    "grid_index": 2104,
+    "icon": "wind-turbine"
+  },
+  "8": {
+    "name": "Tesla tower",
+    "id": 8,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1101": 2,
+      "1202": 1
+    },
+    "items_out": {
+      "2201": 1
+    },
+    "grid_index": 2101,
+    "icon": "tesla-coil"
+  },
+  "9": {
+    "name": "Electromagnetic matrix",
+    "id": 9,
+    "type": "RESEARCH",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1202": 1,
+      "1301": 1
+    },
+    "items_out": {
+      "6001": 1
+    },
+    "grid_index": 1701,
+    "icon": "t-matrix"
+  },
+  "10": {
+    "name": "Matrix lab",
+    "id": 10,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1101": 8,
+      "1110": 4,
+      "1301": 4,
+      "1202": 4
+    },
+    "items_out": {
+      "2901": 1
+    },
+    "grid_index": 2408,
+    "icon": "lab"
+  },
+  "11": {
+    "name": "Prism",
+    "id": 11,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1110": 3
+    },
+    "items_out": {
+      "1111": 2
+    },
+    "grid_index": 1305,
+    "icon": "prism"
+  },
+  "12": {
+    "name": "Plasma exciter",
+    "id": 12,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1202": 4,
+      "1111": 2
+    },
+    "items_out": {
+      "1401": 1
+    },
+    "grid_index": 1501,
+    "icon": "plasma-generator"
+  },
+  "13": {
+    "name": "Wireless power tower",
+    "id": 13,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "2201": 1,
+      "1401": 3
+    },
+    "items_out": {
+      "2202": 1
+    },
+    "grid_index": 2102,
+    "icon": "charging-pole"
+  },
+  "14": {
+    "name": "Oil extractor",
+    "id": 14,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 480,
+    "items_in": {
+      "1103": 12,
+      "1108": 12,
+      "1301": 6,
+      "1401": 4
+    },
+    "items_out": {
+      "2307": 1
+    },
+    "grid_index": 2306,
+    "icon": "oil-extractor"
+  },
+  "15": {
+    "name": "Oil refinery",
+    "id": 15,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1103": 10,
+      "1108": 10,
+      "1301": 6,
+      "1401": 6
+    },
+    "items_out": {
+      "2308": 1
+    },
+    "grid_index": 2307,
+    "icon": "oil-refinery"
+  },
+  "16": {
+    "name": "Plasma refining",
+    "id": 16,
+    "type": "REFINE",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1007": 2
+    },
+    "items_out": {
+      "1120": 1,
+      "1114": 2
+    },
+    "grid_index": 1107,
+    "icon": "plasma-refining"
+  },
+  "17": {
+    "name": "Energetic graphite",
+    "id": 17,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1006": 2
+    },
+    "items_out": {
+      "1109": 1
+    },
+    "grid_index": 1106,
+    "icon": "graphite"
+  },
+  "18": {
+    "name": "Energy matrix",
+    "id": 18,
+    "type": "RESEARCH",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1109": 2,
+      "1120": 2
+    },
+    "items_out": {
+      "6002": 1
+    },
+    "grid_index": 1702,
+    "icon": "e-matrix"
+  },
+  "19": {
+    "name": "Hydrogen fuel rod",
+    "id": 19,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1106": 1,
+      "1120": 5
+    },
+    "items_out": {
+      "1801": 1
+    },
+    "grid_index": 1210,
+    "icon": "hydrogen-energy-fuel"
+  },
+  "20": {
+    "name": " - Thruster",
+    "id": 20,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1103": 2,
+      "1104": 3
+    },
+    "items_out": {
+      "1405": 1
+    },
+    "grid_index": 1310,
+    "icon": "fuel-thruster"
+  },
+  "21": {
+    "name": "Reinforced thruster",
+    "id": 21,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1107": 5,
+      "1204": 5
+    },
+    "items_out": {
+      "1406": 1
+    },
+    "grid_index": 1311,
+    "icon": "ion-thruster"
+  },
+  "22": {
+    "name": "Chemical plant",
+    "id": 22,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 300,
+    "items_in": {
+      "1103": 8,
+      "1108": 8,
+      "1110": 8,
+      "1301": 2
+    },
+    "items_out": {
+      "2309": 1
+    },
+    "grid_index": 2407,
+    "icon": "chemical-plant"
+  },
+  "23": {
+    "name": "Plastic",
+    "id": 23,
+    "type": "CHEMICAL",
+    "handcraft": 0,
+    "time": 180,
+    "items_in": {
+      "1114": 2,
+      "1109": 1
+    },
+    "items_out": {
+      "1115": 1
+    },
+    "grid_index": 1108,
+    "icon": "plastic"
+  },
+  "24": {
+    "name": "Sulfuric acid",
+    "id": 24,
+    "type": "CHEMICAL",
+    "handcraft": 0,
+    "time": 360,
+    "items_in": {
+      "1114": 6,
+      "1005": 8,
+      "1000": 4
+    },
+    "items_out": {
+      "1116": 4
+    },
+    "grid_index": 1406,
+    "icon": "sulphuric-acid"
+  },
+  "25": {
+    "name": "Organic crystal",
+    "id": 25,
+    "type": "CHEMICAL",
+    "handcraft": 0,
+    "time": 360,
+    "items_in": {
+      "1115": 2,
+      "1114": 1,
+      "1000": 1
+    },
+    "items_out": {
+      "1117": 1
+    },
+    "grid_index": 1208,
+    "icon": "crystal-rubber"
+  },
+  "26": {
+    "name": "Titanium crystal",
+    "id": 26,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1117": 1,
+      "1106": 3
+    },
+    "items_out": {
+      "1118": 1
+    },
+    "grid_index": 1309,
+    "icon": "titan-crystal"
+  },
+  "27": {
+    "name": "Structure matrix",
+    "id": 27,
+    "type": "RESEARCH",
+    "handcraft": 1,
+    "time": 480,
+    "items_in": {
+      "1112": 1,
+      "1118": 1
+    },
+    "items_out": {
+      "6003": 1
+    },
+    "grid_index": 1703,
+    "icon": "c-matrix"
+  },
+  "28": {
+    "name": "Casimir crystal",
+    "id": 28,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1118": 1,
+      "1123": 2,
+      "1120": 12
+    },
+    "items_out": {
+      "1126": 1
+    },
+    "grid_index": 1505,
+    "icon": "casimir-crystal"
+  },
+  "29": {
+    "name": "Casimir crystal (advanced)",
+    "id": 29,
+    "type": "ASSEMBLE",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1014": 6,
+      "1123": 2,
+      "1120": 12
+    },
+    "items_out": {
+      "1126": 1
+    },
+    "grid_index": 1605,
+    "icon": "casimir-crystal-lv2"
+  },
+  "30": {
+    "name": "Titanium glass",
+    "id": 30,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 300,
+    "items_in": {
+      "1110": 2,
+      "1106": 2,
+      "1000": 2
+    },
+    "items_out": {
+      "1119": 2
+    },
+    "grid_index": 1304,
+    "icon": "titan-glass"
+  },
+  "31": {
+    "name": "Graphene",
+    "id": 31,
+    "type": "CHEMICAL",
+    "handcraft": 0,
+    "time": 180,
+    "items_in": {
+      "1109": 3,
+      "1116": 1
+    },
+    "items_out": {
+      "1123": 2
+    },
+    "grid_index": 1109,
+    "icon": "graphene"
+  },
+  "32": {
+    "name": "Graphene (advanced)",
+    "id": 32,
+    "type": "CHEMICAL",
+    "handcraft": 0,
+    "time": 120,
+    "items_in": {
+      "1011": 2
+    },
+    "items_out": {
+      "1123": 2,
+      "1120": 1
+    },
+    "grid_index": 1209,
+    "icon": "graphene-lv2"
+  },
+  "33": {
+    "name": "Carbon nanotube",
+    "id": 33,
+    "type": "CHEMICAL",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1123": 3,
+      "1106": 1
+    },
+    "items_out": {
+      "1124": 2
+    },
+    "grid_index": 1409,
+    "icon": "nanotube"
+  },
+  "34": {
+    "name": "Silicon ore",
+    "id": 34,
+    "type": "SMELT",
+    "handcraft": 0,
+    "time": 600,
+    "items_in": {
+      "1005": 10
+    },
+    "items_out": {
+      "1003": 1
+    },
+    "grid_index": 1403,
+    "icon": "silicium-ore"
+  },
+  "35": {
+    "name": "Carbon nanotube (advanced)",
+    "id": 35,
+    "type": "CHEMICAL",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1015": 2
+    },
+    "items_out": {
+      "1124": 2
+    },
+    "grid_index": 1509,
+    "icon": "nanotube-lv2"
+  },
+  "36": {
+    "name": "Particle broadband",
+    "id": 36,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 480,
+    "items_in": {
+      "1124": 2,
+      "1113": 2,
+      "1115": 1
+    },
+    "items_out": {
+      "1402": 1
+    },
+    "grid_index": 1503,
+    "icon": "particle-wide-band"
+  },
+  "37": {
+    "name": "Crystal silicon",
+    "id": 37,
+    "type": "SMELT",
+    "handcraft": 0,
+    "time": 120,
+    "items_in": {
+      "1105": 1
+    },
+    "items_out": {
+      "1113": 1
+    },
+    "grid_index": 1203,
+    "icon": "silicium-high-purity"
+  },
+  "38": {
+    "name": "Plane filter",
+    "id": 38,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 720,
+    "items_in": {
+      "1126": 1,
+      "1119": 2
+    },
+    "items_out": {
+      "1304": 1
+    },
+    "grid_index": 1408,
+    "icon": "plane-filter"
+  },
+  "39": {
+    "name": "Miniature particle collider",
+    "id": 39,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 900,
+    "items_in": {
+      "1107": 20,
+      "1125": 20,
+      "1205": 50,
+      "1123": 10,
+      "1303": 8
+    },
+    "items_out": {
+      "2310": 1
+    },
+    "grid_index": 2210,
+    "icon": "hadron-collider"
+  },
+  "40": {
+    "name": "Deuterium",
+    "id": 40,
+    "type": "PARTICLE",
+    "handcraft": 0,
+    "time": 300,
+    "items_in": {
+      "1120": 10
+    },
+    "items_out": {
+      "1121": 5
+    },
+    "grid_index": 1407,
+    "icon": "deuterium"
+  },
+  "41": {
+    "name": "Deuteron fuel rod",
+    "id": 41,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1107": 1,
+      "1121": 10,
+      "1205": 1
+    },
+    "items_out": {
+      "1802": 1
+    },
+    "grid_index": 1211,
+    "icon": "deuterium-energy-fuel"
+  },
+  "42": {
+    "name": "Annihilation constraint sphere",
+    "id": 42,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 1200,
+    "items_in": {
+      "1206": 1,
+      "1303": 1
+    },
+    "items_out": {
+      "1403": 1
+    },
+    "grid_index": 1508,
+    "icon": "fusion-capacitor"
+  },
+  "43": {
+    "name": "Artificial star",
+    "id": 43,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 1800,
+    "items_in": {
+      "1107": 20,
+      "1125": 20,
+      "1403": 10,
+      "1305": 10
+    },
+    "items_out": {
+      "2210": 1
+    },
+    "grid_index": 2111,
+    "icon": "fusion-reactor"
+  },
+  "44": {
+    "name": "Antimatter fuel rod",
+    "id": 44,
+    "type": "ASSEMBLE",
+    "handcraft": 0,
+    "time": 720,
+    "items_in": {
+      "1122": 10,
+      "1120": 10,
+      "1403": 1,
+      "1107": 1
+    },
+    "items_out": {
+      "1803": 1
+    },
+    "grid_index": 1212,
+    "icon": "antimatter-energy-fuel"
+  },
+  "45": {
+    "name": "Assembling machine Mk.I",
+    "id": 45,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1101": 4,
+      "1201": 8,
+      "1301": 4
+    },
+    "items_out": {
+      "2303": 1
+    },
+    "grid_index": 2401,
+    "icon": "assembler-1"
+  },
+  "46": {
+    "name": "Assembling machine Mk.II",
+    "id": 46,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "2303": 1,
+      "1123": 8,
+      "1303": 4
+    },
+    "items_out": {
+      "2304": 1
+    },
+    "grid_index": 2402,
+    "icon": "assembler-2"
+  },
+  "47": {
+    "name": "Assembling machine Mk.III",
+    "id": 47,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "2304": 1,
+      "1402": 8,
+      "1305": 2
+    },
+    "items_out": {
+      "2305": 1
+    },
+    "grid_index": 2403,
+    "icon": "assembler-3"
+  },
+  "48": {
+    "name": "Mining machine",
+    "id": 48,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1101": 4,
+      "1301": 2,
+      "1202": 2,
+      "1201": 2
+    },
+    "items_out": {
+      "2301": 1
+    },
+    "grid_index": 2304,
+    "icon": "mining-drill"
+  },
+  "49": {
+    "name": "Water pump",
+    "id": 49,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1101": 8,
+      "1108": 4,
+      "1203": 4,
+      "1301": 2
+    },
+    "items_out": {
+      "2306": 1
+    },
+    "grid_index": 2305,
+    "icon": "water-pump"
+  },
+  "50": {
+    "name": "Circuit board",
+    "id": 50,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1101": 2,
+      "1104": 1
+    },
+    "items_out": {
+      "1301": 2
+    },
+    "grid_index": 1404,
+    "icon": "circuit-board"
+  },
+  "51": {
+    "name": "Processor",
+    "id": 51,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1301": 2,
+      "1302": 2
+    },
+    "items_out": {
+      "1303": 1
+    },
+    "grid_index": 1504,
+    "icon": "processor"
+  },
+  "52": {
+    "name": "Quantum chip",
+    "id": 52,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1303": 2,
+      "1304": 2
+    },
+    "items_out": {
+      "1305": 1
+    },
+    "grid_index": 1604,
+    "icon": "quantum-processor"
+  },
+  "53": {
+    "name": "Microcrystalline component",
+    "id": 53,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1105": 2,
+      "1104": 1
+    },
+    "items_out": {
+      "1302": 1
+    },
+    "grid_index": 1603,
+    "icon": "micro-component"
+  },
+  "54": {
+    "name": "Organic crystal (original)",
+    "id": 54,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1030": 20,
+      "1031": 30,
+      "1000": 10
+    },
+    "items_out": {
+      "1117": 1
+    },
+    "grid_index": 1308,
+    "icon": "crystal-rubber-lv0"
+  },
+  "55": {
+    "name": "Information matrix",
+    "id": 55,
+    "type": "RESEARCH",
+    "handcraft": 1,
+    "time": 600,
+    "items_in": {
+      "1303": 2,
+      "1402": 1
+    },
+    "items_out": {
+      "6004": 1
+    },
+    "grid_index": 1704,
+    "icon": "i-matrix"
+  },
+  "56": {
+    "name": "Smelter",
+    "id": 56,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1101": 4,
+      "1108": 2,
+      "1301": 4,
+      "1202": 2
+    },
+    "items_out": {
+      "2302": 1
+    },
+    "grid_index": 2404,
+    "icon": "smelter"
+  },
+  "57": {
+    "name": "Glass",
+    "id": 57,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1005": 2
+    },
+    "items_out": {
+      "1110": 1
+    },
+    "grid_index": 1205,
+    "icon": "glass"
+  },
+  "58": {
+    "name": "X-ray cracking",
+    "id": 58,
+    "type": "REFINE",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1114": 1,
+      "1120": 2
+    },
+    "items_out": {
+      "1120": 3,
+      "1109": 1
+    },
+    "grid_index": 1207,
+    "icon": "X-ray"
+  },
+  "59": {
+    "name": "High-purity silicon",
+    "id": 59,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1003": 2
+    },
+    "items_out": {
+      "1105": 1
+    },
+    "grid_index": 1103,
+    "icon": "silicium-single-crystal"
+  },
+  "60": {
+    "name": "Diamond",
+    "id": 60,
+    "type": "SMELT",
+    "handcraft": 0,
+    "time": 120,
+    "items_in": {
+      "1109": 1
+    },
+    "items_out": {
+      "1112": 1
+    },
+    "grid_index": 1206,
+    "icon": "diamond"
+  },
+  "61": {
+    "name": "Diamond (advanced)",
+    "id": 61,
+    "type": "SMELT",
+    "handcraft": 0,
+    "time": 120,
+    "items_in": {
+      "1012": 1
+    },
+    "items_out": {
+      "1112": 1
+    },
+    "grid_index": 1306,
+    "icon": "diamond-lv2"
+  },
+  "62": {
+    "name": "Crystal silicon (advanced)",
+    "id": 62,
+    "type": "ASSEMBLE",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1013": 1
+    },
+    "items_out": {
+      "1113": 1
+    },
+    "grid_index": 1303,
+    "icon": "silicium-high-purity-lv2"
+  },
+  "63": {
+    "name": "Steel",
+    "id": 63,
+    "type": "SMELT",
+    "handcraft": 0,
+    "time": 180,
+    "items_in": {
+      "1101": 3
+    },
+    "items_out": {
+      "1103": 1
+    },
+    "grid_index": 1301,
+    "icon": "steel-plate"
+  },
+  "64": {
+    "name": "Thermal power station",
+    "id": 64,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 300,
+    "items_in": {
+      "1101": 10,
+      "1108": 4,
+      "1201": 4,
+      "1202": 4
+    },
+    "items_out": {
+      "2204": 1
+    },
+    "grid_index": 2105,
+    "icon": "fuel-plant"
+  },
+  "65": {
+    "name": "Titanium ingot",
+    "id": 65,
+    "type": "SMELT",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1004": 2
+    },
+    "items_out": {
+      "1106": 1
+    },
+    "grid_index": 1104,
+    "icon": "titanium-plate"
+  },
+  "66": {
+    "name": "Titanium alloy",
+    "id": 66,
+    "type": "SMELT",
+    "handcraft": 0,
+    "time": 720,
+    "items_in": {
+      "1106": 4,
+      "1103": 4,
+      "1116": 8
+    },
+    "items_out": {
+      "1107": 4
+    },
+    "grid_index": 1204,
+    "icon": "titanium-alloy"
+  },
+  "67": {
+    "name": "Solar panel",
+    "id": 67,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 300,
+    "items_in": {
+      "1104": 6,
+      "1105": 6,
+      "1301": 4
+    },
+    "items_out": {
+      "2205": 1
+    },
+    "grid_index": 2106,
+    "icon": "solar-panel"
+  },
+  "68": {
+    "name": "Photon combiner",
+    "id": 68,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1111": 2,
+      "1301": 1
+    },
+    "items_out": {
+      "1404": 1
+    },
+    "grid_index": 1601,
+    "icon": "photo-shifter"
+  },
+  "69": {
+    "name": "Photon combiner (advanced)",
+    "id": 69,
+    "type": "ASSEMBLE",
+    "handcraft": 0,
+    "time": 180,
+    "items_in": {
+      "1014": 1,
+      "1301": 1
+    },
+    "items_out": {
+      "1404": 1
+    },
+    "grid_index": 1602,
+    "icon": "photo-shifter-lv2"
+  },
+  "70": {
+    "name": "Solar sail",
+    "id": 70,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1123": 1,
+      "1404": 1
+    },
+    "items_out": {
+      "1501": 2
+    },
+    "grid_index": 1510,
+    "icon": "solar-collector"
+  },
+  "71": {
+    "name": "EM-Rail Ejector",
+    "id": 71,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1103": 20,
+      "1201": 20,
+      "1303": 5,
+      "1205": 10
+    },
+    "items_out": {
+      "2311": 1
+    },
+    "grid_index": 2208,
+    "icon": "em-rail-ejector"
+  },
+  "72": {
+    "name": "Ray receiver",
+    "id": 72,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 480,
+    "items_in": {
+      "1103": 20,
+      "1105": 20,
+      "1404": 10,
+      "1303": 5,
+      "1205": 20
+    },
+    "items_out": {
+      "2208": 1
+    },
+    "grid_index": 2108,
+    "icon": "ray-receiver"
+  },
+  "73": {
+    "name": "Satellite substation",
+    "id": 73,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 300,
+    "items_in": {
+      "2202": 1,
+      "1205": 10,
+      "1125": 2
+    },
+    "items_out": {
+      "2212": 1
+    },
+    "grid_index": 2103,
+    "icon": "orbital-substation"
+  },
+  "74": {
+    "name": "Mass-energy storage",
+    "id": 74,
+    "type": "PARTICLE",
+    "handcraft": 0,
+    "time": 120,
+    "items_in": {
+      "1208": 2
+    },
+    "items_out": {
+      "1122": 2,
+      "1120": 2
+    },
+    "grid_index": 1608,
+    "icon": "photon-formula"
+  },
+  "75": {
+    "name": "Universe matrix",
+    "id": 75,
+    "type": "RESEARCH",
+    "handcraft": 0,
+    "time": 900,
+    "items_in": {
+      "6001": 1,
+      "6002": 1,
+      "6003": 1,
+      "6004": 1,
+      "6005": 1,
+      "1122": 1
+    },
+    "items_out": {
+      "6006": 1
+    },
+    "grid_index": 1706,
+    "icon": "u-matrix"
+  },
+  "76": {
+    "name": "Accumulator",
+    "id": 76,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 300,
+    "items_in": {
+      "1101": 6,
+      "1205": 6,
+      "1113": 4
+    },
+    "items_out": {
+      "2206": 1
+    },
+    "grid_index": 2107,
+    "icon": "accumulator"
+  },
+  "77": {
+    "name": "Energy exchanger",
+    "id": 77,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 900,
+    "items_in": {
+      "1107": 40,
+      "1103": 40,
+      "1303": 40,
+      "1206": 8
+    },
+    "items_out": {
+      "2209": 1
+    },
+    "grid_index": 2110,
+    "icon": "energy-exchanger"
+  },
+  "78": {
+    "name": "Space warper",
+    "id": 78,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 600,
+    "items_in": {
+      "1209": 1
+    },
+    "items_out": {
+      "1210": 1
+    },
+    "grid_index": 1507,
+    "icon": "space-warper"
+  },
+  "79": {
+    "name": "Space warper (advanced)",
+    "id": 79,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 600,
+    "items_in": {
+      "6005": 1
+    },
+    "items_out": {
+      "1210": 8
+    },
+    "grid_index": 1607,
+    "icon": "space-warper-lv2"
+  },
+  "80": {
+    "name": "Frame material",
+    "id": 80,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1124": 4,
+      "1107": 1,
+      "1105": 1
+    },
+    "items_out": {
+      "1125": 1
+    },
+    "grid_index": 1511,
+    "icon": "frame-material"
+  },
+  "81": {
+    "name": "Dyson sphere component",
+    "id": 81,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 480,
+    "items_in": {
+      "1125": 3,
+      "1501": 3,
+      "1303": 3
+    },
+    "items_out": {
+      "1502": 1
+    },
+    "grid_index": 1512,
+    "icon": "dyson-sphere-component"
+  },
+  "82": {
+    "name": "Vertical launching silo",
+    "id": 82,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 1800,
+    "items_in": {
+      "1107": 80,
+      "1125": 30,
+      "1209": 20,
+      "1305": 10
+    },
+    "items_out": {
+      "2312": 1
+    },
+    "grid_index": 2308,
+    "icon": "vertical-launching-silo"
+  },
+  "83": {
+    "name": "Small carrier rocket",
+    "id": 83,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1502": 2,
+      "1802": 2,
+      "1305": 2
+    },
+    "items_out": {
+      "1503": 1
+    },
+    "grid_index": 1412,
+    "icon": "rocket"
+  },
+  "84": {
+    "name": "Conveyor belt MK.I",
+    "id": 84,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1101": 2,
+      "1201": 1
+    },
+    "items_out": {
+      "2001": 3
+    },
+    "grid_index": 2201,
+    "icon": "belt-1"
+  },
+  "85": {
+    "name": "Sorter MK.I",
+    "id": 85,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1101": 1,
+      "1301": 1
+    },
+    "items_out": {
+      "2011": 1
+    },
+    "grid_index": 2301,
+    "icon": "inserter-1"
+  },
+  "86": {
+    "name": "Storage MK.I",
+    "id": 86,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1101": 4,
+      "1108": 4
+    },
+    "items_out": {
+      "2101": 1
+    },
+    "grid_index": 2205,
+    "icon": "storage-1"
+  },
+  "87": {
+    "name": "Splitter(4-direction)",
+    "id": 87,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1101": 3,
+      "1201": 2,
+      "1301": 1
+    },
+    "items_out": {
+      "2020": 1
+    },
+    "grid_index": 2204,
+    "icon": "splitter-4dir"
+  },
+  "88": {
+    "name": "Sorter MK.II",
+    "id": 88,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "2011": 2,
+      "1203": 1
+    },
+    "items_out": {
+      "2012": 2
+    },
+    "grid_index": 2302,
+    "icon": "inserter-2"
+  },
+  "89": {
+    "name": "Conveyor belt MK.II",
+    "id": 89,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "2001": 3,
+      "1204": 1
+    },
+    "items_out": {
+      "2002": 3
+    },
+    "grid_index": 2202,
+    "icon": "belt-2"
+  },
+  "90": {
+    "name": "Sorter MK.III",
+    "id": 90,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "2012": 2,
+      "1204": 1
+    },
+    "items_out": {
+      "2013": 2
+    },
+    "grid_index": 2303,
+    "icon": "inserter-3"
+  },
+  "91": {
+    "name": "Storage MK.II",
+    "id": 91,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1103": 8,
+      "1108": 8
+    },
+    "items_out": {
+      "2102": 1
+    },
+    "grid_index": 2206,
+    "icon": "storage-2"
+  },
+  "92": {
+    "name": "Conveyor belt MK.III",
+    "id": 92,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "2002": 3,
+      "1205": 1,
+      "1123": 1
+    },
+    "items_out": {
+      "2003": 3
+    },
+    "grid_index": 2203,
+    "icon": "belt-3"
+  },
+  "93": {
+    "name": "Planetary Logistics Station",
+    "id": 93,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 1200,
+    "items_in": {
+      "1103": 40,
+      "1106": 40,
+      "1303": 40,
+      "1206": 20
+    },
+    "items_out": {
+      "2103": 1
+    },
+    "grid_index": 2209,
+    "icon": "logistic-station"
+  },
+  "94": {
+    "name": "Logistics drone",
+    "id": 94,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1101": 5,
+      "1303": 2,
+      "1405": 2
+    },
+    "items_out": {
+      "5001": 1
+    },
+    "grid_index": 1410,
+    "icon": "logistic-drone"
+  },
+  "95": {
+    "name": "Interstellar Logistics Station",
+    "id": 95,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 1800,
+    "items_in": {
+      "2103": 1,
+      "1107": 40,
+      "1206": 20
+    },
+    "items_out": {
+      "2104": 1
+    },
+    "grid_index": 2309,
+    "icon": "interstellar-logistic-station"
+  },
+  "96": {
+    "name": "Logistics vessel",
+    "id": 96,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1107": 10,
+      "1303": 10,
+      "1406": 2
+    },
+    "items_out": {
+      "5002": 1
+    },
+    "grid_index": 1411,
+    "icon": "logistic-vessel"
+  },
+  "97": {
+    "name": "Electric motor",
+    "id": 97,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1101": 2,
+      "1201": 1,
+      "1202": 1
+    },
+    "items_out": {
+      "1203": 1
+    },
+    "grid_index": 1302,
+    "icon": "electric-motor"
+  },
+  "98": {
+    "name": "Electromagnetic turbine",
+    "id": 98,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1203": 2,
+      "1202": 2
+    },
+    "items_out": {
+      "1204": 1
+    },
+    "grid_index": 1402,
+    "icon": "mag-turbine"
+  },
+  "99": {
+    "name": "Particle container",
+    "id": 99,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1204": 2,
+      "1104": 2,
+      "1123": 2
+    },
+    "items_out": {
+      "1206": 1
+    },
+    "grid_index": 1506,
+    "icon": "partical-capacitor"
+  },
+  "100": {
+    "name": "Particle container (advanced)",
+    "id": 100,
+    "type": "ASSEMBLE",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1016": 10,
+      "1104": 2
+    },
+    "items_out": {
+      "1206": 1
+    },
+    "grid_index": 1606,
+    "icon": "partical-capacitor-lv2"
+  },
+  "101": {
+    "name": "Graviton lens",
+    "id": 101,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 360,
+    "items_in": {
+      "1112": 4,
+      "1127": 1
+    },
+    "items_out": {
+      "1209": 1
+    },
+    "grid_index": 1405,
+    "icon": "gravity-lens"
+  },
+  "102": {
+    "name": "Gravity matrix",
+    "id": 102,
+    "type": "RESEARCH",
+    "handcraft": 1,
+    "time": 1440,
+    "items_in": {
+      "1209": 1,
+      "1305": 1
+    },
+    "items_out": {
+      "6005": 2
+    },
+    "grid_index": 1705,
+    "icon": "g-matrix"
+  },
+  "103": {
+    "name": "Super-magnetic ring",
+    "id": 103,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1204": 2,
+      "1102": 3,
+      "1109": 1
+    },
+    "items_out": {
+      "1205": 1
+    },
+    "grid_index": 1502,
+    "icon": "hyper-magnetism-ring"
+  },
+  "104": {
+    "name": "Strange matter",
+    "id": 104,
+    "type": "PARTICLE",
+    "handcraft": 0,
+    "time": 480,
+    "items_in": {
+      "1206": 2,
+      "1101": 2,
+      "1121": 10
+    },
+    "items_out": {
+      "1127": 1
+    },
+    "grid_index": 1312,
+    "icon": "strange-matter-generator"
+  },
+  "106": {
+    "name": "Accelerant Mk.I",
+    "id": 106,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1006": 2
+    },
+    "items_out": {
+      "1141": 1
+    },
+    "grid_index": 1110,
+    "icon": "accelerator-1"
+  },
+  "107": {
+    "name": "Accelerant Mk.II",
+    "id": 107,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 240,
+    "items_in": {
+      "1117": 2,
+      "1141": 1
+    },
+    "items_out": {
+      "1142": 1
+    },
+    "grid_index": 1111,
+    "icon": "accelerator-2"
+  },
+  "108": {
+    "name": "Accelerant Mk.III",
+    "id": 108,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 480,
+    "items_in": {
+      "1126": 3,
+      "1142": 1
+    },
+    "items_out": {
+      "1143": 1
+    },
+    "grid_index": 1112,
+    "icon": "accelerator-3"
+  },
+  "109": {
+    "name": "Spray coater",
+    "id": 109,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1401": 1,
+      "1301": 4,
+      "1103": 2
+    },
+    "items_out": {
+      "2313": 1
+    },
+    "grid_index": 2405,
+    "icon": "spray-coater"
+  },
+  "110": {
+    "name": "Fractionator",
+    "id": 110,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 180,
+    "items_in": {
+      "1103": 8,
+      "1108": 4,
+      "1110": 4,
+      "1303": 1
+    },
+    "items_out": {
+      "2314": 1
+    },
+    "grid_index": 2406,
+    "icon": "fractionator"
+  },
+  "111": {
+    "name": "Orbital Collector",
+    "id": 111,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 1800,
+    "items_in": {
+      "2104": 1,
+      "1205": 50,
+      "1406": 20,
+      "2207": 20
+    },
+    "items_out": {
+      "2105": 1
+    },
+    "grid_index": 2409,
+    "icon": "orbital-collector"
+  },
+  "112": {
+    "name": "Foundation",
+    "id": 112,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 60,
+    "items_in": {
+      "1108": 3,
+      "1103": 1
+    },
+    "items_out": {
+      "1131": 1
+    },
+    "grid_index": 1712,
+    "icon": "terrain-tool"
+  },
+  "113": {
+    "name": "Mini fusion power station",
+    "id": 113,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 600,
+    "items_in": {
+      "1107": 12,
+      "1205": 10,
+      "1124": 8,
+      "1303": 4
+    },
+    "items_out": {
+      "2211": 1
+    },
+    "grid_index": 2109,
+    "icon": "fusion-power-station"
+  },
+  "114": {
+    "name": "Storage tank",
+    "id": 114,
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1101": 8,
+      "1108": 4,
+      "1110": 4
+    },
+    "items_out": {
+      "2106": 1
+    },
+    "grid_index": 2207,
+    "icon": "storage-tank"
+  },
+  "115": {
+    "name": "Deuterium fractionation",
+    "id": 115,
+    "type": "FRACTIONATE",
+    "handcraft": 0,
+    "time": 0,
+    "items_in": {
+      "1120": 100
+    },
+    "items_out": {
+      "1121": 1
+    },
+    "grid_index": 1307,
+    "icon": "deuterium-formula"
+  }
+}
