@@ -28,7 +28,6 @@ class ItemDropdown extends HTMLDivElement {
     }
     this.img = this.querySelector('.dropbtn');
     this.search = this.querySelector('input');
-    console.log(this.search)
     this.querySelector(".dropbtn").addEventListener('click', event => this.toggleDropdown(event));
     this.selectItem(6001)
   }
@@ -44,12 +43,10 @@ class ItemDropdown extends HTMLDivElement {
   
 }
 
-class InputItemElement extends HTMLLIElement {
-
+class OutputItemElement extends HTMLLIElement {
   get rate() {
     let val = this.querySelectorAll("input")[1].value;
-    if (val) return Number(val);
-    return 0;
+    return toNumber(val);
   }
 
   get item(){
@@ -66,12 +63,14 @@ class InputItemElement extends HTMLLIElement {
         <input type="text" size="3" placeholder="0" value="1">
       `.trim();
     
-    this.item_dropdown = document.createElement('div', {is: 'item-dropdown'});
-    this.item_dropdown.addEventListener('item-selected', event => reloadResultsTable())
-    this.querySelector('button').insertAdjacentElement('afterend', this.item_dropdown)
-
+      
+    this.querySelector(':scope > input').addEventListener('change', event => reloadResultsTable());
     this.querySelector("button").addEventListener('click', (event) => this.removeElement(event));
 
+
+    this.item_dropdown = document.createElement('div', {is: 'item-dropdown'});
+    this.item_dropdown.addEventListener('item-selected', event => reloadResultsTable());
+    this.querySelector(':scope > button').insertAdjacentElement('afterend', this.item_dropdown);
   }
 
   removeElement(event) {
@@ -81,7 +80,6 @@ class InputItemElement extends HTMLLIElement {
 }
 
 class ResultRowElement extends HTMLTableSectionElement {
-
   constructor() {
     super();
     this.classList.add('item-row')
@@ -137,6 +135,6 @@ class ResultRowElement extends HTMLTableSectionElement {
 }
 
 
-customElements.define('input-item', InputItemElement, { extends: 'li' });
+customElements.define('output-item', OutputItemElement, { extends: 'li' });
 customElements.define('result-row', ResultRowElement, { extends: 'tbody' });
 customElements.define('item-dropdown', ItemDropdown, { extends: 'div' });
