@@ -1,5 +1,4 @@
 class ItemDropdown extends HTMLDivElement {
-
   constructor() {
     super();
 
@@ -16,7 +15,7 @@ class ItemDropdown extends HTMLDivElement {
         <div></div>
         <div></div>
       </div>
-      <img class="dropbtn" src="item_images/iron-plate.png">
+      <img class="dropbtn" src="">
       `.trim();
     let content = this.querySelector(".dropdown-content");
     for (const [key, item] of Object.entries(items)) {
@@ -24,23 +23,25 @@ class ItemDropdown extends HTMLDivElement {
       img.src = item.icon;
       img.title = item.name;
       img.dataset.item_id = key
-      img.addEventListener('click', itemSelected);
+      img.addEventListener('click', event => this.selectItem(event.target.dataset.item_id));
       content.children[2 + ITEM_TYPES[item.type]].appendChild(img)
     }
     this.img = this.querySelector('.dropbtn');
     this.search = this.querySelector('input');
-    this.querySelector(".dropbtn").addEventListener('click', toggleDropdown);
+    console.log(this.search)
+    this.querySelector(".dropbtn").addEventListener('click', event => this.toggleDropdown(event));
+    this.selectItem(6001)
   }
-  itemSelected(event){
-    let item_id = event.target.dataset.item_id;
+  selectItem(item_id){
     this.img.src = items[item_id].icon;
     this.item = item_id;
+    this.dispatchEvent(new Event('item-selected'));
   }
   toggleDropdown(event) {
     this.classList.toggle('active')
-    // event.target.parentNode.classList.toggle('active');
     this.search.focus();
   }
+  
 }
 
 class InputItemElement extends HTMLLIElement {
@@ -51,57 +52,26 @@ class InputItemElement extends HTMLLIElement {
     return 0;
   }
 
+  get item(){
+    return this.item_dropdown.item;
+  }
+
   constructor() {
     super();
 
-    this.classList.add('outputItem')
+    this.classList.add('outputItem');
     this.innerHTML = `
         <button>x</button>
-        <div class="dropdown">
-          <div class="dropdown-content">
-            <input type="text" placehoder="Search">
-            <br>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <img class="dropbtn" src="item_images/iron-plate.png">
-        </div>
         <label>Items/s</label>
         <input type="text" size="3" placeholder="0" value="1">
       `.trim();
+    
+    this.item_dropdown = document.createElement('div', {is: 'item-dropdown'});
+    this.item_dropdown.addEventListener('item-selected', event => reloadResultsTable())
+    this.querySelector('button').insertAdjacentElement('afterend', this.item_dropdown)
 
-    let content = this.querySelector(".dropdown-content");
-    for (const [key, item] of Object.entries(items)) {
-      let img = document.createElement('img');
-      img.src = item.icon;
-      img.title = item.name;
-      img.dataset.item_id = key
-      img.addEventListener('click', (event) => this.selectItem(event.target.dataset.item_id));
-      content.children[2 + ITEM_TYPES[item.type]].appendChild(img)
-    }
-
-    this.search = this.querySelector('input');
-    this.img = this.querySelector('.dropbtn');
-    this.querySelector(".dropbtn").addEventListener('click', (event) => this.toggleDropdown(event));
     this.querySelector("button").addEventListener('click', (event) => this.removeElement(event));
 
-    this.selectItem(6001);
-  }
-  toggleDropdown(event) {
-    // event.target.parentNode.classList.toggle('active');
-    event.target.parentNode.classList.toggle('active');
-    this.search.focus();
-  }
-
-  selectItem(item_id) {
-    this.img.src = items[item_id].icon;
-    this.item = item_id;
-    reloadResultsTable();
   }
 
   removeElement(event) {
