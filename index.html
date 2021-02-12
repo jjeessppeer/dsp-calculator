@@ -3,7 +3,7 @@
 
 <head>
   <title>DSP Calculator</title>
-  <link rel="icon" href="/item_images/t-matrix.png" type="image/x-icon" />
+  <link rel="icon" href="icons/t-matrix.png" type="image/x-icon" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -26,12 +26,30 @@
 <body>
 
   <div class="contentBox">
-    <h3>Output Items</h5>
-    <ul id="outputItems" class="outputItems">
-      <li>
-        <button id="addInputBtn">+</button>
-      </li>
-    </ul>
+    <table id="inputTable">
+      <tr>
+        <th>Output items (i)</th>
+        <th>Input items (i)</th>
+      </tr>
+      <tr>
+        <td>
+          <ul id="outputItems" class="outputItems">
+            <li><button id="addInputBtn" style="margin-top: 0.5em;">+</button></li>
+          </ul>
+        </td>
+        <td>
+          <ul id="inputItems" class="outputItems">
+            <li>
+              <button id="addInputBtn">+</button>
+            </li>
+          </ul>
+        </td>
+      </tr>
+
+    </table>
+    
+
+    
   </div>
 
   <br>
@@ -50,10 +68,11 @@
           <th colspan="2">belts</th>
           <th colspan="2">machines</th>
           <th colspan="1">power</th>
+          <th colspan="1">is_input</th>
         </tr>
       </thead>
       
-      <tbody class="item-row">
+      <!-- <tbody class="item-row">
         <tr>
           <td><img src="item_images/copper-ore.png"></td>
           <td class="pad">1.5</td>
@@ -63,27 +82,60 @@
           <td class="pad">&times; 1.5</td>
           <td>100kW</td>
         </tr>
-      </tbody>
+      </tbody> -->
       
 
     </table>
   </div>
   <div id="settings-page" class="tab-page">
-    <table>
+    <table class="settings-table">
       <tr>
         <td>Assembler type:</td>
         <td id="assembler-selection">
-          <img class="active" data-type="0" src="item_images/assembler-1.png">
-          <img data-type="1" src="item_images/assembler-2.png">
-          <img data-type="2" src="item_images/assembler-3.png">
+          <img data-level="0" class="active" src="icons/assembler-1.png">
+          <img data-level="1" src="icons/assembler-2.png">
+          <img data-level="2" src="icons/assembler-3.png">
         </td>
       </tr>
       <tr>
-        Hydrogen source:
+        <td>Belt type:</td>
+        <td id="belt-selection">
+          <img data-level="0" class="active" src="icons/belt-1.png">
+          <img data-level="1" src="icons/belt-2.png">
+          <img data-level="2" src="icons/belt-3.png">
+        </td>
+      </tr>
+      <!-- <tr><td><br></td></tr> -->
+      <tr>
+        <td>Hydrogen source:</td>
+        <td id="hydrogen-selection">
+          <img data-recepie="58" src="icons/X-ray.png">
+          <img data-recepie="134" class="active" src="icons/orbital-collector.png">
+        </td>
       </tr>
       <tr>
-        Graphite source:
+        <td>Deuterium source:</td>
+        <td id="deuterium-selection">
+          <img data-recepie="40" class="active" src="icons/deuterium-formula.png">
+          <img data-recepie="115" src="icons/hadron-collider.png">
+          <img data-recepie="135" src="icons/orbital-collector.png">
+        </td>
       </tr>
+      <tr>
+        <td>Advanced recepies:</td>
+        <td id="special-selection">
+          <img data-activates="32" data-deactivates="31" title="Graphene">
+          <img data-activates="61" data-deactivates="60" title="Diamond">
+          <img data-activates="62" data-deactivates="37" title="Crystal silicon">
+          <img data-activates="35" data-deactivates="33" title="Carbon nanotube">
+          <br>
+          <img data-activates="29" data-deactivates="28" title="Casimir crystal">
+          <img data-activates="69" data-deactivates="68" title="Photon combiner">
+          <img data-activates="100" data-deactivates="99" title="Particle container">
+          <img data-activates="79" data-deactivates="78" title="Space warper">
+        </td>
+      </tr>
+      
     </table>
   </div>
   
@@ -92,7 +144,8 @@
 
   <script>
     var datasets_loaded = 0
-    var items, machines, recepies, belts;
+    var items, machines, recepies_full, belts;
+    var recepies;
     var SETTINGS = {
       'machines': {
         'SMELT': 0,
@@ -103,6 +156,7 @@
         'EXCHANGE': 0,
         'PHOTON_CAPTURE': 0,
         'PHOTON_STORE': 0,
+        'FRACTIONATE': 0,
         'RESEARCH': 0,
         'GATHER': 0,
         'MINE': 0,
@@ -111,8 +165,17 @@
         'OIL_EXTRACT': 0
       },
       belt: 0,
-      specials: {
-        'thing': false
+      special_resources: {
+        "magnets": 0,
+        "deuterium": 0,
+        "acid": 0,
+        "spiniform": 0,
+        "crystals": 0,
+        "silicon": 0,
+        "diamond": 0
+      },
+      recepies: {
+        'hydrogen': 1
       }
     }
     
@@ -127,7 +190,7 @@
       if (datasets_loaded == 4) initialize();
     });
     fetch('data/recepies.json').then(response => response.json()).then(data => {
-      recepies = data;
+      recepies_full = data;
       datasets_loaded++;
       if (datasets_loaded == 4) initialize();
     });
@@ -141,20 +204,54 @@
     function initialize(){
       console.log("INITIALIZING")
       document.getElementById("addInputBtn").addEventListener('click', addInputRow);
+
+      document.querySelectorAll('#assembler-selection img').forEach(
+        element => element.addEventListener('click', event => {
+        document.querySelector('#assembler-selection .active').classList.remove('active');
+        event.target.classList.add('active')
+        SETTINGS.machines['ASSEMBLE'] = event.target.dataset.level;
+        reloadResultsTable();
+      }));
+
+      document.querySelectorAll('#belt-selection img').forEach(
+        element => element.addEventListener('click', event => {
+        document.querySelector('#belt-selection .active').classList.remove('active');
+        event.target.classList.add('active');
+        SETTINGS.belt = event.target.dataset.level;
+        reloadResultsTable();
+      }));
+
+      document.querySelectorAll('#deuterium-selection img, #hydrogen-selection img').forEach(
+        element => element.addEventListener('click', event => {
+        event.target.parentNode.querySelector('.active').classList.remove('active');
+        event.target.classList.add('active');
+        reloadResultsTable();
+      }));
+
+      document.querySelectorAll('#special-selection img').forEach(
+        element => {
+          element.addEventListener('click', event => {
+            event.target.classList.toggle('active');
+            reloadResultsTable();
+          });
+          element.src = recepies_full[element.dataset.activates].icon;
+      });
+
+
       var active_machines = {};
       for (const machine in machines){
         active_machines[machine] = 0
       }
-
-      addInputRow()
+      addInputRow();
     }
 
 
     function addInputRow(){
       let listel = document.createElement('li', {is: 'input-item'});
       let btn = document.getElementById('addInputBtn');
-      btn.parentNode.insertBefore(listel, btn);
-      // reloadResultsTable()
+      btn.parentNode.parentNode.insertBefore(listel, btn.parentNode);
+      reloadResultsTable()
+      // 
     }
 
 
@@ -186,7 +283,6 @@
 
   </script>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> -->
 
 
 </html>

@@ -1,12 +1,25 @@
-.outputItems {
+#inputTable td{
+    text-align: left;
+    vertical-align: top;
+}
+
+#inputTable th{
+    padding-right: 150px;
+}
+
+#inputTable li{
+    min-height: 3em;
+}
+
+#inputTable ul {
     /* height:100px; */
+    display: inline;
     list-style-type: none;
     margin: 0;
     padding: 0;
-
 }
 
-.outputItems button {
+#inputTable button {
     height: 2em;
     width: 2em;
     padding: 0;
@@ -14,13 +27,15 @@
     font-weight: bold;
 
     color: var(--accent);
-    background: linear-gradient(to bottom, var(--light), var(--medium));
-    border: 2px outset var(--light);
+    background: linear-gradient(to bottom, var(--light), var(--dark));
+    /* border: 2px outset var(--light); */
+    /* border-color: ; */
+    border-width: 0;
     border-radius: 0.4em;
     cursor: pointer;
 }
 
-.outputItem{
+.outputItem {
     padding: 0;
     display: flex;
     align-items: center;

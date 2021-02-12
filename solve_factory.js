@@ -1,3 +1,27 @@
+function pruneRecepies(){
+  recepies = {};
+  for (const recepie_id in recepies_full){
+    // console.log(recepie_id)
+    recepies[recepie_id] = recepies_full[recepie_id];
+  }
+  // if (SETTINGS.recepies.hydrogen == 0)
+  //     delete recepies[134] // Hydrogen orbital collection
+  // if (SETTINGS.recepies.hydrogen == 1)
+  //     delete recepies[58] // X-ray cracking
+  
+  document.querySelectorAll('#special-selection img').forEach(element => {
+    if (element.classList.contains('active')) delete recepies[element.dataset.deactivates];
+    else delete recepies[element.dataset.activates];
+  });
+
+  document.querySelectorAll('#deuterium-selection img, #hydrogen-selection img').forEach(
+    element => {
+    if (!element.classList.contains('active')) delete recepies[element.dataset.recepie];
+  });
+
+}
+
+
 // Return recepies that has selected item as output
 function getRecepies(item_id){
   let result = {};
@@ -6,6 +30,8 @@ function getRecepies(item_id){
   }
   return result;
 }
+
+
 
 // Loads all recepies that are relevant to making one item
 function recurseRecepies(item_id, used_items, used_recepies, order, previous){
@@ -38,6 +64,8 @@ function createRows(recepie_id, order, result, parents){
 }
 
 function reloadResultsTable(){
+  pruneRecepies();
+
   // Prepare items and recepies for linear program.
 
   // Recalculate item requirements.
@@ -69,9 +97,10 @@ function reloadResultsTable(){
       if (!(item in variable)) variable[item] = 0;
       variable[item] -= count;
     }
-    if ('cost' in recepie) variable['cost'] = recepie['cost'];
-    else variable['cost'] = 1;
-    // variable['cost'] = 1
+    // if ('cost' in recepie) variable['cost'] = recepie['cost'];
+    // else variable['cost'] = 1;
+    variable['cost'] = machines[recepie.type].cost;
+    // variable['cost'] = 1;
     variables[recepie_id] = variable;
   }
 

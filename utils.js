@@ -14,5 +14,15 @@ var ITEM_TYPES = {
 
 
 function formatNumber(num, decimals=3){
-    return num.toFixed(decimals).replace(/(\.0+|0+)$/, '');
+    // let v = str.toString().split(""); 
+    // return v
+    // return
+    return (Math.ceil(num*Math.pow(10, decimals))/Math.pow(10, decimals));
+    // return num
+    // let revS = str.toFixed(decimals).split('').reverse().join('')
+    // let revN = revS.replace(/^0+(?=[1-9]*\.)/, '')
+    // let s = revN.split('').reverse().join('');
+    // console.log(str, revS, revN, s)
+    // return s
+    // return str.toFixed(decimals).replace(/\.0+$/, '');
 }

@@ -16,7 +16,7 @@ MINE_TYPES = {
     'GATHER': [1030, 1031],
     'MINE': [
         1001, 1002, 1003, 1004, 1005, 1006, 
-        1011, 1012, 1013, 1014, 1015, 1016],
+        1011, 1012, 1013, 1014, 1015, 1016, 1117],
     'PUMP': [1000, 1116],
     'ORBITAL_COLLECT': [1120, 1121, 1011],
     'OIL_EXTRACT': [1007],
@@ -149,10 +149,9 @@ while line:
 
         recepie['grid_index'] = readValue(recepieProtoSet, 'GridIndex')
         if explicit == 1:
-            recepie['icon'] = os.path.basename(readValue(recepieProtoSet, 'IconPath'))
+            recepie['icon'] = 'icons/'+os.path.basename(readValue(recepieProtoSet, 'IconPath'))+'.png'
         else:
             recepie['icon'] = items[items_out[0]]['icon']
-        recepie['icon'] = 'icons/'+recepie['icon']+'.png'
         recepie['cost'] = 1
         recepies[recepie['id']] = recepie
     line = recepieProtoSet.readline()
@@ -172,9 +171,15 @@ for key, item in items.items():
             'items_out': {key: 1},
             'grid_index': -1,
             'icon': item['icon'],
-            'cost': 100
+            'cost': 0
         }
         recepie_idx += 1
+
+# Modify special recepies
+print('Fixing special recepies...')
+# Deuterium fractionation
+recepies[115]['items_in'][1120] = 1 
+recepies[115]['time'] = int(60/(30*0.01))
 
 # Write parsed dictionaries to json files
 print('Dumping json...')

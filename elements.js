@@ -1,3 +1,48 @@
+class ItemDropdown extends HTMLDivElement {
+
+  constructor() {
+    super();
+
+    this.classList.add('dropdown');
+    this.innerHTML = `
+      <div class="dropdown-content">
+        <input type="text" placeholder="Search">
+        <br>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <img class="dropbtn" src="item_images/iron-plate.png">
+      `.trim();
+    let content = this.querySelector(".dropdown-content");
+    for (const [key, item] of Object.entries(items)) {
+      let img = document.createElement('img');
+      img.src = item.icon;
+      img.title = item.name;
+      img.dataset.item_id = key
+      img.addEventListener('click', itemSelected);
+      content.children[2 + ITEM_TYPES[item.type]].appendChild(img)
+    }
+    this.img = this.querySelector('.dropbtn');
+    this.search = this.querySelector('input');
+    this.querySelector(".dropbtn").addEventListener('click', toggleDropdown);
+  }
+  itemSelected(event){
+    let item_id = event.target.dataset.item_id;
+    this.img.src = items[item_id].icon;
+    this.item = item_id;
+  }
+  toggleDropdown(event) {
+    this.classList.toggle('active')
+    // event.target.parentNode.classList.toggle('active');
+    this.search.focus();
+  }
+}
+
 class InputItemElement extends HTMLLIElement {
 
   get rate() {
@@ -85,11 +130,11 @@ class ResultRowElement extends HTMLTableSectionElement {
       // items_per_s = items_per_s
       let n_belts = items_per_s / belts[SETTINGS.belt].speed;
 
-      let machine_item = machines[recepie.type].buildings[SETTINGS.machines[recepie.type]]
-      let machine_speed = machines[recepie.type].speeds[SETTINGS.machines[recepie.type]] * 60
+      let machine_item = machines[recepie.type].buildings[SETTINGS.machines[recepie.type]];
+      let machine_speed = machines[recepie.type].speeds[SETTINGS.machines[recepie.type]] * 60;
 
       let n_machines = rate * recepie.time / machine_speed;
-      let power = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].active * n_machines
+      let power = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].active * n_machines;
       power = formatNumber(power, 0);
 
       if (i == 0) {
@@ -99,7 +144,10 @@ class ResultRowElement extends HTMLTableSectionElement {
               <td class="pad">`+ formatNumber(items_per_s) + `</td>
               <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
               <td class="pad">&times; `+ formatNumber(n_belts) + `</td>
-              <td rowspan="`+ length + `"><img src="` + items[machine_item].icon + `"></td>
+              <td rowspan="`+ length + `">
+                `+(recepie.icon != items[item_id].icon ? "<img src="+recepie.icon+"><br>" : "")+`
+                <img src="` + items[machine_item].icon + `">
+              </td>
               <td rowspan="`+ length + `" class="pad">&times; ` + formatNumber(n_machines) + `</td>
               <td rowspan="`+ length + `">` + math.unit(power, 'kW').toString() + `</td>
             </tr>`;
@@ -121,3 +169,4 @@ class ResultRowElement extends HTMLTableSectionElement {
 
 customElements.define('input-item', InputItemElement, { extends: 'li' });
 customElements.define('result-row', ResultRowElement, { extends: 'tbody' });
+customElements.define('item-dropdown', ItemDropdown, { extends: 'div' });
