@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="style/tabs.css">
   <link rel="stylesheet" href="style/production-table.css">
   <link rel="stylesheet" href="style/settings.css">
+  <link rel="stylesheet" href="style/about.css">
 
 </head>
 
@@ -120,12 +121,19 @@
     </table>
   </div>
   <div id="about-page" class="tab-page">
-    This website and 
-    Contact:
-    <ul>
-      <li>Email: jjeessppeer@gmail.com</li>
-      <li>Discord: Jesper#8148</li>
-    </ul>
+    <h3>Feedback</h3>
+    <p>
+      Feedback is much appreciated, bug reports and feature requests are 
+      very helpful. You can message me through the 
+      contact information below or via the 
+      <a href="https://github.com/jjeessppeer/dsp-calculator">github page</a>.
+    </p>
+    <h3>Contact</h3>
+    <p>Email: jjeessppeer@gmail.com<br>
+      Discord: Jesper#8148</p>
+    <h3>Source</h3>
+    <p>This website is licenced under the Unlicence. The source code is found here: <a href="https://github.com/jjeessppeer/dsp-calculator">https://github.com/jjeessppeer/dsp-calculator</a></p>
+
   </div>
   
 
@@ -262,7 +270,6 @@
       if (!existed) addInputRow(item_id);
       reloadResultsTable();
     }
-
 
     document.querySelectorAll('.tab-btn').forEach(element => { 
       element.addEventListener('click', tabClicked); });
