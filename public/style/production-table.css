@@ -3,6 +3,10 @@
     height: 2.5em;
 }
 
+.item-row img.is-input {
+    filter: brightness(50%);
+}
+
 .resultsTable {
     /* text-align: right; */
     font-family: 'Courier New', Courier, monospace;

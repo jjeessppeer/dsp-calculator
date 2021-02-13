@@ -109,6 +109,7 @@ class ResultRowElement extends HTMLTableSectionElement {
 
   initializeItemRow(recepie_id, rate) {
     let recepie = recepies[recepie_id];
+    this.recepie_id = recepie_id;
 
     let length = Object.keys(recepie.items_out).length;
     let i = 0;
@@ -117,7 +118,6 @@ class ResultRowElement extends HTMLTableSectionElement {
       let items_per_s = recepie.items_out[item_id] * rate;
       if (item_id in recepie.items_in) items_per_s -= recepie.items_in[item_id] * rate;
       if (items_per_s <= 0) continue;
-      // items_per_s = items_per_s
       let n_belts = items_per_s / belts[SETTINGS.belt].speed;
 
       let machine_item = machines[recepie.type].buildings[SETTINGS.machines[recepie.type]];
@@ -127,36 +127,34 @@ class ResultRowElement extends HTMLTableSectionElement {
       let power = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].active * n_machines;
       power = formatNumber(power, 0);
 
-      if (i == 0) {
-        this.innerHTML += `
-            <tr>
-              <td><img src="`+items[item_id].icon+`" title="` + items[item_id].name + `"></td>
-              <td class="pad">`+ formatNumber(items_per_s) + `</td>
-              <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
-              <td class="pad">&times; `+ formatNumber(n_belts) + `</td>
-              <td rowspan="`+ length + `">
-                `+(recepie.icon != items[item_id].icon && recepie.type != "IMPORT"? "<img src="+recepie.icon+"><br>" : "")+`
-                <img src="` + items[machine_item].icon + `">
-              </td>
-              <td rowspan="`+ length + `" class="pad">&times; ` + formatNumber(n_machines) + `</td>
-              <td rowspan="`+ length + `">` + math.unit(power, 'kW').toString() + `</td>
-            </tr>`;
-      }
-      else {
-        this.innerHTML += `
-            <tr>
-              <td><img src="`+ items[item_id].icon + `" title="` + items[item_id].name + `"></td>
-              <td class="pad">`+ formatNumber(items_per_s) + `</td>
-              <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
-              <td class="pad">&times; `+ formatNumber(n_belts) + `</td>
-            </tr>`;
-      }
-      i++;
+      let is_input = false;
+      document.querySelectorAll('#inputItems li:not(:last-child)').forEach(element => {
+        if (element.item == item_id) is_input = true;
+      });
+      is_input = is_input ? 'class="is-input"' : "";
 
+      let recepie_img = recepie.icon != items[item_id].icon && recepie.type != "IMPORT" ? "<img src="+recepie.icon+"><br>" : "";
 
-      this.querySelectorAll('tr > td > img:first-child').forEach(element => element.addEventListener('click', event => {
+      let row = document.createElement('tr');
+      row.innerHTML = `
+        <td><img src="`+items[item_id].icon+`" title="`+items[item_id].name+`" `+is_input+`></td>
+        <td class="pad">`+formatNumber(items_per_s)+`</td>
+        <td><img src="`+items[belts[SETTINGS.belt].item].icon+`"></td>
+        <td class="pad">&times; `+ formatNumber(n_belts) + `</td>`;
+      
+      // Add belt, machines, and power only for the first row. Row spans the full result row.
+      if (this.childNodes.length == 0){
+        row.innerHTML += `
+          <td rowspan="`+ length + `">`+recepie_img+`<img src="` + items[machine_item].icon + `"></td>
+          <td rowspan="`+ length + `" class="pad">&times; ` + formatNumber(n_machines) + `</td>
+          <td rowspan="`+ length + `">` + math.unit(power, 'kW').toString() + `</td>
+        `
+      }
+      this.appendChild(row);
+      this.querySelector('tr:nth-child('+(i+1)+') > td:first-child > img').addEventListener('click', event => {
         toggleInputRow(item_id);
-      }));
+      });
+      i++;
     }
   }
 }

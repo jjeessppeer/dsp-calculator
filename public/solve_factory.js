@@ -18,8 +18,6 @@ function pruneRecepies(){
 
   // Add free recepies from input items.
   document.querySelectorAll('#inputItems li:not(:last-child)').forEach(element => {
-    console.log(element)
-    console.log(element.item)
     recepies[element.item + " imported"] = {
       "name": items[element.item].name + " imported",
       "type": "IMPORT",
