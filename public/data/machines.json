@@ -63,7 +63,7 @@
     "buildings": [2208],
     "speeds": [1],
     "powers": [{"idle": -1, "active": -1}],
-    "cost": 10
+    "cost": 1000
   },
   "FRACTIONATE": {
     "name": "Fractionation facility",
