@@ -15,16 +15,15 @@
   <script src="solve_factory.js"></script>
 
   
-  <link rel="stylesheet" href="mystyle.css">
-  <link rel="stylesheet" href="input-list.css">
-  <link rel="stylesheet" href="tabs.css">
-  <link rel="stylesheet" href="production-table.css">
-  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="style/mystyle.css">
+  <link rel="stylesheet" href="style/input-list.css">
+  <link rel="stylesheet" href="style/tabs.css">
+  <link rel="stylesheet" href="style/production-table.css">
+  <link rel="stylesheet" href="style/settings.css">
 
 </head>
 
 <body>
-
   <div class="contentBox">
     <table id="inputTable">
       <tr>
@@ -34,7 +33,7 @@
       <tr>
         <td>
           <ul id="outputItems" class="outputItems">
-            <li><button id="addInputBtn" style="margin-top: 0.5em;">+</button></li>
+            <li><button id="addOutputBtn" style="margin-top: 0.5em;">+</button></li>
           </ul>
         </td>
         <td>
@@ -45,11 +44,7 @@
           </ul>
         </td>
       </tr>
-
-    </table>
-    
-
-    
+    </table>    
   </div>
 
   <br>
@@ -58,6 +53,7 @@
   <div id="tabs">
     <button data-page="results-page" class="tab-btn active">Results</button>
     <button data-page="settings-page" class="tab-btn">Settings</button>
+    <button data-page="about-page" class="tab-btn">About</button>
   </div>
 
   <div id="results-page" class="tab-page active">
@@ -71,20 +67,6 @@
           <th colspan="1">is_input</th>
         </tr>
       </thead>
-      
-      <!-- <tbody class="item-row">
-        <tr>
-          <td><img src="item_images/copper-ore.png"></td>
-          <td class="pad">1.5</td>
-          <td><img src="item_images/belt-1.png"></td>
-          <td class="pad">&times; 1.5</td>
-          <td><img src="item_images/assembler-1.png"></td>
-          <td class="pad">&times; 1.5</td>
-          <td>100kW</td>
-        </tr>
-      </tbody> -->
-      
-
     </table>
   </div>
   <div id="settings-page" class="tab-page">
@@ -105,7 +87,6 @@
           <img data-level="2" src="icons/belt-3.png">
         </td>
       </tr>
-      <!-- <tr><td><br></td></tr> -->
       <tr>
         <td>Hydrogen source:</td>
         <td id="hydrogen-selection">
@@ -138,6 +119,9 @@
       
     </table>
   </div>
+  <div id="about-page" class="tab-page">
+    hellow
+  </div>
   
 
 
@@ -148,6 +132,7 @@
     var recepies;
     var SETTINGS = {
       'machines': {
+        'IMPORT': 0,
         'SMELT': 0,
         'CHEMICAL': 0,
         'REFINE': 0,
@@ -203,7 +188,8 @@
 
     function initialize(){
       console.log("INITIALIZING")
-      document.getElementById("addInputBtn").addEventListener('click', addInputRow);
+      document.getElementById("addOutputBtn").addEventListener('click', event => addOutputRow());
+      document.getElementById("addInputBtn").addEventListener('click', event => addInputRow());
 
       document.querySelectorAll('#assembler-selection img').forEach(
         element => element.addEventListener('click', event => {
@@ -242,20 +228,36 @@
       for (const machine in machines){
         active_machines[machine] = 0
       }
-      addInputRow();
+      addOutputRow();
     }
 
 
-    function addInputRow(){
+    function addOutputRow(){
+      let listel = document.createElement('li', {is: 'output-item'});
+      let btn = document.getElementById('addOutputBtn');
+      btn.parentNode.parentNode.insertBefore(listel, btn.parentNode);
+      reloadResultsTable();
+    }
+    function addInputRow(item_id=1101){
       let listel = document.createElement('li', {is: 'input-item'});
+      console.log(item_id)
+      listel.item = item_id
       let btn = document.getElementById('addInputBtn');
       btn.parentNode.parentNode.insertBefore(listel, btn.parentNode);
-      reloadResultsTable()
-      // 
+      reloadResultsTable();
+    }
+    function toggleInputRow(item_id){
+      let existed = false;
+      document.querySelectorAll('.inputItem').forEach(element => {
+        if (element.item == item_id) {
+          existed = true;
+          element.remove();
+        }
+      });
+      if (!existed) addInputRow(item_id);
+      reloadResultsTable();
     }
 
-
-    // addInputRow();
 
     document.querySelectorAll('.tab-btn').forEach(element => { 
       element.addEventListener('click', tabClicked); });
@@ -268,9 +270,7 @@
     }
 
 
-    
-    
-    // document.querySelector(".resultsTable").addEventListener('click', addInputRow);
+
 
     window.addEventListener('click', function (event) {
         var dropdowns = document.querySelectorAll(".dropdown");

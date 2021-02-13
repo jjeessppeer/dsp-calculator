@@ -35,13 +35,13 @@
     cursor: pointer;
 }
 
-.outputItem {
+#inputTable li {
     padding: 0;
     display: flex;
     align-items: center;
 }
 
-.outputItem > *{
+#inputTable li > *{
     margin-right: 8px;
 }
 

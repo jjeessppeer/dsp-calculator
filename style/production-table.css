@@ -44,6 +44,10 @@
     /* border-spacing: 4px; */
 }
 
+.item-row tr > td > img:first-child {
+    cursor: pointer;
+}
+
 .resultsTable td.pad {
     padding-right: 40px;
 }

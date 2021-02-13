@@ -43,6 +43,28 @@ class ItemDropdown extends HTMLDivElement {
   
 }
 
+class InputItemElement extends HTMLLIElement {
+  get item(){
+    return this.item_dropdown.item;
+  }
+  set item(item_id){
+    this.item_dropdown.selectItem(item_id);
+  }
+  constructor(){
+    super();
+    this.classList.add('inputItem');
+    this.innerHTML = `<button>x</button>`;
+    this.querySelector('button').addEventListener('click', event => {
+      this.remove();
+      reloadResultsTable();
+    });
+
+    this.item_dropdown = document.createElement('div', {is: 'item-dropdown'});
+    this.item_dropdown.addEventListener('item-selected', event => reloadResultsTable());
+    this.querySelector(':scope > button').insertAdjacentElement('afterend', this.item_dropdown);
+  }
+}
+
 class OutputItemElement extends HTMLLIElement {
   get rate() {
     let val = this.querySelectorAll("input")[1].value;
@@ -65,7 +87,7 @@ class OutputItemElement extends HTMLLIElement {
     
       
     this.querySelector(':scope > input').addEventListener('change', event => reloadResultsTable());
-    this.querySelector("button").addEventListener('click', (event) => this.removeElement(event));
+    this.querySelector("button").addEventListener('click', event => this.removeElement(event));
 
 
     this.item_dropdown = document.createElement('div', {is: 'item-dropdown'});
@@ -113,7 +135,7 @@ class ResultRowElement extends HTMLTableSectionElement {
               <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
               <td class="pad">&times; `+ formatNumber(n_belts) + `</td>
               <td rowspan="`+ length + `">
-                `+(recepie.icon != items[item_id].icon ? "<img src="+recepie.icon+"><br>" : "")+`
+                `+(recepie.icon != items[item_id].icon && recepie.type != "IMPORT"? "<img src="+recepie.icon+"><br>" : "")+`
                 <img src="` + items[machine_item].icon + `">
               </td>
               <td rowspan="`+ length + `" class="pad">&times; ` + formatNumber(n_machines) + `</td>
@@ -130,11 +152,17 @@ class ResultRowElement extends HTMLTableSectionElement {
             </tr>`;
       }
       i++;
+
+
+      this.querySelectorAll('tr > td > img:first-child').forEach(element => element.addEventListener('click', event => {
+        toggleInputRow(item_id);
+      }));
     }
   }
 }
 
 
 customElements.define('output-item', OutputItemElement, { extends: 'li' });
+customElements.define('input-item', InputItemElement, { extends: 'li' });
 customElements.define('result-row', ResultRowElement, { extends: 'tbody' });
 customElements.define('item-dropdown', ItemDropdown, { extends: 'div' });

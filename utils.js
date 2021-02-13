@@ -26,3 +26,17 @@ function formatNumber(num, decimals=3){
     // return s
     // return str.toFixed(decimals).replace(/\.0+$/, '');
 }
+
+// Convert a string to a number
+function toNumber(str){
+    let num = Number(str);
+    if (num) return num;
+
+    if (str.match(/[0-9]+\/[1-9]+/)){
+        let index = str.indexOf('/');
+        let n1 = Number(str.substring(0, index));
+        let n2 = Number(str.substring(index+1));
+        return n1/n2;
+    }
+    return 0;
+}

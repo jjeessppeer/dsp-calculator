@@ -1,13 +1,10 @@
 function pruneRecepies(){
   recepies = {};
+  
+  // Remove recepies based on settings.
   for (const recepie_id in recepies_full){
-    // console.log(recepie_id)
     recepies[recepie_id] = recepies_full[recepie_id];
   }
-  // if (SETTINGS.recepies.hydrogen == 0)
-  //     delete recepies[134] // Hydrogen orbital collection
-  // if (SETTINGS.recepies.hydrogen == 1)
-  //     delete recepies[58] // X-ray cracking
   
   document.querySelectorAll('#special-selection img').forEach(element => {
     if (element.classList.contains('active')) delete recepies[element.dataset.deactivates];
@@ -17,6 +14,23 @@ function pruneRecepies(){
   document.querySelectorAll('#deuterium-selection img, #hydrogen-selection img').forEach(
     element => {
     if (!element.classList.contains('active')) delete recepies[element.dataset.recepie];
+  });
+
+  // Add free recepies from input items.
+  document.querySelectorAll('#inputItems li:not(:last-child)').forEach(element => {
+    console.log(element)
+    console.log(element.item)
+    recepies[element.item + " imported"] = {
+      "name": items[element.item].name + " imported",
+      "type": "IMPORT",
+      "handcraft": 0,
+      "time": 0,
+      "items_in": {},
+      "items_out": {},
+      "icon": "404.png",
+      "cost": 0
+    }
+    recepies[element.item + " imported"]["items_out"][element.item] = 1;
   });
 
 }
