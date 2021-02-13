@@ -2,76 +2,117 @@
   "NONE": {
     "name": "",
     "buildings": [],
-    "speeds": []
+    "speeds": [],
+    "powers": [],
+    "cost": 0
+  },
+  "IMPORT": {
+    "name": "Imported",
+    "buildings": [2103],
+    "speeds": [1],
+    "powers": [{"idle": 0, "active": 0}],
+    "cost": 0
   },
   "SMELT": {
     "name": "Smelting facility",
     "buildings": [2302],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": 12, "active": 300}],
+    "cost": 10
   },
   "CHEMICAL": {
     "name": "Chemical facility",
     "buildings": [2309],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": -1, "active": -1}],
+    "cost": 10
   },
   "REFINE": {
     "name": "Refining facility",
     "buildings": [2308],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": 24, "active": 960}],
+    "cost": 10
   },
   "ASSEMBLE": {
     "name": "Assembler",
     "buildings": [2303, 2304, 2305],
-    "speeds": [0.75, 1, 1.5]
+    "speeds": [0.75, 1, 1.5],
+    "powers": [
+      {"idle": 12, "active": 270},
+      {"idle": 15, "active": 480},
+      {"idle": 18, "active": 780}
+    ],
+    "cost": 10
   },
   "PARTICLE": {
     "name": "Particle collider",
     "buildings": [2310],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": -1, "active": -1}],
+    "cost": 50
   },
   "EXCHANGE": {
     "name": "Energy exchanger",
-    "buildings": [2209]
+    "buildings": [2209],
+    "powers": [{"idle": -1, "active": -1}],
+    "cost": 10
   },
   "PHOTON_STORE": {
     "name": "Ray reciever",
     "buildings": [2208],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": -1, "active": -1}],
+    "cost": 10
   },
   "FRACTIONATE": {
     "name": "Fractionation facility",
     "buildings": [2314],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": -1, "active": -1}],
+    "cost": 10
   },
   "RESEARCH": {
     "name": "Research facility",
     "buildings": [2901],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": 12, "active": 480}],
+    "cost": 10
   },
 
   "GATHER": {
     "name": "Mecha",
     "buildings": [1001],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": 0, "active": 0}],
+    "cost": 999
   },
   "MINE": {
     "name": "Miner",
     "buildings": [2301],
-    "speeds": [1]
+    "speeds": [2.5],
+    "powers": [{"idle": 24, "active": 42000}],
+    "cost": 100
   },
   "PUMP": {
     "name": "Pump",
     "buildings": [2306],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": 12, "active": 300}],
+    "cost": 1
   },
   "ORBITAL_COLLECT": {
     "name": "Orbital Collector",
     "buildings": [2105],
-    "speeds": [1]
+    "speeds": [1],
+    "powers": [{"idle": 0, "active": 0}],
+    "cost": 1
   },
   "OIL_EXTRACT": {
     "name": "Oil extractor",
     "buildings":  [2307],
-    "speeds": [1]
+    "speeds": [2],
+    "powers": [{"idle": 24, "active": 840}],
+    "cost": 100
   }
 }

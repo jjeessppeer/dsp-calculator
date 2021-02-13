@@ -5,7 +5,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "iron-ore"
+    "icon": "icons/iron-ore.png"
   },
   "1002": {
     "name": "Copper ore",
@@ -13,7 +13,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "copper-ore"
+    "icon": "icons/copper-ore.png"
   },
   "1003": {
     "name": "Silicon ore",
@@ -21,7 +21,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "silicium-ore"
+    "icon": "icons/silicium-ore.png"
   },
   "1004": {
     "name": "Titanium ore",
@@ -29,7 +29,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "titanium-ore"
+    "icon": "icons/titanium-ore.png"
   },
   "1005": {
     "name": "Stone",
@@ -37,7 +37,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "stone-ore"
+    "icon": "icons/stone-ore.png"
   },
   "1006": {
     "name": "Coal",
@@ -45,7 +45,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "coal-ore"
+    "icon": "icons/coal-ore.png"
   },
   "1030": {
     "name": "Log",
@@ -53,7 +53,7 @@
     "mined": [
       "GATHER"
     ],
-    "icon": "wood"
+    "icon": "icons/wood.png"
   },
   "1031": {
     "name": "Plant fuel",
@@ -61,7 +61,7 @@
     "mined": [
       "GATHER"
     ],
-    "icon": "plant-fuel"
+    "icon": "icons/plant-fuel.png"
   },
   "1011": {
     "name": "Fire ice",
@@ -70,7 +70,7 @@
       "MINE",
       "ORBITAL_COLLECT"
     ],
-    "icon": "gas-hydrate"
+    "icon": "icons/gas-hydrate.png"
   },
   "1012": {
     "name": "Kimberlite ore",
@@ -78,7 +78,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "diamond-ore"
+    "icon": "icons/diamond-ore.png"
   },
   "1013": {
     "name": "Fractal silicon",
@@ -86,7 +86,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "fractal-silica"
+    "icon": "icons/fractal-silica.png"
   },
   "1014": {
     "name": "Optical grating crystal",
@@ -94,7 +94,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "grating-ore"
+    "icon": "icons/grating-ore.png"
   },
   "1015": {
     "name": "Spiniform stalagmite crystal",
@@ -102,7 +102,7 @@
     "mined": [
       "MINE"
     ],
-    "icon": "bamboo-crystal"
+    "icon": "icons/bamboo-crystal.png"
   },
   "1016": {
     "name": "Unipolar magnet",
@@ -110,187 +110,187 @@
     "mined": [
       "MINE"
     ],
-    "icon": "mono-mag-ore"
+    "icon": "icons/mono-mag-ore.png"
   },
   "1101": {
     "name": "Iron ingot",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "iron-plate"
+    "icon": "icons/iron-plate.png"
   },
   "1104": {
     "name": "Copper ingot",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "copper-plate"
+    "icon": "icons/copper-plate.png"
   },
   "1105": {
     "name": "High-purity silicon",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "silicium-single-crystal"
+    "icon": "icons/silicium-single-crystal.png"
   },
   "1106": {
     "name": "Titanium ingot",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "titanium-plate"
+    "icon": "icons/titanium-plate.png"
   },
   "1108": {
     "name": "Stone brick",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "stone-brick"
+    "icon": "icons/stone-brick.png"
   },
   "1109": {
     "name": "Energetic graphite",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "graphite"
+    "icon": "icons/graphite.png"
   },
   "1103": {
     "name": "Steel",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "steel-plate"
+    "icon": "icons/steel-plate.png"
   },
   "1107": {
     "name": "Titanium alloy",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "titanium-alloy"
+    "icon": "icons/titanium-alloy.png"
   },
   "1110": {
     "name": "Glass",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "glass"
+    "icon": "icons/glass.png"
   },
   "1119": {
     "name": "Titanium glass",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "titan-glass"
+    "icon": "icons/titan-glass.png"
   },
   "1111": {
     "name": "Prism",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "prism"
+    "icon": "icons/prism.png"
   },
   "1112": {
     "name": "Diamond",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "diamond"
+    "icon": "icons/diamond.png"
   },
   "1113": {
     "name": "Crystal silicon",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "silicium-high-purity"
+    "icon": "icons/silicium-high-purity.png"
   },
   "1201": {
     "name": "Gear",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "gear-wheel"
+    "icon": "icons/gear-wheel.png"
   },
   "1102": {
     "name": "Magnet",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "magnet"
+    "icon": "icons/magnet.png"
   },
   "1202": {
     "name": "Magnetic coil",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "magnetism-wire"
+    "icon": "icons/magnetism-wire.png"
   },
   "1203": {
     "name": "Electric motor",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "electric-motor"
+    "icon": "icons/electric-motor.png"
   },
   "1204": {
     "name": "Electromagnetic turbine",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "mag-turbine"
+    "icon": "icons/mag-turbine.png"
   },
   "1205": {
     "name": "Super-magnetic ring",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "hyper-magnetism-ring"
+    "icon": "icons/hyper-magnetism-ring.png"
   },
   "1206": {
     "name": "Particle container",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "partical-capacitor"
+    "icon": "icons/partical-capacitor.png"
   },
   "1127": {
     "name": "Strange matter",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "strange-matter-generator"
+    "icon": "icons/strange-matter-generator.png"
   },
   "1301": {
     "name": "Circuit board",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "circuit-board"
+    "icon": "icons/circuit-board.png"
   },
   "1303": {
     "name": "Processor",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "processor"
+    "icon": "icons/processor.png"
   },
   "1305": {
     "name": "Quantum chip",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "quantum-processor"
+    "icon": "icons/quantum-processor.png"
   },
   "1302": {
     "name": "Microcrystalline component",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "micro-component"
+    "icon": "icons/micro-component.png"
   },
   "1304": {
     "name": "Plane filter",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "plane-filter"
+    "icon": "icons/plane-filter.png"
   },
   "1402": {
     "name": "Particle broadband",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "particle-wide-band"
+    "icon": "icons/particle-wide-band.png"
   },
   "1401": {
     "name": "Plasma exciter",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "plasma-generator"
+    "icon": "icons/plasma-generator.png"
   },
   "1404": {
     "name": "Photon combiner",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "photo-shifter"
+    "icon": "icons/photo-shifter.png"
   },
   "1501": {
     "name": "Solar sail",
     "type": "PRODUCT",
     "mined": [],
-    "icon": "solar-collector"
+    "icon": "icons/solar-collector.png"
   },
   "1000": {
     "name": "Water",
@@ -298,7 +298,7 @@
     "mined": [
       "PUMP"
     ],
-    "icon": "water"
+    "icon": "icons/water.png"
   },
   "1007": {
     "name": "Crude oil",
@@ -306,13 +306,13 @@
     "mined": [
       "OIL_EXTRACT"
     ],
-    "icon": "oil"
+    "icon": "icons/oil.png"
   },
   "1114": {
     "name": "Refined oil",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "refined-oil"
+    "icon": "icons/refined-oil.png"
   },
   "1116": {
     "name": "Sulfuric acid",
@@ -320,7 +320,7 @@
     "mined": [
       "PUMP"
     ],
-    "icon": "sulphuric-acid"
+    "icon": "icons/sulphuric-acid.png"
   },
   "1120": {
     "name": "Hydrogen",
@@ -328,7 +328,7 @@
     "mined": [
       "ORBITAL_COLLECT"
     ],
-    "icon": "hydrogen"
+    "icon": "icons/hydrogen.png"
   },
   "1121": {
     "name": "Deuterium",
@@ -336,432 +336,436 @@
     "mined": [
       "ORBITAL_COLLECT"
     ],
-    "icon": "deuterium"
+    "icon": "icons/deuterium.png"
   },
   "1122": {
     "name": "Antimatter",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "anti-matter"
+    "icon": "icons/anti-matter.png"
   },
   "1208": {
     "name": "Critical photon",
     "type": "MATERIAL",
-    "mined": [],
-    "icon": "photon-capacitor-full"
+    "mined": [
+      "PHOTON_STORE"
+    ],
+    "icon": "icons/photon-capacitor-full.png"
   },
   "1801": {
     "name": "Hydrogen fuel rod",
     "type": "PRODUCT",
     "mined": [],
-    "icon": "hydrogen-energy-fuel"
+    "icon": "icons/hydrogen-energy-fuel.png"
   },
   "1802": {
     "name": "Deuteron fuel rod",
     "type": "PRODUCT",
     "mined": [],
-    "icon": "deuterium-energy-fuel"
+    "icon": "icons/deuterium-energy-fuel.png"
   },
   "1803": {
     "name": "Antimatter fuel rod",
     "type": "PRODUCT",
     "mined": [],
-    "icon": "antimatter-energy-fuel"
+    "icon": "icons/antimatter-energy-fuel.png"
   },
   "1115": {
     "name": "Plastic",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "plastic"
+    "icon": "icons/plastic.png"
   },
   "1123": {
     "name": "Graphene",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "graphene"
+    "icon": "icons/graphene.png"
   },
   "1124": {
     "name": "Carbon nanotube",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "nanotube"
+    "icon": "icons/nanotube.png"
   },
   "1117": {
     "name": "Organic crystal",
     "type": "MATERIAL",
-    "mined": [],
-    "icon": "crystal-rubber"
+    "mined": [
+      "MINE"
+    ],
+    "icon": "icons/crystal-rubber.png"
   },
   "1118": {
     "name": "Titanium crystal",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "titan-crystal"
+    "icon": "icons/titan-crystal.png"
   },
   "1126": {
     "name": "Casimir crystal",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "casimir-crystal"
+    "icon": "icons/casimir-crystal.png"
   },
   "1209": {
     "name": "Graviton lens",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "gravity-lens"
+    "icon": "icons/gravity-lens.png"
   },
   "1210": {
     "name": "Space warper",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "space-warper"
+    "icon": "icons/space-warper.png"
   },
   "1403": {
     "name": "Annihilation constraint sphere",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "fusion-capacitor"
+    "icon": "icons/fusion-capacitor.png"
   },
   "1405": {
     "name": "Thruster",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "fuel-thruster"
+    "icon": "icons/fuel-thruster.png"
   },
   "1406": {
     "name": "Reinforced thruster",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "ion-thruster"
+    "icon": "icons/ion-thruster.png"
   },
   "5001": {
     "name": "Logistics drone",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "logistic-drone"
+    "icon": "icons/logistic-drone.png"
   },
   "5002": {
     "name": "Logistics vessel",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "logistic-vessel"
+    "icon": "icons/logistic-vessel.png"
   },
   "1125": {
     "name": "Frame material",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "frame-material"
+    "icon": "icons/frame-material.png"
   },
   "1502": {
     "name": "Dyson sphere component",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "dyson-sphere-component"
+    "icon": "icons/dyson-sphere-component.png"
   },
   "1503": {
     "name": "Small carrier rocket",
     "type": "PRODUCT",
     "mined": [],
-    "icon": "rocket"
+    "icon": "icons/rocket.png"
   },
   "1131": {
     "name": "Foundation",
     "type": "COMPONENT",
     "mined": [],
-    "icon": "terrain-tool"
+    "icon": "icons/terrain-tool.png"
   },
   "1141": {
     "name": "Accelerant Mk.I",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "accelerator-1"
+    "icon": "icons/accelerator-1.png"
   },
   "1142": {
     "name": "Accelerant Mk.II",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "accelerator-2"
+    "icon": "icons/accelerator-2.png"
   },
   "1143": {
     "name": "Accelerant Mk.III",
     "type": "MATERIAL",
     "mined": [],
-    "icon": "accelerator-3"
+    "icon": "icons/accelerator-3.png"
   },
   "2001": {
     "name": "Conveyor belt MK.I",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "belt-1"
+    "icon": "icons/belt-1.png"
   },
   "2002": {
     "name": "Conveyor belt MK.II",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "belt-2"
+    "icon": "icons/belt-2.png"
   },
   "2003": {
     "name": "Conveyor belt MK.III",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "belt-3"
+    "icon": "icons/belt-3.png"
   },
   "2011": {
     "name": "Sorter MK.I",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "inserter-1"
+    "icon": "icons/inserter-1.png"
   },
   "2012": {
     "name": "Sorter MK.II",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "inserter-2"
+    "icon": "icons/inserter-2.png"
   },
   "2013": {
     "name": "Sorter MK.III",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "inserter-3"
+    "icon": "icons/inserter-3.png"
   },
   "2020": {
     "name": "Splitter(4-direction)",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "splitter-4dir"
+    "icon": "icons/splitter-4dir.png"
   },
   "2101": {
     "name": "Storage MK.I",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "storage-1"
+    "icon": "icons/storage-1.png"
   },
   "2102": {
     "name": "Storage MK.II",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "storage-2"
+    "icon": "icons/storage-2.png"
   },
   "2106": {
     "name": "Storage tank",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "storage-tank"
+    "icon": "icons/storage-tank.png"
   },
   "2303": {
     "name": "Assembling machine Mk.I",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "assembler-1"
+    "icon": "icons/assembler-1.png"
   },
   "2304": {
     "name": "Assembling machine Mk.II",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "assembler-2"
+    "icon": "icons/assembler-2.png"
   },
   "2305": {
     "name": "Assembling machine Mk.III",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "assembler-3"
+    "icon": "icons/assembler-3.png"
   },
   "2201": {
     "name": "Tesla tower",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "tesla-coil"
+    "icon": "icons/tesla-coil.png"
   },
   "2202": {
     "name": "Wireless power tower",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "charging-pole"
+    "icon": "icons/charging-pole.png"
   },
   "2212": {
     "name": "Satellite substation",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "orbital-substation"
+    "icon": "icons/orbital-substation.png"
   },
   "2203": {
     "name": "Wind turbine",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "wind-turbine"
+    "icon": "icons/wind-turbine.png"
   },
   "2204": {
     "name": "Thermal power station",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "fuel-plant"
+    "icon": "icons/fuel-plant.png"
   },
   "2211": {
     "name": "Mini fusion power station",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "fusion-power-station"
+    "icon": "icons/fusion-power-station.png"
   },
   "2301": {
     "name": "Mining machine",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "mining-drill"
+    "icon": "icons/mining-drill.png"
   },
   "2302": {
     "name": "Smelter",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "smelter"
+    "icon": "icons/smelter.png"
   },
   "2307": {
     "name": "Oil extractor",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "oil-extractor"
+    "icon": "icons/oil-extractor.png"
   },
   "2308": {
     "name": "Oil refinery",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "oil-refinery"
+    "icon": "icons/oil-refinery.png"
   },
   "2306": {
     "name": "Water pump",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "water-pump"
+    "icon": "icons/water-pump.png"
   },
   "2309": {
     "name": "Chemical plant",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "chemical-plant"
+    "icon": "icons/chemical-plant.png"
   },
   "2314": {
     "name": "Fractionator",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "fractionator"
+    "icon": "icons/fractionator.png"
   },
   "2313": {
     "name": "Spray coater",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "spray-coater"
+    "icon": "icons/spray-coater.png"
   },
   "2205": {
     "name": "Solar panel",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "solar-panel"
+    "icon": "icons/solar-panel.png"
   },
   "2206": {
     "name": "Accumulator",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "accumulator"
+    "icon": "icons/accumulator.png"
   },
   "2207": {
     "name": "Accumulator(full)",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "accumulator-full"
+    "icon": "icons/accumulator-full.png"
   },
   "2311": {
     "name": "EM-Rail Ejector",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "em-rail-ejector"
+    "icon": "icons/em-rail-ejector.png"
   },
   "2208": {
     "name": "Ray receiver",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "ray-receiver"
+    "icon": "icons/ray-receiver.png"
   },
   "2312": {
     "name": "Vertical launching silo",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "vertical-launching-silo"
+    "icon": "icons/vertical-launching-silo.png"
   },
   "2209": {
     "name": "Energy exchanger",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "energy-exchanger"
+    "icon": "icons/energy-exchanger.png"
   },
   "2310": {
     "name": "Miniature particle collider",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "hadron-collider"
+    "icon": "icons/hadron-collider.png"
   },
   "2210": {
     "name": "Artificial star",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "fusion-reactor"
+    "icon": "icons/fusion-reactor.png"
   },
   "2103": {
     "name": "Planetary Logistics Station",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "logistic-station"
+    "icon": "icons/logistic-station.png"
   },
   "2104": {
     "name": "Interstellar Logistics Station",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "interstellar-logistic-station"
+    "icon": "icons/interstellar-logistic-station.png"
   },
   "2105": {
     "name": "Orbital Collector",
     "type": "LOGISTICS",
     "mined": [],
-    "icon": "orbital-collector"
+    "icon": "icons/orbital-collector.png"
   },
   "2901": {
     "name": "Matrix lab",
     "type": "PRODUCTION",
     "mined": [],
-    "icon": "lab"
+    "icon": "icons/lab.png"
   },
   "6001": {
     "name": "Electromagnetic matrix",
     "type": "MATRIX",
     "mined": [],
-    "icon": "t-matrix"
+    "icon": "icons/t-matrix.png"
   },
   "6002": {
     "name": "Energy matrix",
     "type": "MATRIX",
     "mined": [],
-    "icon": "e-matrix"
+    "icon": "icons/e-matrix.png"
   },
   "6003": {
     "name": "Structure matrix",
     "type": "MATRIX",
     "mined": [],
-    "icon": "c-matrix"
+    "icon": "icons/c-matrix.png"
   },
   "6004": {
     "name": "Information matrix",
     "type": "MATRIX",
     "mined": [],
-    "icon": "i-matrix"
+    "icon": "icons/i-matrix.png"
   },
   "6005": {
     "name": "Gravity matrix",
     "type": "MATRIX",
     "mined": [],
-    "icon": "g-matrix"
+    "icon": "icons/g-matrix.png"
   },
   "6006": {
     "name": "Universe matrix",
     "type": "MATRIX",
     "mined": [],
-    "icon": "u-matrix"
+    "icon": "icons/u-matrix.png"
   }
 }

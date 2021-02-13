@@ -129,7 +129,7 @@ while line:
         recepie = {}
         name = readValue(recepieProtoSet, 'Name').replace('"', '')
         recepie['name'] = translations[name]
-        recepie['id'] = readValue(recepieProtoSet, 'ID')
+        recepie_id = readValue(recepieProtoSet, 'ID')
         recepie['type'] = RECEPIE_TYPES[readValue(recepieProtoSet, 'Type')]
         recepie['handcraft'] = readValue(recepieProtoSet, 'Handcraft')
         explicit = readValue(recepieProtoSet, 'Explicit')
@@ -147,13 +147,12 @@ while line:
         for i in range(len(items_out)):
             recepie['items_out'][items_out[i]] = count_out[i]
 
-        recepie['grid_index'] = readValue(recepieProtoSet, 'GridIndex')
+        # recepie['grid_index'] = readValue(recepieProtoSet, 'GridIndex')
         if explicit == 1:
             recepie['icon'] = 'icons/'+os.path.basename(readValue(recepieProtoSet, 'IconPath'))+'.png'
         else:
             recepie['icon'] = items[items_out[0]]['icon']
-        recepie['cost'] = 1
-        recepies[recepie['id']] = recepie
+        recepies[recepie_id] = recepie
     line = recepieProtoSet.readline()
 
 # Insert pseudo recepies for mined resources
@@ -169,9 +168,8 @@ for key, item in items.items():
             'time': 60,
             'items_in': {},
             'items_out': {key: 1},
-            'grid_index': -1,
-            'icon': item['icon'],
-            'cost': 0
+            # 'grid_index': -1,
+            'icon': item['icon']
         }
         recepie_idx += 1
 
