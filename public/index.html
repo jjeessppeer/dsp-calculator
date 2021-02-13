@@ -28,8 +28,8 @@
   <div class="contentBox">
     <table id="inputTable">
       <tr>
-        <th>Output items (i)</th>
-        <th>Input items (i)</th>
+        <th>Output items <img src="info.png" title="Enter items and the rates that the factory will produce as outputs."></th>
+        <th>Input items <img src="info.png" title="Enter items that the factory block takes as inputs. Raw resources (ores, oil, etc.) are considered as inputs by default."></th>
       </tr>
       <tr>
         <td>
@@ -136,9 +136,6 @@
 
   </div>
   
-
-
-
   <script>
     var datasets_loaded = 0
     var items, machines, recepies_full, belts;
@@ -162,19 +159,7 @@
         'ORBITAL_COLLECT': 0,
         'OIL_EXTRACT': 0
       },
-      belt: 0,
-      special_resources: {
-        "magnets": 0,
-        "deuterium": 0,
-        "acid": 0,
-        "spiniform": 0,
-        "crystals": 0,
-        "silicon": 0,
-        "diamond": 0
-      },
-      recepies: {
-        'hydrogen': 1
-      }
+      belt: 0
     }
     
     fetch('data/items.json').then(response => response.json()).then(data => {
