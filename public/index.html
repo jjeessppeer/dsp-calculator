@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="style/production-table.css">
   <link rel="stylesheet" href="style/settings.css">
   <link rel="stylesheet" href="style/about.css">
+  <script language="javascript" src="lz-string.min.js"></script>
 
 </head>
 
@@ -29,7 +30,7 @@
     <table id="inputTable">
       <tr>
         <th>Output items <img src="info.png" title="Enter items and the rates that the factory will produce as outputs."></th>
-        <th>Input items <img src="info.png" title="Enter items that the factory block takes as inputs. Raw resources (ores, oil, etc.) are considered as inputs by default."></th>
+        <th>Input items <img src="info.png" title="Enter items that the factory block takes as inputs. Raw resources (ores, oil, etc.) are considered as inputs by default. You can click on items in the table below to toggle them as inputs aswell."></th>
       </tr>
       <tr>
         <td>
@@ -99,6 +100,7 @@
           <img data-activates="69" data-deactivates="68" title="Photon combiner">
           <img data-activates="100" data-deactivates="99" title="Particle container">
           <img data-activates="79" data-deactivates="78" title="Space warper">
+          <img data-activates="137" data-deactivates="25" title="Organic crystal mining">
         </td>
       </tr>
       <tr>
@@ -140,13 +142,13 @@
     var datasets_loaded = 0
     var items, machines, recepies_full, belts;
     var recepies;
-    var SETTINGS = {
+    var SETTINGS_DEFAULT = {
       'machines': {
         'IMPORT': 0,
         'SMELT': 0,
         'CHEMICAL': 0,
         'REFINE': 0,
-        'ASSEMBLE': 1,
+        'ASSEMBLE': 0,
         'PARTICLE': 0,
         'EXCHANGE': 0,
         'PHOTON_CAPTURE': 0,
@@ -160,7 +162,8 @@
         'OIL_EXTRACT': 0
       },
       belt: 0
-    }
+    };
+    var SETTINGS = JSON.parse(JSON.stringify(SETTINGS_DEFAULT));
     
     fetch('data/items.json').then(response => response.json()).then(data => {
       items = data;
@@ -183,6 +186,63 @@
       if (datasets_loaded == 4) initialize();
     });
 
+
+    function saveConfigToURL(){
+      console.log("SAVING TO URL")
+      // window.location.clearHashParam();
+      let outputs = [];
+      document.querySelectorAll('.outputItem').forEach(element => {
+        outputs.push(element.item);
+        outputs.push(element.rate);
+      });
+      if (outputs.length > 0)
+        window.location.setHashParam("outputs", outputs.toString());
+      else
+        window.location.removeHashParam("outputs");
+      let inputs = [];
+      document.querySelectorAll('.inputItem').forEach(element => {
+        inputs.push(element.item);
+      });
+      if (inputs.length > 0)
+        window.location.setHashParam("inputs", inputs.toString());
+      else
+        window.location.removeHashParam("inputs");
+      
+      let settings = [];
+      const elements = document.querySelectorAll('#settings-page img');
+      for (let i=0; i<elements.length; i++){
+        settings.push(elements[i].classList.contains('active') ? 1 : 0);
+      }
+      window.location.setHashParam("settings", settings.join(","));
+
+      console.log(window.location.hash.substring(1));
+      console.log(LZString.compressToEncodedURIComponent(window.location.hash.substring(1)));
+
+      
+    }
+
+    function loadConfigFromURL(){
+      document.querySelectorAll('.outputItem .inputItem').forEach(element => {
+        element.remove()
+      });
+      let outputs = window.location.getHashParam("outputs");
+      if (outputs){
+        outputs = outputs.split(',');
+        for (let i=0; i<outputs.length; i+=2){
+          addOutputRow(outputs[i], outputs[i+1], false);
+        }
+      }
+      else {
+        addOutputRow(6001, 1, false);
+      }
+      let inputs = window.location.getHashParam("inputs");
+      if (inputs){
+        inputs = inputs.split(',');
+        for (let i=0; i<inputs.length; i+=1){
+          addInputRow(inputs[i], false);
+        }
+      }
+    }
 
     function initialize(){
       console.log("INITIALIZING")
@@ -226,23 +286,25 @@
       for (const machine in machines){
         active_machines[machine] = 0
       }
-      addOutputRow();
+      loadConfigFromURL();
+      reloadResultsTable();
     }
 
 
-    function addOutputRow(){
+    function addOutputRow(item_id=6001, rate=1, update=true){
       let listel = document.createElement('li', {is: 'output-item'});
+      listel.item = item_id;
+      listel.rate = rate;
       let btn = document.getElementById('addOutputBtn');
       btn.parentNode.parentNode.insertBefore(listel, btn.parentNode);
-      reloadResultsTable();
+      if (update) reloadResultsTable();
     }
-    function addInputRow(item_id=1101){
+    function addInputRow(item_id=1101, update=true){
       let listel = document.createElement('li', {is: 'input-item'});
-      console.log(item_id)
-      listel.item = item_id
+      listel.item = item_id;
       let btn = document.getElementById('addInputBtn');
       btn.parentNode.parentNode.insertBefore(listel, btn.parentNode);
-      reloadResultsTable();
+      if (update) reloadResultsTable();
     }
     function toggleInputRow(item_id){
       let existed = false;

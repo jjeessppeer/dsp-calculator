@@ -1,3 +1,4 @@
+// Read and apply settings.
 function pruneRecepies(){
   recepies = {};
   
@@ -77,7 +78,7 @@ function createRows(recepie_id, order, result, parents){
 
 function reloadResultsTable(){
   pruneRecepies();
-
+  console.log("UPDATING",document.body.scrollTop)
   // Prepare items and recepies for linear program.
 
   // Recalculate item requirements.
@@ -126,6 +127,7 @@ function reloadResultsTable(){
   };
 
   let lp_results = solver.Solve(model);
+  console.log(lp_results)
 
   // Setup the result rows
 
@@ -139,5 +141,5 @@ function reloadResultsTable(){
     elem.initializeItemRow(recepie_id, lp_results[recepie_id]);
     document.querySelector("#resultsTable").appendChild(elem);
   });
-
+  saveConfigToURL();
 }

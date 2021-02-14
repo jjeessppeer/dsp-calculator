@@ -40,3 +40,55 @@ function toNumber(str){
     }
     return 0;
 }
+
+
+// function loadSettingsRow(id) {
+
+// }
+
+Location.prototype.clearHashParam = function(){
+    this.hash = "#";
+}
+
+Location.prototype.removeHashParam = function(name){
+    let hash = this.hash.substring(1);
+    if (hash == "") return;
+    hash_params = hash.split("&");
+    for (let i=0; i<hash_params.length; i++){
+        let [param_name, param_value] = hash_params[i].split("=");
+        if (param_name == name) {
+            hash_params.splice(i, 1);
+            break;
+        }
+    }
+    this.hash = "#" + hash_params.join("&");
+}
+
+Location.prototype.setHashParam = function(name, value){
+    let hash = this.hash.substring(1);
+    let hash_params;
+    if (hash != "")
+        hash_params = hash.split("&");
+    else
+        hash_params = [];
+    for (let i=0; i<hash_params.length; i++){
+        let [param_name, param_value] = hash_params[i].split("=");
+        if (param_name == name) {
+            hash_params[i] = name + "=" + value;
+            this.hash = "#" + hash_params.join("&");
+            return;
+        }
+    }
+    hash_params.push(name + "=" + value);
+    this.hash = "#" + hash_params.join("&");
+}
+
+Location.prototype.getHashParam = function (name){
+    let hash = this.hash.substring(1);
+    let hash_params = hash.split("&");
+    for (const param of hash_params){
+        let [param_name, param_value] = param.split("=");
+        if (param_name == name) return param_value;
+    }
+    return undefined;
+}
