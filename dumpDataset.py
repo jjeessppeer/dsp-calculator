@@ -182,14 +182,14 @@ recepies[115]['time'] = int(60/(30*0.01))
 # Write parsed dictionaries to json files
 print('Dumping json...')
 
-if os.path.exists("data/items.json"):
-  os.remove("data/items.json")
-items_out = open('data/items.json', 'a')
+if os.path.exists("public/data/items.json"):
+  os.remove("public/data/items.json")
+items_out = open('public/data/items.json', 'a')
 items_out.write(json.dumps(items, indent=2))
 
-if os.path.exists("data/recepies.json"):
-  os.remove("data/recepies.json")
-recepies_out = open('data/recepies.json', 'a')
+if os.path.exists("public/data/recepies.json"):
+  os.remove("public/data/recepies.json")
+recepies_out = open('public/data/recepies.json', 'a')
 recepies_out.write(json.dumps(recepies, indent=2))
 
 
