@@ -48,7 +48,14 @@
     /* border-spacing: 4px; */
 }
 
-.item-row tr > td > img:first-child {
+.item-row tr > td:nth-child(1) svg {
+    cursor: pointer;
+    color: var(--accent);
+    height: 18px;
+    width: 18px;
+}
+
+.item-row tr > td:nth-child(2) > img:first-child {
     cursor: pointer;
 }
 

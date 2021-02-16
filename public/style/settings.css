@@ -3,10 +3,10 @@
     vertical-align: center;
     border-spacing: 0 0.75em;
 }
-/* #settings-page tr {
-    
-} */
-
+#settings-page input[type="text"] {
+    width: 3em;
+}
+ 
 #settings-page table td:nth-child(1){
     text-align: right;
 }

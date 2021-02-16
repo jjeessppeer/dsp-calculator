@@ -134,7 +134,11 @@ class ResultRowElement extends HTMLTableSectionElement {
       let machine_speed = machines[recepie.type].speeds[SETTINGS.machines[recepie.type]] * 60;
 
       let n_machines = rate * recepie.time / machine_speed;
-      let power = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].active * n_machines;
+      if (document.querySelector('#machineCeilCheck').checked) n_machines = Math.ceil(n_machines);
+      let p_a = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].active;
+      let p_i = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].idle;
+      let power = p_a * Math.floor(n_machines) + p_i * (n_machines%1);
+      this.power = power;
       power = formatNumber(power, 0);
 
       let is_input = false;
@@ -146,7 +150,22 @@ class ResultRowElement extends HTMLTableSectionElement {
       let recepie_img = recepie.icon != items[item_id].icon && recepie.type != "IMPORT" ? "<img src="+recepie.icon+"><br>" : "";
 
       let row = document.createElement('tr');
+      // <svg><use href="launch-24px.svg" /></svg>
+
+    
+      let link = window.location.href;
+      console.log(link)
+      link = setHashParam(link, "outputs", item_id + ',' + items_per_s);
+      console.log()
+      
       row.innerHTML = `
+        <td>
+          <a href="`+getHash(link)+`" target="_blank">
+          <svg viewBox="0 0 24 24">
+          <use href="icon.svg#launch" />
+          </svg>
+          </a>
+        </td>
         <td><img src="`+items[item_id].icon+`" title="`+items[item_id].name+`" `+is_input+`></td>
         <td class="pad">`+formatNumber(items_per_s)+`</td>
         <td><img src="`+items[belts[SETTINGS.belt].item].icon+`"></td>
@@ -161,7 +180,7 @@ class ResultRowElement extends HTMLTableSectionElement {
         `
       }
       this.appendChild(row);
-      this.querySelector('tr:nth-child('+(i+1)+') > td:first-child > img').addEventListener('click', event => {
+      this.querySelector('tr:nth-child('+(i+1)+') > td:nth-child(2) > img').addEventListener('click', event => {
         toggleInputRow(item_id);
       });
       i++;

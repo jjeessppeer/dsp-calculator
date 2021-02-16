@@ -11,13 +11,19 @@
     height: 1em;
 }
 
+#inputTable th img {
+    vertical-align: middle;
+    margin-bottom: 0.20em;
+    height: 1em;
+}
+
 #inputTable td{
     text-align: left;
     vertical-align: top;
 }
 
 #inputTable li{
-    min-height: 3em;
+    min-height: 2em;
 }
 
 #inputTable ul {

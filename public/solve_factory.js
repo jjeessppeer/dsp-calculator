@@ -12,7 +12,7 @@ function pruneRecepies(){
     else delete recepies[element.dataset.activates];
   });
 
-  document.querySelectorAll('#deuterium-selection img, #hydrogen-selection img').forEach(
+  document.querySelectorAll('#settings-page .recepieSwitch img').forEach(
     element => {
     if (!element.classList.contains('active')) delete recepies[element.dataset.recepie];
   });
@@ -32,6 +32,8 @@ function pruneRecepies(){
     recepies[element.item + " imported"]["items_out"][element.item] = 1;
   });
 
+  SETTINGS.machines['ASSEMBLE'] = document.querySelector('#assembler-selection img.active').dataset.level;
+  SETTINGS.belt = document.querySelector('#belt-selection img.active').dataset.level;
 }
 
 

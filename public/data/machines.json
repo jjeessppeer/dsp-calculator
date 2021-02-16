@@ -11,14 +11,14 @@
     "buildings": [2103],
     "speeds": [1],
     "powers": [{"idle": 0, "active": 0}],
-    "cost": 0
+    "cost": 0.00001
   },
   "SMELT": {
     "name": "Smelting facility",
     "buildings": [2302],
     "speeds": [1],
     "powers": [{"idle": 12, "active": 300}],
-    "cost": 10
+    "cost": 1
   },
   "CHEMICAL": {
     "name": "Chemical facility",
@@ -32,7 +32,7 @@
     "buildings": [2308],
     "speeds": [1],
     "powers": [{"idle": 24, "active": 960}],
-    "cost": 10
+    "cost": 50
   },
   "ASSEMBLE": {
     "name": "Assembler",
@@ -92,7 +92,7 @@
     "buildings": [2301],
     "speeds": [2.5],
     "powers": [{"idle": 24, "active": 42000}],
-    "cost": 100
+    "cost": 10
   },
   "PUMP": {
     "name": "Pump",
@@ -106,7 +106,7 @@
     "buildings": [2105],
     "speeds": [1],
     "powers": [{"idle": 0, "active": 0}],
-    "cost": 1
+    "cost": 0.1
   },
   "OIL_EXTRACT": {
     "name": "Oil extractor",

@@ -14,17 +14,9 @@ var ITEM_TYPES = {
 
 
 function formatNumber(num, decimals=3){
-    // let v = str.toString().split(""); 
-    // return v
-    // return
+    decimals = Number(document.querySelector('#numberPrecision').value);
+    if (!decimals) decimals = 3;
     return (Math.ceil(num*Math.pow(10, decimals))/Math.pow(10, decimals));
-    // return num
-    // let revS = str.toFixed(decimals).split('').reverse().join('')
-    // let revN = revS.replace(/^0+(?=[1-9]*\.)/, '')
-    // let s = revN.split('').reverse().join('');
-    // console.log(str, revS, revN, s)
-    // return s
-    // return str.toFixed(decimals).replace(/\.0+$/, '');
 }
 
 // Convert a string to a number
@@ -45,6 +37,34 @@ function toNumber(str){
 // function loadSettingsRow(id) {
 
 // }
+
+function getHashParam(href, name) {
+
+}
+
+function getHash(href){
+    let [link_base, ...hash] = href.split('#');
+    return '#' + hash.join('#');
+}
+
+function setHashParam(href, name, value) {
+    let [link_base, ...hash] = href.split('#');
+    hash = hash.join('#');
+    let hash_params;
+    if (hash != "")
+        hash_params = hash.split("&");
+    else
+        hash_params = [];
+    for (let i=0; i<hash_params.length; i++){
+        let [param_name, param_value] = hash_params[i].split("=");
+        if (param_name == name) {
+            hash_params[i] = name + "=" + value;
+            return link_base + "#" + hash_params.join("&");
+        }
+    }
+    hash_params.push(name + "=" + value);
+    return link_base + "#" + hash_params.join("&");
+}
 
 Location.prototype.clearHashParam = function(){
     this.hash = "#";
