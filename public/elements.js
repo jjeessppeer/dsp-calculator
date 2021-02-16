@@ -153,10 +153,7 @@ class ResultRowElement extends HTMLTableSectionElement {
       // <svg><use href="launch-24px.svg" /></svg>
 
     
-      let link = window.location.href;
-      console.log(link)
-      link = setHashParam(link, "outputs", item_id + ',' + items_per_s);
-      console.log()
+      let link = setHashParam(window.location.href, "outputs", item_id + ',' + items_per_s);
       
       row.innerHTML = `
         <td>
