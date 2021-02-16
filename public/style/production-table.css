@@ -51,14 +51,72 @@
 .item-row tr > td:nth-child(1) svg {
     cursor: pointer;
     color: var(--accent);
+    height: 50px;
+    width: 50px;
+}
+
+.item-row tr > td:nth-child(1) button, .item-row tr > td:nth-child(1) a {
+    cursor: pointer;
+    display: inline-block;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.item-row tr > td:nth-child(1) svg, .item-row tr > td:nth-child(1) button, .item-row tr > td:nth-child(1) a {
+    color: var(--accent);
     height: 18px;
     width: 18px;
 }
 
-.item-row tr > td:nth-child(2) > img:first-child {
+.item-row tr > td:nth-child(1) button svg{
+    transform: rotate(-90deg);
+    transition-duration: 0.2s;
+}
+
+.item-row tr > td:nth-child(1) button.active svg{
+    transform: rotate(0deg);
+}
+
+.item-row tr > td:nth-child(1) button:hover,  .item-row tr > td:nth-child(1) a:hover{
+    background-color: var(--dark);
+}
+
+
+.item-row tr > td:nth-child(1) svg:nth-child(3) {
+    
+    transition-duration: 0.2s;
+}
+
+.item-row tr > td:nth-child(1) svg:nth-child(3).active {
+    transform: rotate(0deg);
+}
+
+.item-row .item-icon {
     cursor: pointer;
 }
 
 .resultsTable td.pad {
     padding-right: 40px;
+}
+
+.item-row .subfactory-row{
+    display: none;
+}
+
+.item-row.show-breakdown .subfactory-row{
+    display: table-row;
+}
+
+.subfactory-row table{
+    background-color: var(--dark);
+}
+
+.subfactory-row td.pad{
+    padding-right: 20px;
+}
+.subfactory-row img{
+    height: 2em;
+    width: 2em;
 }
