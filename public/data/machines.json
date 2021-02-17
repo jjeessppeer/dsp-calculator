@@ -24,7 +24,7 @@
     "name": "Chemical facility",
     "buildings": [2309],
     "speeds": [1],
-    "powers": [{"idle": -1, "active": -1}],
+    "powers": [{"idle": 24, "active": 720}],
     "cost": 10
   },
   "REFINE": {
@@ -49,27 +49,27 @@
     "name": "Particle collider",
     "buildings": [2310],
     "speeds": [1],
-    "powers": [{"idle": -1, "active": -1}],
+    "powers": [{"idle": 120, "active": 12000}],
     "cost": 50
   },
   "EXCHANGE": {
     "name": "Energy exchanger",
     "buildings": [2209],
-    "powers": [{"idle": -1, "active": -1}],
+    "powers": [{"idle": 0, "active": 45000}],
     "cost": 10
   },
   "PHOTON_STORE": {
     "name": "Ray reciever",
     "buildings": [2208],
     "speeds": [1],
-    "powers": [{"idle": -1, "active": -1}],
+    "powers": [{"idle": 0, "active": 0}],
     "cost": 1000
   },
   "FRACTIONATE": {
     "name": "Fractionation facility",
     "buildings": [2314],
     "speeds": [1],
-    "powers": [{"idle": -1, "active": -1}],
+    "powers": [{"idle": 18, "active": 720}],
     "cost": 10
   },
   "RESEARCH": {
