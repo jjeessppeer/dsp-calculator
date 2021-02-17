@@ -34,6 +34,10 @@ function pruneRecepies(){
 
   SETTINGS.machines['ASSEMBLE'] = document.querySelector('#assembler-selection img.active').dataset.level;
   SETTINGS.belt = document.querySelector('#belt-selection img.active').dataset.level;
+
+  SETTINGS.format = {};
+  SETTINGS.format.precision = Number(document.querySelector('#numberPrecision').value);
+  if (!SETTINGS.precision) SETTINGS.format.precision = 3;
 }
 
 
@@ -80,7 +84,7 @@ function createRows(recepie_id, order, result, parents){
 
 function reloadResultsTable(){
   pruneRecepies();
-  console.log("UPDATING",document.body.scrollTop)
+  console.log("UPDATING RESULTS");
   // Prepare items and recepies for linear program.
 
   // Recalculate item requirements.
@@ -129,19 +133,28 @@ function reloadResultsTable(){
   };
 
   let lp_results = solver.Solve(model);
-  console.log(lp_results)
 
   // Setup the result rows
 
   let row_order = [];
   createRows('root', recepies_order, row_order, []);
-
+  let power_total = 0;
+  let results_table = document.querySelector("#resultsTable");
   document.querySelectorAll('.item-row').forEach(element => {element.remove()});
   row_order.forEach(recepie_id => {
     if (!(recepie_id in lp_results)) return;
     let elem = document.createElement('tbody',{is: 'result-row'});
     elem.initializeItemRow(recepie_id, lp_results[recepie_id]);
-    document.querySelector("#resultsTable").appendChild(elem);
+    power_total += elem.power;
+    results_table.appendChild(elem);
+    
   });
+  let power_row = document.createElement('tr');
+  power_total = math.unit(power_total, 'kW').format(SETTINGS.format)
+  power_row.innerHTML = `<td colspan="6"/><td>Total power:</td><td>`+power_total+`</td>`;
+  results_table.appendChild(power_row);
+
+
+
   saveConfigToURL();
 }

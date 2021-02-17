@@ -177,7 +177,8 @@
         'ORBITAL_COLLECT': 0,
         'OIL_EXTRACT': 0
       },
-      belt: 0
+      belt: 0,
+      format: {precision: 3}
     };
     var SETTINGS = JSON.parse(JSON.stringify(SETTINGS_DEFAULT));
     
@@ -267,7 +268,7 @@
     }
 
     function initialize(){
-      console.log("INITIALIZING")
+      console.log("INITIALIZING CALCULATOR")
       document.getElementById("addOutputBtn").addEventListener('click', event => addOutputRow());
       document.getElementById("addInputBtn").addEventListener('click', event => addInputRow());
 

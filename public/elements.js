@@ -136,7 +136,6 @@ class ResultRowElement extends HTMLTableSectionElement {
     let recepie = recepies[recepie_id];
     this.recepie_id = recepie_id;
 
-
     // Populate input breakdown table
     for (const item_id in recepie.items_in){
       let row = document.createElement('tr');
@@ -144,9 +143,9 @@ class ResultRowElement extends HTMLTableSectionElement {
       row.innerHTML = `
         <td></td>
         <td><img src="`+items[item_id].icon+`"></td>
-        <td class="pad">&times;`+formatNumber(rate_in)+`</td>
+        <td class="pad">&times;`+math.format(rate_in, SETTINGS.format)+`</td>
         <td><img src="`+items[belts[SETTINGS.belt].item].icon+`"></td>
-        <td class="pad">&times;`+formatNumber(rate_in/belts[SETTINGS.belt].speed)+`</td>
+        <td class="pad">&times;`+math.format(rate_in/belts[SETTINGS.belt].speed, SETTINGS.format)+`</td>
       `;
       this.subfactory_table.appendChild(row);
     }
@@ -169,7 +168,6 @@ class ResultRowElement extends HTMLTableSectionElement {
       let p_i = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].idle;
       let power = p_a * Math.floor(n_machines) + p_i * (n_machines%1);
       this.power = power;
-      power = formatNumber(power, 0);
 
       let is_input = false;
       document.querySelectorAll('#inputItems li:not(:last-child)').forEach(element => {
@@ -198,9 +196,9 @@ class ResultRowElement extends HTMLTableSectionElement {
 
       row.innerHTML += `
         <td><img class="item-icon`+is_input+`" src="`+items[item_id].icon+`" title="`+items[item_id].name+`"></td>
-        <td class="pad">`+formatNumber(items_per_s)+`</td>
+        <td class="pad">`+math.format(items_per_s, SETTINGS.format)+`</td>
         <td><img src="`+items[belts[SETTINGS.belt].item].icon+`"></td>
-        <td class="pad">&times; `+ formatNumber(n_belts) + `</td>`;
+        <td class="pad">&times; `+ math.format(n_belts, SETTINGS.format) + `</td>`;
       
       // Add belt, machines, and power only for the first row. Row spans the full result row.
       if (i == 0){
@@ -209,8 +207,8 @@ class ResultRowElement extends HTMLTableSectionElement {
         `
         row.innerHTML += `
           <td rowspan="`+ length + `">`+recepie_img+`<img src="` + items[machine_item].icon + `"></td>
-          <td rowspan="`+ length + `" class="pad">&times; ` + formatNumber(n_machines) + `</td>
-          <td rowspan="`+ length + `">` + math.unit(power, 'kW').toString() + `</td>
+          <td rowspan="`+ length + `" class="pad">&times; ` + math.format(n_machines, SETTINGS.format) + `</td>
+          <td rowspan="`+ length + `">` + math.unit(power, 'kW').format(SETTINGS.format) + `</td>
         `
       }
       // this.appendChild(row);

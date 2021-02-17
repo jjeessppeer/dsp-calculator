@@ -12,13 +12,6 @@ var ITEM_TYPES = {
     'MONSTER': -1
 }
 
-
-function formatNumber(num, decimals=3){
-    decimals = Number(document.querySelector('#numberPrecision').value);
-    if (!decimals) decimals = 3;
-    return (Math.ceil(num*Math.pow(10, decimals))/Math.pow(10, decimals));
-}
-
 // Convert a string to a number
 function toNumber(str){
     let num = Number(str);
