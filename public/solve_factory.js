@@ -140,7 +140,7 @@ function reloadResultsTable(){
   createRows('root', recepies_order, row_order, []);
   let power_total = 0;
   let results_table = document.querySelector("#resultsTable");
-  document.querySelectorAll('.item-row').forEach(element => {element.remove()});
+  document.querySelectorAll('#resultsTable > .item-row, #resultsTable > tr:last-child').forEach(element => {element.remove()});
   row_order.forEach(recepie_id => {
     if (!(recepie_id in lp_results)) return;
     let elem = document.createElement('tbody',{is: 'result-row'});
@@ -149,8 +149,8 @@ function reloadResultsTable(){
     results_table.appendChild(elem);
     
   });
-  let power_row = document.createElement('tr');
   power_total = math.unit(power_total, 'kW').format(SETTINGS.format)
+  let power_row = document.createElement('tr');
   power_row.innerHTML = `<td colspan="6"/><td>Total power:</td><td>`+power_total+`</td>`;
   results_table.appendChild(power_row);
 
