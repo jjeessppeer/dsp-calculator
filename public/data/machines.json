@@ -91,7 +91,7 @@
     "name": "Miner",
     "buildings": [2301],
     "speeds": [2.5],
-    "powers": [{"idle": 24, "active": 42000}],
+    "powers": [{"idle": 24, "active": 420}],
     "cost": 10
   },
   "PUMP": {
