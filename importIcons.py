@@ -4,9 +4,13 @@ import os
 from PIL import Image
 import math
 
-with open('data/items.json', 'r') as items_file:
+# Dumping textures from game before imprting:
+# * Load main "Dyson Sphere Program" folder in Unity Asset Studio gui
+# * Go to assets tab, filter by Texture2D. Select all assets and extract them.
+
+with open('public/data/items.json', 'r') as items_file:
     items = json.load(items_file)
-with open('data/recepies.json', 'r') as recepies_file:
+with open('public/data/recepies.json', 'r') as recepies_file:
     recepies = json.load(recepies_file)
 
 
@@ -16,7 +20,7 @@ with open('data/recepies.json', 'r') as recepies_file:
 def importIcon(item):
     icon_file = os.path.basename(item['icon'])
     source = 'dumps/textures/Texture2D/'+icon_file
-    dest = item['icon']
+    dest = "public/{}".format(item['icon'])
 
     if os.path.exists(dest): return
     print(dest)
