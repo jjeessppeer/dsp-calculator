@@ -50,7 +50,7 @@
     "buildings": [2310],
     "speeds": [1],
     "powers": [{"idle": 120, "active": 12000}],
-    "cost": 50
+    "cost": 500
   },
   "EXCHANGE": {
     "name": "Energy exchanger",
@@ -106,7 +106,7 @@
     "buildings": [2105],
     "speeds": [1],
     "powers": [{"idle": 0, "active": 0}],
-    "cost": 0.1
+    "cost": 0.01
   },
   "OIL_EXTRACT": {
     "name": "Oil extractor",

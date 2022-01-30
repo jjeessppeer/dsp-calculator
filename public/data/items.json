@@ -439,7 +439,7 @@
     "icon": "icons/ion-thruster.png"
   },
   "5001": {
-    "name": "Logistics drone",
+    "name": "Logistic Drone",
     "type": "LOGISTICS",
     "mined": [],
     "icon": "icons/logistic-drone.png"
@@ -475,19 +475,19 @@
     "icon": "icons/terrain-tool.png"
   },
   "1141": {
-    "name": "Accelerant Mk.I",
+    "name": "Proliferator Mk.I",
     "type": "MATERIAL",
     "mined": [],
     "icon": "icons/accelerator-1.png"
   },
   "1142": {
-    "name": "Accelerant Mk.II",
+    "name": "Proliferator Mk.II",
     "type": "MATERIAL",
     "mined": [],
     "icon": "icons/accelerator-2.png"
   },
   "1143": {
-    "name": "Accelerant Mk.III",
+    "name": "Proliferator Mk.III",
     "type": "MATERIAL",
     "mined": [],
     "icon": "icons/accelerator-3.png"
@@ -529,10 +529,28 @@
     "icon": "icons/inserter-3.png"
   },
   "2020": {
-    "name": "Splitter(4-direction)",
+    "name": "Splitter",
     "type": "LOGISTICS",
     "mined": [],
     "icon": "icons/splitter-4dir.png"
+  },
+  "2040": {
+    "name": "Automatic piler",
+    "type": "LOGISTICS",
+    "mined": [],
+    "icon": "icons/piler.png"
+  },
+  "2030": {
+    "name": "Traffic monitor",
+    "type": "LOGISTICS",
+    "mined": [],
+    "icon": "icons/monitor.png"
+  },
+  "2313": {
+    "name": "Spray coater",
+    "type": "PRODUCTION",
+    "mined": [],
+    "icon": "icons/spray-coater.png"
   },
   "2101": {
     "name": "Storage MK.I",
@@ -595,16 +613,22 @@
     "icon": "icons/wind-turbine.png"
   },
   "2204": {
-    "name": "Thermal power station",
+    "name": "Thermal power plant",
     "type": "PRODUCTION",
     "mined": [],
     "icon": "icons/fuel-plant.png"
   },
   "2211": {
-    "name": "Mini fusion power station",
+    "name": "Mini fusion power plant",
     "type": "PRODUCTION",
     "mined": [],
     "icon": "icons/fusion-power-station.png"
+  },
+  "2213": {
+    "name": "Geothermal power station",
+    "type": "PRODUCTION",
+    "mined": [],
+    "icon": "icons/geothermal-power-station.png"
   },
   "2301": {
     "name": "Mining machine",
@@ -612,11 +636,29 @@
     "mined": [],
     "icon": "icons/mining-drill.png"
   },
+  "2316": {
+    "name": "Advanced mining machine",
+    "type": "PRODUCTION",
+    "mined": [],
+    "icon": "icons/mining-drill-mk2.png"
+  },
+  "2306": {
+    "name": "Water pump",
+    "type": "PRODUCTION",
+    "mined": [],
+    "icon": "icons/water-pump.png"
+  },
   "2302": {
-    "name": "Smelter",
+    "name": "Arc Smelter",
     "type": "PRODUCTION",
     "mined": [],
     "icon": "icons/smelter.png"
+  },
+  "2315": {
+    "name": "Plane Smelter",
+    "type": "PRODUCTION",
+    "mined": [],
+    "icon": "icons/smelter-2.png"
   },
   "2307": {
     "name": "Oil extractor",
@@ -630,12 +672,6 @@
     "mined": [],
     "icon": "icons/oil-refinery.png"
   },
-  "2306": {
-    "name": "Water pump",
-    "type": "PRODUCTION",
-    "mined": [],
-    "icon": "icons/water-pump.png"
-  },
   "2309": {
     "name": "Chemical plant",
     "type": "PRODUCTION",
@@ -647,12 +683,6 @@
     "type": "PRODUCTION",
     "mined": [],
     "icon": "icons/fractionator.png"
-  },
-  "2313": {
-    "name": "Spray coater",
-    "type": "PRODUCTION",
-    "mined": [],
-    "icon": "icons/spray-coater.png"
   },
   "2205": {
     "name": "Solar panel",
