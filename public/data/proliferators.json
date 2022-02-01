@@ -1,0 +1,30 @@
+[
+    {
+        "item_id": 1001,
+        "speed": 1,
+        "productivity": 1,
+        "power": 1,
+        "uses": 1
+    },
+    {
+        "item_id": 1141,
+        "speed": 1.5,
+        "productivity": 1.125,
+        "power": 1.5,
+        "uses": 125
+    },
+    {
+        "item_id": 1142,
+        "speed": 1.5,
+        "productivity": 1.125,
+        "power": 1.5,
+        "uses": 125
+    },
+    {
+        "item_id": 1143,
+        "speed": 1.5,
+        "productivity": 1.125,
+        "power": 1.5,
+        "uses": 125
+    }
+]

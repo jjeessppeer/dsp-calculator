@@ -109,5 +109,12 @@
     cursor: pointer;
 }
 
+.dropdown.proliferator-dropdown .dropdown-content{
+    width: auto;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
 
 
