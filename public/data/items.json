@@ -1,4 +1,10 @@
 {
+  "-1": {
+    "name": "no-proliferator-icon",
+    "type": "RESOURCE",
+    "mined": [],
+    "icon": "icons/accelerator-0.png"
+  },
   "1001": {
     "name": "Iron Ore",
     "type": "RESOURCE",

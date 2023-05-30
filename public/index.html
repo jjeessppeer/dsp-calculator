@@ -11,8 +11,12 @@
   <script src="external/solver.js"></script>
   <script language="javascript" src="external/lz-string.min.js"></script>
     
-  <script src="elements.js"></script>
+  <script src="Elements/IconDropdown.js"></script>
+  <script src="Elements/IOPanel.js"></script>
+  <script src="Elements/ResultsPanel.js"></script>
+  <script src="Elements/Settings.js"></script>
   <script src="utils.js"></script>
+  <script src="FactorySolver.js"></script>
   <script src="solve_factory.js"></script>
 
   
@@ -154,6 +158,24 @@
     <p>This website is licenced under the Unlicence. The source code is found here: <a href="https://github.com/jjeessppeer/dsp-calculator">https://github.com/jjeessppeer/dsp-calculator</a></p>
 
   </div>
+
+
+
+  <script type="importmap">
+    {
+      "imports": {
+        "square": "./moduletest.mjs"
+      }
+    }
+  </script>
+  
+
+  <script type="module">
+    //  import message from "./moduletest.js"; 
+    console.log("hello")
+    import { message } from "square";
+
+  </script>
   
   <script>
     var datasets_loaded = 0
@@ -302,6 +324,8 @@
         reloadResultsTable();
       }));
 
+     
+
       document.querySelectorAll('#special-selection img').forEach(
         element => {
           element.addEventListener('click', event => {
@@ -316,6 +340,8 @@
       for (const machine in machines){
         active_machines[machine] = 0
       }
+      // getDuplicateRecipies();
+
       loadConfigFromURL();
       reloadResultsTable();
     }

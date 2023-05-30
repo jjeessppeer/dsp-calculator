@@ -1,180 +1,37 @@
-function updateResults() {
-
-}
-
-// Solve a given factory given a set of output items, input items, and settings
-// Returs a list of recepies and their rates.
-function solveFactory(output_items, output_rates, input_items, enabled_recepies, proliferator_settings) {
-  let constraints = {};
-  let recepies_order = {'root': []};
-  let used_recepies = {};
-  let used_items = [];
-
-
-  for (let i=0; i<output_items.length; i++) {
-    recurseRecepies(output_items[i], used_items, used_recepies, recepies_order, 'root');
-    if (!(output_items[i] in constraints)) constraints[element.item] = {'min': output_rates[i]};
-    else constraints[element.item]['min'] += output_rates[i];
+function getDuplicateRecipies() {
+  const recipe_item_map = {};
+  for (const key in items) {
+    recipe_item_map[key] = [];
   }
-
-
-}
-
-function getRecepiesFromSettings() {
-  let recepies = {};
-  
-  // Remove recepies based on settings.
-  for (const recepie_id in recepies_full){
-    recepies[recepie_id] = recepies_full[recepie_id];
-  }
-  
-  document.querySelectorAll('#special-selection img').forEach(element => {
-    if (element.classList.contains('active')) delete recepies[element.dataset.deactivates];
-    else delete recepies[element.dataset.activates];
-  });
-
-  document.querySelectorAll('#settings-page .recepieSwitch img').forEach(
-    element => {
-    if (!element.classList.contains('active')) delete recepies[element.dataset.recepie];
-  });
-
-  // Add free recepies from input items.
-  document.querySelectorAll('#inputItems li:not(:last-child)').forEach(element => {
-    recepies[element.item + " imported"] = {
-      "name": items[element.item].name + " imported",
-      "type": "IMPORT",
-      "handcraft": 0,
-      "time": 0,
-      "items_in": {},
-      "items_out": {},
-      "icon": "404.png",
-      "cost": 0
-    }
-    recepies[element.item + " imported"]["items_out"][element.item] = 1;
-  });
-
-  SETTINGS.machines['ASSEMBLE'] = document.querySelector('#assembler-selection img.active').dataset.level;
-  SETTINGS.belt = document.querySelector('#belt-selection img.active').dataset.level;
-
-  SETTINGS.format = {};
-  SETTINGS.format.precision = Number(document.querySelector('#numberPrecision').value);
-  if (!SETTINGS.precision) SETTINGS.format.precision = 3;
-
-  return recepies;
-}
-
-function getOutputItems() {
-
-}
-
-function getInputItems() {
-
-}
-
-function getProliferatorSettings() {
-
-}
-
-// Loads all recepies that are relevant to making one item
-function recurseRecepies2(item_id, used_items, used_recepies, order, previous, recepie_book){
-
-  // Get all recepies with output the desired item id.
-  let recepies = {};
-  for (const [recepie_id, recepie] of Object.entries(recepie_book)){
-    if(item_id in recepie.items_out) recepies[recepie_id] = recepie;
-  }
-
-  for (const [recepie_id, recepie] of Object.entries(recepies)){
-    order[previous].push(recepie_id);
-  }
-  if (used_items.includes(item_id)) return;
-  used_items.push(item_id);
-  
-  for (const [recepie_id, recepie] of Object.entries(recepies)){
-    if (recepie in used_recepies) continue;
-    order[recepie_id] = [];
-    used_recepies[recepie_id] = recepie;
-    for (const [item_id, count] of Object.entries(recepie.items_in)){
-      recurseRecepies2(item_id, used_items, used_recepies, order, recepie_id, recepie_book)
+  for (const key in recepies_full) {
+    // if (recepies_full[key].type == 'MINE' || recepies_full[key].type == 'PUMP') continue;
+    for (const outitem in recepies_full[key].items_out) {
+      recipe_item_map[outitem].push(key);
+      // console.log(outitem, ": ", recipe_item_map[outitem].length);
     }
   }
-}
-
-
-
-
-// Read and apply settings.
-function pruneRecepies(){
-  recepies = {};
   
-  // Remove recepies based on settings.
-  for (const recepie_id in recepies_full){
-    recepies[recepie_id] = recepies_full[recepie_id];
-  }
-  
-  document.querySelectorAll('#special-selection img').forEach(element => {
-    if (element.classList.contains('active')) delete recepies[element.dataset.deactivates];
-    else delete recepies[element.dataset.activates];
-  });
+  document.querySelectorAll(".settings-row").forEach(e => e.remove());
+  for (const key in recipe_item_map) {
+    if (recipe_item_map[key].length <= 1) continue;
+    // console.log(items[key]);
+    // console.log(key, ": ", recipe_item_map[key].length);
 
-  document.querySelectorAll('#settings-page .recepieSwitch img').forEach(
-    element => {
-    if (!element.classList.contains('active')) delete recepies[element.dataset.recepie];
-  });
-
-  // Add free recepies from input items.
-  document.querySelectorAll('#inputItems li:not(:last-child)').forEach(element => {
-    recepies[element.item + " imported"] = {
-      "name": items[element.item].name + " imported",
-      "type": "IMPORT",
-      "handcraft": 0,
-      "time": 0,
-      "items_in": {},
-      "items_out": {},
-      "icon": "404.png",
-      "cost": 0
-    }
-    recepies[element.item + " imported"]["items_out"][element.item] = 1;
-  });
-
-  SETTINGS.machines['ASSEMBLE'] = document.querySelector('#assembler-selection img.active').dataset.level;
-  SETTINGS.belt = document.querySelector('#belt-selection img.active').dataset.level;
-
-  SETTINGS.format = {};
-  SETTINGS.format.precision = Number(document.querySelector('#numberPrecision').value);
-  if (!SETTINGS.precision) SETTINGS.format.precision = 3;
-}
-
-
-// Return recepies that has selected item as output
-function getRecepies(item_id){
-  let result = {};
-  for (const [recepie_id, recepie] of Object.entries(recepies)){
-    if(item_id in recepie.items_out) result[recepie_id] = recepie;
-  }
-  return result;
-}
-
-
-
-// Loads all recepies that are relevant to making one item
-function recurseRecepies(item_id, used_items, used_recepies, order, previous){
-  let recepies = getRecepies(item_id);
-  for (const [recepie_id, recepie] of Object.entries(recepies)){
-    order[previous].push(recepie_id);
-  }
-  if (used_items.includes(item_id)) return;
-  used_items.push(item_id);
-  
-  for (const [recepie_id, recepie] of Object.entries(recepies)){
-    if (recepie in used_recepies) continue;
-    order[recepie_id] = [];
-    used_recepies[recepie_id] = recepie;
-    for (const [item_id, count] of Object.entries(recepie.items_in)){
-      recurseRecepies(item_id, used_items, used_recepies, order, recepie_id)
-    }
+    const table = document.querySelector('.settings-table');
+    const row = document.createElement('tr', {is: 'recipe-toggle'});
+    row.setRecipes(key, recipe_item_map[key]);
+    console.log(row);
+    table.append(row);
+    // const e = `<tr>
+    //     <td>test:</td>
+    //     <td class="recipe-toggle">
+    //       <img data-recepie="58" src="icons/X-ray.png">
+    //       <img data-recepie="143" class="active" src="icons/orbital-collector.png">
+    //     </td>
+    // </tr>`
   }
 }
+
 
 function createRows(recepie_id, order, result, parents){
   if (parents.includes(recepie_id)) return;
@@ -188,56 +45,7 @@ function createRows(recepie_id, order, result, parents){
 }
 
 function reloadResultsTable(){
-  pruneRecepies();
-  console.log("UPDATING RESULTS");
-  // Prepare items and recepies for linear program.
-
-  // Recalculate item requirements.
-  let constraints = {};
-  let used_recepies = {};
-  let recepies_order = {'root': []};
-  let used_items = [];
-  let input_list = document.querySelectorAll('.outputItem');
-
-  let input_items = [];
-  input_list.forEach(element => {
-    recurseRecepies(element.item, used_items, used_recepies, recepies_order, 'root');
-    if (!(element.item in constraints)) constraints[element.item] = {'min': element.rate};
-    else constraints[element.item]['min'] += element.rate;
-  });
-
-  // Build production matrix constraints.
-  used_items.forEach(item => {
-    if (!(item in constraints)) constraints[item] = {'min': 0};
-  });
-
-  let variables = {};
-  for (const [recepie_id, recepie] of Object.entries(used_recepies)){
-    let variable = {};
-    for (const [item, count] of Object.entries(recepie.items_out)){
-      variable[item] = count;
-    }
-    for (const [item, count] of Object.entries(recepie.items_in)){
-      if (!(item in variable)) variable[item] = 0;
-      variable[item] -= count;
-    }
-    // if ('cost' in recepie) variable['cost'] = recepie['cost'];
-    // else variable['cost'] = 1;
-    variable['cost'] = machines[recepie.type].cost;
-    // variable['cost'] = 1;
-    variables[recepie_id] = variable;
-  }
-
-  // Solve linear program to get recepie ratios
-
-  let model={
-    "optimize": "cost",
-    "opType": "min",
-    "constraints": constraints,
-    "variables": variables
-  };
-
-  let lp_results = solver.Solve(model);
+  const [lp_results, recepies_order, recipes] = solveFactory();
 
   // Setup the result rows
 
@@ -249,7 +57,7 @@ function reloadResultsTable(){
   row_order.forEach(recepie_id => {
     if (!(recepie_id in lp_results)) return;
     let elem = document.createElement('tbody',{is: 'result-row'});
-    elem.initializeItemRow(recepie_id, lp_results[recepie_id]);
+    elem.initializeItemRow(recepie_id, lp_results[recepie_id], recipes);
     power_total += elem.power;
     results_table.appendChild(elem);
     

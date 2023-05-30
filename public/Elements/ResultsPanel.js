@@ -19,8 +19,8 @@ class ResultRowElement extends HTMLTableSectionElement {
     }
 
 
-    initializeItemRow(recepie_id, rate) {
-        let recepie = recepies[recepie_id];
+    initializeItemRow(recepie_id, rate, recipes) {
+        let recepie = recipes[recepie_id];
         this.recepie_id = recepie_id;
 
         // Populate input breakdown table
