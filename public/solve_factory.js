@@ -1,3 +1,108 @@
+function updateResults() {
+
+}
+
+// Solve a given factory given a set of output items, input items, and settings
+// Returs a list of recepies and their rates.
+function solveFactory(output_items, output_rates, input_items, enabled_recepies, proliferator_settings) {
+  let constraints = {};
+  let recepies_order = {'root': []};
+  let used_recepies = {};
+  let used_items = [];
+
+
+  for (let i=0; i<output_items.length; i++) {
+    recurseRecepies(output_items[i], used_items, used_recepies, recepies_order, 'root');
+    if (!(output_items[i] in constraints)) constraints[element.item] = {'min': output_rates[i]};
+    else constraints[element.item]['min'] += output_rates[i];
+  }
+
+
+}
+
+function getRecepiesFromSettings() {
+  let recepies = {};
+  
+  // Remove recepies based on settings.
+  for (const recepie_id in recepies_full){
+    recepies[recepie_id] = recepies_full[recepie_id];
+  }
+  
+  document.querySelectorAll('#special-selection img').forEach(element => {
+    if (element.classList.contains('active')) delete recepies[element.dataset.deactivates];
+    else delete recepies[element.dataset.activates];
+  });
+
+  document.querySelectorAll('#settings-page .recepieSwitch img').forEach(
+    element => {
+    if (!element.classList.contains('active')) delete recepies[element.dataset.recepie];
+  });
+
+  // Add free recepies from input items.
+  document.querySelectorAll('#inputItems li:not(:last-child)').forEach(element => {
+    recepies[element.item + " imported"] = {
+      "name": items[element.item].name + " imported",
+      "type": "IMPORT",
+      "handcraft": 0,
+      "time": 0,
+      "items_in": {},
+      "items_out": {},
+      "icon": "404.png",
+      "cost": 0
+    }
+    recepies[element.item + " imported"]["items_out"][element.item] = 1;
+  });
+
+  SETTINGS.machines['ASSEMBLE'] = document.querySelector('#assembler-selection img.active').dataset.level;
+  SETTINGS.belt = document.querySelector('#belt-selection img.active').dataset.level;
+
+  SETTINGS.format = {};
+  SETTINGS.format.precision = Number(document.querySelector('#numberPrecision').value);
+  if (!SETTINGS.precision) SETTINGS.format.precision = 3;
+
+  return recepies;
+}
+
+function getOutputItems() {
+
+}
+
+function getInputItems() {
+
+}
+
+function getProliferatorSettings() {
+
+}
+
+// Loads all recepies that are relevant to making one item
+function recurseRecepies2(item_id, used_items, used_recepies, order, previous, recepie_book){
+
+  // Get all recepies with output the desired item id.
+  let recepies = {};
+  for (const [recepie_id, recepie] of Object.entries(recepie_book)){
+    if(item_id in recepie.items_out) recepies[recepie_id] = recepie;
+  }
+
+  for (const [recepie_id, recepie] of Object.entries(recepies)){
+    order[previous].push(recepie_id);
+  }
+  if (used_items.includes(item_id)) return;
+  used_items.push(item_id);
+  
+  for (const [recepie_id, recepie] of Object.entries(recepies)){
+    if (recepie in used_recepies) continue;
+    order[recepie_id] = [];
+    used_recepies[recepie_id] = recepie;
+    for (const [item_id, count] of Object.entries(recepie.items_in)){
+      recurseRecepies2(item_id, used_items, used_recepies, order, recepie_id, recepie_book)
+    }
+  }
+}
+
+
+
+
 // Read and apply settings.
 function pruneRecepies(){
   recepies = {};

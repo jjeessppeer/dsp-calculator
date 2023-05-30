@@ -292,7 +292,7 @@ class ResultRowElement extends HTMLTableSectionElement {
         
         let pc = row.querySelector('.proliferator-cell');
         let proliferator_dropdown = document.createElement('div', {is: 'proliferator-dropdown'});
-        pc.appendChild(icontest)
+        pc.appendChild(proliferator_dropdown)
       }
       // this.appendChild(row);
       this.insertBefore(row, this.querySelector('.subfactory-row'));
