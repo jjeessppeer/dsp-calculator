@@ -8,10 +8,10 @@
     },
     {
         "item_id": 1141,
-        "speed": 1.5,
+        "speed": 1.25,
         "productivity": 1.125,
-        "power": 1.5,
-        "uses": 125
+        "power": 1.3,
+        "uses": 12
     },
     {
         "item_id": 1142,

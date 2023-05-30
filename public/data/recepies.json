@@ -1,6 +1,6 @@
 {
   "1": {
-    "name": "Iron ingot",
+    "name": "Iron Ingot",
     "type": "SMELT",
     "handcraft": 1,
     "time": 60,
@@ -26,7 +26,7 @@
     "icon": "icons/magnet.png"
   },
   "3": {
-    "name": "Copper ingot",
+    "name": "Copper Ingot",
     "type": "SMELT",
     "handcraft": 1,
     "time": 60,
@@ -39,7 +39,7 @@
     "icon": "icons/copper-plate.png"
   },
   "4": {
-    "name": "Stone brick",
+    "name": "Stone Brick",
     "type": "SMELT",
     "handcraft": 1,
     "time": 60,
@@ -65,7 +65,7 @@
     "icon": "icons/gear-wheel.png"
   },
   "6": {
-    "name": "Magnetic coil",
+    "name": "Magnetic Coil",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 60,
@@ -79,7 +79,7 @@
     "icon": "icons/magnetism-wire.png"
   },
   "7": {
-    "name": "Wind turbine",
+    "name": "Wind Turbine",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -94,7 +94,7 @@
     "icon": "icons/wind-turbine.png"
   },
   "8": {
-    "name": "Tesla tower",
+    "name": "Tesla Tower",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 60,
@@ -108,7 +108,7 @@
     "icon": "icons/tesla-coil.png"
   },
   "9": {
-    "name": "Electromagnetic matrix",
+    "name": "Electromagnetic Matrix",
     "type": "RESEARCH",
     "handcraft": 1,
     "time": 180,
@@ -122,7 +122,7 @@
     "icon": "icons/t-matrix.png"
   },
   "10": {
-    "name": "Matrix lab",
+    "name": "Matrix Lab",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 180,
@@ -151,7 +151,7 @@
     "icon": "icons/prism.png"
   },
   "12": {
-    "name": "Plasma exciter",
+    "name": "Plasma Exciter",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 120,
@@ -165,7 +165,7 @@
     "icon": "icons/plasma-generator.png"
   },
   "13": {
-    "name": "Wireless power tower",
+    "name": "Wireless Power Tower",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 180,
@@ -179,7 +179,7 @@
     "icon": "icons/charging-pole.png"
   },
   "14": {
-    "name": "Oil extractor",
+    "name": "Oil Extractor",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 480,
@@ -195,7 +195,7 @@
     "icon": "icons/oil-extractor.png"
   },
   "15": {
-    "name": "Oil refinery",
+    "name": "Oil Refinery",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -211,7 +211,7 @@
     "icon": "icons/oil-refinery.png"
   },
   "16": {
-    "name": "Plasma refining",
+    "name": "Plasma Refining",
     "type": "REFINE",
     "handcraft": 0,
     "time": 240,
@@ -225,7 +225,7 @@
     "icon": "icons/plasma-refining.png"
   },
   "17": {
-    "name": "Energetic graphite",
+    "name": "Energetic Graphite",
     "type": "SMELT",
     "handcraft": 1,
     "time": 120,
@@ -238,7 +238,7 @@
     "icon": "icons/graphite.png"
   },
   "18": {
-    "name": "Energy matrix",
+    "name": "Energy Matrix",
     "type": "RESEARCH",
     "handcraft": 1,
     "time": 360,
@@ -252,7 +252,7 @@
     "icon": "icons/e-matrix.png"
   },
   "19": {
-    "name": "Hydrogen fuel rod",
+    "name": "Hydrogen Fuel Rod",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -280,7 +280,7 @@
     "icon": "icons/fuel-thruster.png"
   },
   "21": {
-    "name": "Reinforced thruster",
+    "name": "Reinforced Thruster",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -294,7 +294,7 @@
     "icon": "icons/ion-thruster.png"
   },
   "22": {
-    "name": "Chemical plant",
+    "name": "Chemical Plant",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 300,
@@ -324,7 +324,7 @@
     "icon": "icons/plastic.png"
   },
   "24": {
-    "name": "Sulfuric acid",
+    "name": "Sulfuric Acid",
     "type": "CHEMICAL",
     "handcraft": 0,
     "time": 360,
@@ -339,7 +339,7 @@
     "icon": "icons/sulphuric-acid.png"
   },
   "25": {
-    "name": "Organic crystal",
+    "name": "Organic Crystal",
     "type": "CHEMICAL",
     "handcraft": 0,
     "time": 360,
@@ -354,7 +354,7 @@
     "icon": "icons/crystal-rubber.png"
   },
   "26": {
-    "name": "Titanium crystal",
+    "name": "Titanium Crystal",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -368,7 +368,7 @@
     "icon": "icons/titan-crystal.png"
   },
   "27": {
-    "name": "Structure matrix",
+    "name": "Structure Matrix",
     "type": "RESEARCH",
     "handcraft": 1,
     "time": 480,
@@ -382,7 +382,7 @@
     "icon": "icons/c-matrix.png"
   },
   "28": {
-    "name": "Casimir crystal",
+    "name": "Casimir Crystal",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -397,12 +397,12 @@
     "icon": "icons/casimir-crystal.png"
   },
   "29": {
-    "name": "Casimir crystal (advanced)",
+    "name": "Casimir Crystal (advanced)",
     "type": "ASSEMBLE",
     "handcraft": 0,
     "time": 240,
     "items_in": {
-      "1014": 4,
+      "1014": 8,
       "1123": 2,
       "1120": 12
     },
@@ -412,7 +412,7 @@
     "icon": "icons/casimir-crystal-lv2.png"
   },
   "30": {
-    "name": "Titanium glass",
+    "name": "Titanium Glass",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 300,
@@ -455,7 +455,7 @@
     "icon": "icons/graphene-lv2.png"
   },
   "33": {
-    "name": "Carbon nanotube",
+    "name": "Carbon Nanotube",
     "type": "CHEMICAL",
     "handcraft": 0,
     "time": 240,
@@ -469,7 +469,7 @@
     "icon": "icons/nanotube.png"
   },
   "34": {
-    "name": "Silicon ore",
+    "name": "Silicon Ore",
     "type": "SMELT",
     "handcraft": 0,
     "time": 600,
@@ -482,12 +482,12 @@
     "icon": "icons/silicium-ore.png"
   },
   "35": {
-    "name": "Carbon nanotube (advanced)",
+    "name": "Carbon Nanotube (advanced)",
     "type": "CHEMICAL",
     "handcraft": 0,
     "time": 240,
     "items_in": {
-      "1015": 2
+      "1015": 6
     },
     "items_out": {
       "1124": 2
@@ -495,7 +495,7 @@
     "icon": "icons/nanotube-lv2.png"
   },
   "36": {
-    "name": "Particle broadband",
+    "name": "Particle Broadband",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 480,
@@ -510,7 +510,7 @@
     "icon": "icons/particle-wide-band.png"
   },
   "37": {
-    "name": "Crystal silicon",
+    "name": "Crystal Silicon",
     "type": "SMELT",
     "handcraft": 0,
     "time": 120,
@@ -523,7 +523,7 @@
     "icon": "icons/silicium-high-purity.png"
   },
   "38": {
-    "name": "Plane filter",
+    "name": "Plane Filter",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 720,
@@ -537,14 +537,14 @@
     "icon": "icons/plane-filter.png"
   },
   "39": {
-    "name": "Miniature particle collider",
+    "name": "Miniature Particle Collider",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 900,
     "items_in": {
       "1107": 20,
       "1125": 20,
-      "1205": 50,
+      "1205": 25,
       "1123": 10,
       "1303": 8
     },
@@ -567,7 +567,7 @@
     "icon": "icons/deuterium.png"
   },
   "41": {
-    "name": "Deuteron fuel rod",
+    "name": "Deuteron Fuel Rod",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 720,
@@ -582,7 +582,7 @@
     "icon": "icons/deuterium-energy-fuel.png"
   },
   "42": {
-    "name": "Annihilation constraint sphere",
+    "name": "Annihilation Constraint Sphere",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 1200,
@@ -596,7 +596,7 @@
     "icon": "icons/fusion-capacitor.png"
   },
   "43": {
-    "name": "Artificial star",
+    "name": "Artificial Star",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 1800,
@@ -612,7 +612,7 @@
     "icon": "icons/fusion-reactor.png"
   },
   "44": {
-    "name": "Antimatter fuel rod",
+    "name": "Antimatter Fuel Rod",
     "type": "ASSEMBLE",
     "handcraft": 0,
     "time": 1440,
@@ -628,7 +628,7 @@
     "icon": "icons/antimatter-energy-fuel.png"
   },
   "45": {
-    "name": "Assembling machine Mk.I",
+    "name": "Assembling Machine Mk.I",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 120,
@@ -643,7 +643,7 @@
     "icon": "icons/assembler-1.png"
   },
   "46": {
-    "name": "Assembling machine Mk.II",
+    "name": "Assembling Machine Mk.II",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 180,
@@ -658,7 +658,7 @@
     "icon": "icons/assembler-2.png"
   },
   "47": {
-    "name": "Assembling machine Mk.III",
+    "name": "Assembling Machine Mk.III",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -673,7 +673,7 @@
     "icon": "icons/assembler-3.png"
   },
   "48": {
-    "name": "Mining machine",
+    "name": "Mining Machine",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 180,
@@ -689,7 +689,7 @@
     "icon": "icons/mining-drill.png"
   },
   "49": {
-    "name": "Water pump",
+    "name": "Water Pump",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -705,7 +705,7 @@
     "icon": "icons/water-pump.png"
   },
   "50": {
-    "name": "Circuit board",
+    "name": "Circuit Board",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 60,
@@ -733,7 +733,7 @@
     "icon": "icons/processor.png"
   },
   "52": {
-    "name": "Quantum chip",
+    "name": "Quantum Chip",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -747,7 +747,7 @@
     "icon": "icons/quantum-processor.png"
   },
   "53": {
-    "name": "Microcrystalline component",
+    "name": "Microcrystalline Component",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 120,
@@ -761,7 +761,7 @@
     "icon": "icons/micro-component.png"
   },
   "54": {
-    "name": "Organic crystal (original)",
+    "name": "Organic Crystal (original)",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -776,7 +776,7 @@
     "icon": "icons/crystal-rubber-lv0.png"
   },
   "55": {
-    "name": "Information matrix",
+    "name": "Information Matrix",
     "type": "RESEARCH",
     "handcraft": 1,
     "time": 600,
@@ -819,7 +819,7 @@
     "icon": "icons/glass.png"
   },
   "58": {
-    "name": "X-ray cracking",
+    "name": "X-ray Cracking",
     "type": "REFINE",
     "handcraft": 0,
     "time": 240,
@@ -834,7 +834,7 @@
     "icon": "icons/X-ray.png"
   },
   "59": {
-    "name": "High-purity silicon",
+    "name": "High-purity Silicon",
     "type": "SMELT",
     "handcraft": 1,
     "time": 120,
@@ -873,7 +873,7 @@
     "icon": "icons/diamond-lv2.png"
   },
   "62": {
-    "name": "Crystal silicon (advanced)",
+    "name": "Crystal Silicon (advanced)",
     "type": "ASSEMBLE",
     "handcraft": 0,
     "time": 90,
@@ -899,7 +899,7 @@
     "icon": "icons/steel-plate.png"
   },
   "64": {
-    "name": "Thermal power plant",
+    "name": "Thermal Power Plant",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 300,
@@ -915,7 +915,7 @@
     "icon": "icons/fuel-plant.png"
   },
   "65": {
-    "name": "Titanium ingot",
+    "name": "Titanium Ingot",
     "type": "SMELT",
     "handcraft": 1,
     "time": 120,
@@ -928,7 +928,7 @@
     "icon": "icons/titanium-plate.png"
   },
   "66": {
-    "name": "Titanium alloy",
+    "name": "Titanium Alloy",
     "type": "SMELT",
     "handcraft": 0,
     "time": 720,
@@ -943,7 +943,7 @@
     "icon": "icons/titanium-alloy.png"
   },
   "67": {
-    "name": "Solar panel",
+    "name": "Solar Panel",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -958,7 +958,7 @@
     "icon": "icons/solar-panel.png"
   },
   "68": {
-    "name": "Photon combiner",
+    "name": "Photon Combiner",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 180,
@@ -972,7 +972,7 @@
     "icon": "icons/photo-shifter.png"
   },
   "69": {
-    "name": "Photon combiner (advanced)",
+    "name": "Photon Combiner (advanced)",
     "type": "ASSEMBLE",
     "handcraft": 0,
     "time": 180,
@@ -1016,7 +1016,7 @@
     "icon": "icons/em-rail-ejector.png"
   },
   "72": {
-    "name": "Ray receiver",
+    "name": "Ray Receiver",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 480,
@@ -1033,7 +1033,7 @@
     "icon": "icons/ray-receiver.png"
   },
   "73": {
-    "name": "Satellite substation",
+    "name": "Satellite Substation",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 300,
@@ -1048,7 +1048,7 @@
     "icon": "icons/orbital-substation.png"
   },
   "74": {
-    "name": "Mass-energy storage",
+    "name": "Mass-energy Storage",
     "type": "PARTICLE",
     "handcraft": 0,
     "time": 120,
@@ -1062,7 +1062,7 @@
     "icon": "icons/photon-formula.png"
   },
   "75": {
-    "name": "Universe matrix",
+    "name": "Universe Matrix",
     "type": "RESEARCH",
     "handcraft": 0,
     "time": 900,
@@ -1095,7 +1095,7 @@
     "icon": "icons/accumulator.png"
   },
   "77": {
-    "name": "Energy exchanger",
+    "name": "Energy Exchanger",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 900,
@@ -1111,7 +1111,7 @@
     "icon": "icons/energy-exchanger.png"
   },
   "78": {
-    "name": "Space warper",
+    "name": "Space Warper",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 600,
@@ -1124,7 +1124,7 @@
     "icon": "icons/space-warper.png"
   },
   "79": {
-    "name": "Space warper (advanced)",
+    "name": "Space Warper (advanced)",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 600,
@@ -1137,7 +1137,7 @@
     "icon": "icons/space-warper-lv2.png"
   },
   "80": {
-    "name": "Frame material",
+    "name": "Frame Material",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -1152,7 +1152,7 @@
     "icon": "icons/frame-material.png"
   },
   "81": {
-    "name": "Dyson sphere component",
+    "name": "Dyson Sphere Component",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 480,
@@ -1167,7 +1167,7 @@
     "icon": "icons/dyson-sphere-component.png"
   },
   "82": {
-    "name": "Vertical launching silo",
+    "name": "Vertical Launching Silo",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 1800,
@@ -1183,7 +1183,7 @@
     "icon": "icons/vertical-launching-silo.png"
   },
   "83": {
-    "name": "Small carrier rocket",
+    "name": "Small Carrier Rocket",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -1198,7 +1198,7 @@
     "icon": "icons/rocket.png"
   },
   "84": {
-    "name": "Conveyor belt MK.I",
+    "name": "Conveyor Belt MK.I",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 60,
@@ -1269,7 +1269,7 @@
     "icon": "icons/inserter-2.png"
   },
   "89": {
-    "name": "Conveyor belt MK.II",
+    "name": "Conveyor Belt MK.II",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 60,
@@ -1311,7 +1311,7 @@
     "icon": "icons/storage-2.png"
   },
   "92": {
-    "name": "Conveyor belt MK.III",
+    "name": "Conveyor Belt MK.III",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 60,
@@ -1342,7 +1342,7 @@
     "icon": "icons/logistic-station.png"
   },
   "94": {
-    "name": "Logistic Drone",
+    "name": "Logistics Drone",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -1372,7 +1372,7 @@
     "icon": "icons/interstellar-logistic-station.png"
   },
   "96": {
-    "name": "Logistics vessel",
+    "name": "Logistics Vessel",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -1387,7 +1387,7 @@
     "icon": "icons/logistic-vessel.png"
   },
   "97": {
-    "name": "Electric motor",
+    "name": "Electric Motor",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 120,
@@ -1402,7 +1402,7 @@
     "icon": "icons/electric-motor.png"
   },
   "98": {
-    "name": "Electromagnetic turbine",
+    "name": "Electromagnetic Turbine",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 120,
@@ -1416,7 +1416,7 @@
     "icon": "icons/mag-turbine.png"
   },
   "99": {
-    "name": "Particle container",
+    "name": "Particle Container",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -1431,7 +1431,7 @@
     "icon": "icons/partical-capacitor.png"
   },
   "100": {
-    "name": "Particle container (advanced)",
+    "name": "Particle Container (advanced)",
     "type": "ASSEMBLE",
     "handcraft": 0,
     "time": 240,
@@ -1445,7 +1445,7 @@
     "icon": "icons/partical-capacitor-lv2.png"
   },
   "101": {
-    "name": "Graviton lens",
+    "name": "Graviton Lens",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -1459,7 +1459,7 @@
     "icon": "icons/gravity-lens.png"
   },
   "102": {
-    "name": "Gravity matrix",
+    "name": "Gravity Matrix",
     "type": "RESEARCH",
     "handcraft": 1,
     "time": 1440,
@@ -1473,7 +1473,7 @@
     "icon": "icons/g-matrix.png"
   },
   "103": {
-    "name": "Super-magnetic ring",
+    "name": "Super-magnetic Ring",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 180,
@@ -1488,7 +1488,7 @@
     "icon": "icons/hyper-magnetism-ring.png"
   },
   "104": {
-    "name": "Strange matter",
+    "name": "Strange Matter",
     "type": "PARTICLE",
     "handcraft": 0,
     "time": 480,
@@ -1544,7 +1544,7 @@
     "icon": "icons/accelerator-3.png"
   },
   "109": {
-    "name": "Spray coater",
+    "name": "Spray Coater",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 180,
@@ -1606,7 +1606,7 @@
     "icon": "icons/terrain-tool.png"
   },
   "113": {
-    "name": "Mini fusion power plant",
+    "name": "Mini Fusion Power Plant",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 600,
@@ -1622,7 +1622,7 @@
     "icon": "icons/fusion-power-station.png"
   },
   "114": {
-    "name": "Storage tank",
+    "name": "Storage Tank",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 120,
@@ -1637,7 +1637,7 @@
     "icon": "icons/storage-tank.png"
   },
   "115": {
-    "name": "Deuterium fractionation",
+    "name": "Deuterium Fractionation",
     "type": "FRACTIONATE",
     "handcraft": 0,
     "time": 200,
@@ -1666,7 +1666,7 @@
     "icon": "icons/smelter-2.png"
   },
   "117": {
-    "name": "Traffic monitor",
+    "name": "Traffic Monitor",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 120,
@@ -1682,7 +1682,7 @@
     "icon": "icons/monitor.png"
   },
   "118": {
-    "name": "Geothermal power station",
+    "name": "Geothermal Power Station",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 360,
@@ -1698,7 +1698,7 @@
     "icon": "icons/geothermal-power-station.png"
   },
   "119": {
-    "name": "Advanced mining machine",
+    "name": "Advanced Mining Machine",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 1200,
@@ -1715,7 +1715,7 @@
     "icon": "icons/mining-drill-mk2.png"
   },
   "120": {
-    "name": "Automatic piler",
+    "name": "Automatic Piler",
     "type": "ASSEMBLE",
     "handcraft": 1,
     "time": 240,
@@ -1731,8 +1731,69 @@
     "icon": "icons/piler.png"
   },
   "121": {
-    "name": "Iron ore mine",
-    "id": 121,
+    "name": "Reforming Refine",
+    "type": "REFINE",
+    "handcraft": 0,
+    "time": 240,
+    "items_in": {
+      "1114": 2,
+      "1120": 1,
+      "1006": 1
+    },
+    "items_out": {
+      "1114": 3
+    },
+    "icon": "icons/reforming-refine.png"
+  },
+  "122": {
+    "name": "Logistics Distributor",
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 480,
+    "items_in": {
+      "1101": 8,
+      "1401": 4,
+      "1303": 4
+    },
+    "items_out": {
+      "2107": 1
+    },
+    "icon": "icons/delivery-machine.png"
+  },
+  "123": {
+    "name": "Logistics Bot",
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 120,
+    "items_in": {
+      "1101": 2,
+      "1204": 1,
+      "1303": 1
+    },
+    "items_out": {
+      "5003": 1
+    },
+    "icon": "icons/delivery-drone.png"
+  },
+  "124": {
+    "name": "Quantum Chemical Plant",
+    "type": "ASSEMBLE",
+    "handcraft": 1,
+    "time": 600,
+    "items_in": {
+      "2309": 1,
+      "1119": 10,
+      "1127": 3,
+      "1305": 3
+    },
+    "items_out": {
+      "2317": 1
+    },
+    "icon": "icons/chemical-plant-2.png"
+  },
+  "125": {
+    "name": "Iron Ore mine",
+    "id": 125,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1742,9 +1803,9 @@
     },
     "icon": "icons/iron-ore.png"
   },
-  "122": {
-    "name": "Copper ore mine",
-    "id": 122,
+  "126": {
+    "name": "Copper Ore mine",
+    "id": 126,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1754,9 +1815,9 @@
     },
     "icon": "icons/copper-ore.png"
   },
-  "123": {
-    "name": "Silicon ore mine",
-    "id": 123,
+  "127": {
+    "name": "Silicon Ore mine",
+    "id": 127,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1766,9 +1827,9 @@
     },
     "icon": "icons/silicium-ore.png"
   },
-  "124": {
-    "name": "Titanium ore mine",
-    "id": 124,
+  "128": {
+    "name": "Titanium Ore mine",
+    "id": 128,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1778,9 +1839,9 @@
     },
     "icon": "icons/titanium-ore.png"
   },
-  "125": {
+  "129": {
     "name": "Stone mine",
-    "id": 125,
+    "id": 129,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1790,9 +1851,9 @@
     },
     "icon": "icons/stone-ore.png"
   },
-  "126": {
+  "130": {
     "name": "Coal mine",
-    "id": 126,
+    "id": 130,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1802,9 +1863,9 @@
     },
     "icon": "icons/coal-ore.png"
   },
-  "127": {
+  "131": {
     "name": "Log gather",
-    "id": 127,
+    "id": 131,
     "type": "GATHER",
     "handcraft": 0,
     "time": 60,
@@ -1814,9 +1875,9 @@
     },
     "icon": "icons/wood.png"
   },
-  "128": {
-    "name": "Plant fuel gather",
-    "id": 128,
+  "132": {
+    "name": "Plant Fuel gather",
+    "id": 132,
     "type": "GATHER",
     "handcraft": 0,
     "time": 60,
@@ -1826,9 +1887,9 @@
     },
     "icon": "icons/plant-fuel.png"
   },
-  "129": {
-    "name": "Fire ice mine",
-    "id": 129,
+  "133": {
+    "name": "Fire Ice mine",
+    "id": 133,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1838,9 +1899,9 @@
     },
     "icon": "icons/gas-hydrate.png"
   },
-  "130": {
-    "name": "Fire ice orbital collect",
-    "id": 130,
+  "134": {
+    "name": "Fire Ice orbital collect",
+    "id": 134,
     "type": "ORBITAL_COLLECT",
     "handcraft": 0,
     "time": 60,
@@ -1850,9 +1911,9 @@
     },
     "icon": "icons/gas-hydrate.png"
   },
-  "131": {
-    "name": "Kimberlite ore mine",
-    "id": 131,
+  "135": {
+    "name": "Kimberlite Ore mine",
+    "id": 135,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1862,9 +1923,9 @@
     },
     "icon": "icons/diamond-ore.png"
   },
-  "132": {
-    "name": "Fractal silicon mine",
-    "id": 132,
+  "136": {
+    "name": "Fractal Silicon mine",
+    "id": 136,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1874,9 +1935,9 @@
     },
     "icon": "icons/fractal-silica.png"
   },
-  "133": {
-    "name": "Optical grating crystal mine",
-    "id": 133,
+  "137": {
+    "name": "Optical Grating Crystal mine",
+    "id": 137,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1886,9 +1947,9 @@
     },
     "icon": "icons/grating-ore.png"
   },
-  "134": {
-    "name": "Spiniform stalagmite crystal mine",
-    "id": 134,
+  "138": {
+    "name": "Spiniform Stalagmite Crystal mine",
+    "id": 138,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1898,9 +1959,9 @@
     },
     "icon": "icons/bamboo-crystal.png"
   },
-  "135": {
-    "name": "Unipolar magnet mine",
-    "id": 135,
+  "139": {
+    "name": "Unipolar Magnet mine",
+    "id": 139,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
@@ -1910,9 +1971,9 @@
     },
     "icon": "icons/mono-mag-ore.png"
   },
-  "136": {
+  "140": {
     "name": "Water pump",
-    "id": 136,
+    "id": 140,
     "type": "PUMP",
     "handcraft": 0,
     "time": 60,
@@ -1922,9 +1983,9 @@
     },
     "icon": "icons/water.png"
   },
-  "137": {
-    "name": "Crude oil oil extract",
-    "id": 137,
+  "141": {
+    "name": "Crude Oil oil extract",
+    "id": 141,
     "type": "OIL_EXTRACT",
     "handcraft": 0,
     "time": 60,
@@ -1934,9 +1995,9 @@
     },
     "icon": "icons/oil.png"
   },
-  "138": {
-    "name": "Sulfuric acid pump",
-    "id": 138,
+  "142": {
+    "name": "Sulfuric Acid pump",
+    "id": 142,
     "type": "PUMP",
     "handcraft": 0,
     "time": 60,
@@ -1946,9 +2007,9 @@
     },
     "icon": "icons/sulphuric-acid.png"
   },
-  "139": {
+  "143": {
     "name": "Hydrogen orbital collect",
-    "id": 139,
+    "id": 143,
     "type": "ORBITAL_COLLECT",
     "handcraft": 0,
     "time": 60,
@@ -1958,9 +2019,9 @@
     },
     "icon": "icons/hydrogen.png"
   },
-  "140": {
+  "144": {
     "name": "Deuterium orbital collect",
-    "id": 140,
+    "id": 144,
     "type": "ORBITAL_COLLECT",
     "handcraft": 0,
     "time": 60,
@@ -1970,9 +2031,9 @@
     },
     "icon": "icons/deuterium.png"
   },
-  "141": {
-    "name": "Critical photon photon store",
-    "id": 141,
+  "145": {
+    "name": "Critical Photon photon store",
+    "id": 145,
     "type": "PHOTON_STORE",
     "handcraft": 0,
     "time": 60,
@@ -1982,9 +2043,9 @@
     },
     "icon": "icons/photon-capacitor-full.png"
   },
-  "142": {
-    "name": "Organic crystal mine",
-    "id": 142,
+  "146": {
+    "name": "Organic Crystal mine",
+    "id": 146,
     "type": "MINE",
     "handcraft": 0,
     "time": 60,
