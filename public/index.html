@@ -16,8 +16,8 @@
   <script src="Elements/ResultsPanel.js"></script>
   <script src="Elements/Settings.js"></script>
   <script src="utils.js"></script>
-  <script src="FactorySolver.js"></script>
-  <script src="solve_factory.js"></script>
+  <script src="Factory/FactorySolver.js"></script>
+  <script src="Factory/FactoryInterface.js"></script>
 
   
   <link rel="stylesheet" href="style/mystyle.css">
@@ -233,32 +233,6 @@
     });
 
 
-    function saveConfigToURL(){
-      let outputs = [];
-      document.querySelectorAll('.outputItem').forEach(element => {
-        outputs.push(element.item);
-        outputs.push(element.rate);
-      });
-      if (outputs.length > 0)
-        window.location.setHashParam("outputs", outputs.toString());
-      else
-        window.location.removeHashParam("outputs");
-      let inputs = [];
-      document.querySelectorAll('.inputItem').forEach(element => {
-        inputs.push(element.item);
-      });
-      if (inputs.length > 0)
-        window.location.setHashParam("inputs", inputs.toString());
-      else
-        window.location.removeHashParam("inputs");
-      
-      let settings = [];
-      const elements = document.querySelectorAll('#settings-page img');
-      for (let i=0; i<elements.length; i++){
-        settings.push(elements[i].classList.contains('active') ? 1 : 0);
-      }
-      window.location.setHashParam("settings", settings.join(","));     
-    }
 
     function loadConfigFromURL(){
       document.querySelectorAll('.outputItem .inputItem').forEach(element => {

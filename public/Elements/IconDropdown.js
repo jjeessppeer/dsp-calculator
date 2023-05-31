@@ -70,8 +70,8 @@ class ProliferatorDropdown extends IconDropdown {
         }
 
         this.addEventListener('item-selected', event => {
-            console.log("Proliferator changed");
-            console.log(this.selected_id)
+            // console.log("Proliferator changed");
+            // console.log(this.selected_id)
             reloadResultsTable();
         });
     }

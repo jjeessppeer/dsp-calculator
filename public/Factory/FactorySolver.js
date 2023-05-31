@@ -35,11 +35,28 @@ function getEnabledRecipes() {
 }
 
 function getProliferatorSettings() {
-    
+    const proliferator_settings = {};
+    document.querySelectorAll('.proliferator-dropdown').forEach(el => {
+        const proliferator_id = el.selected_id;
+        const recipe_id = el.parentElement.parentElement.parentElement.recepie_id;
+        // if (proliferator_id == 0) return;
+        proliferator_settings[recipe_id] = proliferator_id;
+    });
+    return proliferator_settings;
 }
 
-function applyProliferator(recipes, proliferatorSettings) {
+function applyProliferators(recipes, proliferatorSettings) {
+    for (const recipe_id in proliferatorSettings) {
+        let recipe = JSON.parse(JSON.stringify(recipes[recipe_id]));
+        let proliferator = proliferators[proliferatorSettings[recipe_id]];
+        
+        if (proliferator.item_id == -1) continue;
 
+        for (const item_id in recipe.items_out) {
+            recipe.items_out[item_id] *= proliferator.productivity;
+        }
+        recipes[recipe_id] = recipe;
+    }
 }
 
 function addInputRecipes(recipes) {
@@ -63,6 +80,8 @@ function addInputRecipes(recipes) {
 function solveFactory() {
     const recipes = getEnabledRecipes();
     addInputRecipes(recipes);
+    const proliferator_settings = getProliferatorSettings();
+    applyProliferators(recipes, proliferator_settings);
 
     console.log("UPDATING RESULTS");
     // Prepare items and recepies for linear program.

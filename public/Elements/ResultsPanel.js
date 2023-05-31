@@ -19,7 +19,7 @@ class ResultRowElement extends HTMLTableSectionElement {
     }
 
 
-    initializeItemRow(recepie_id, rate, recipes) {
+    initializeItemRow(recepie_id, rate, recipes, proliferator_settings) {
         let recepie = recipes[recepie_id];
         this.recepie_id = recepie_id;
 
@@ -53,7 +53,11 @@ class ResultRowElement extends HTMLTableSectionElement {
             if (document.querySelector('#machineCeilCheck').checked) n_machines = Math.ceil(n_machines);
             let p_a = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].active;
             let p_i = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].idle;
-            let power = p_a * Math.floor(n_machines) + p_i * (n_machines % 1);
+            const active_percentage = n_machines / Math.ceil(n_machines);
+            let power = p_a * active_percentage + p_i * (1 - active_percentage);
+            if (proliferator_settings[recepie_id]) {
+                power *= proliferators[proliferator_settings[recepie_id]].power;
+            }
             this.power = power;
 
             let is_input = false;
@@ -70,37 +74,38 @@ class ResultRowElement extends HTMLTableSectionElement {
 
             if (i == 0) {
                 row.innerHTML += `
-            <td rowspan="`+ length + `">
-              <a href="`+ getHash(link) + `" target="_blank">
-                  <svg viewBox="0 0 24 24"><use href="icons.svg#launch" /></svg>
-              </a>
-              <br>
-              <button>
-                <svg viewBox="25 0 24 24"><use href="icons.svg#arrow" /></svg>
-              </button>
-            </td>`;
+                    <td rowspan="`+ length + `">
+                    <a href="`+ getHash(link) + `" target="_blank">
+                    <svg viewBox="0 0 24 24"><use href="icons.svg#launch" /></svg>
+                    </a>
+                    <br>
+                    <button>
+                    <svg viewBox="25 0 24 24"><use href="icons.svg#arrow" /></svg>
+                    </button>
+                    </td>
+                `;
             }
 
             row.innerHTML += `
-          <td><img class="item-icon`+ is_input + `" src="` + items[item_id].icon + `" title="` + items[item_id].name + `"></td>
-          <td class="pad">`+ math.format(items_per_s, SETTINGS.format) + `</td>
-          <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
-          <td class="pad">&times; `+ math.format(n_belts, SETTINGS.format) + `</td>`;
+                <td><img class="item-icon`+ is_input + `" src="` + items[item_id].icon + `" title="` + items[item_id].name + `"></td>
+                <td class="pad">`+ math.format(items_per_s, SETTINGS.format) + `</td>
+                <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
+                <td class="pad">&times; `+ math.format(n_belts, SETTINGS.format) + `</td>
+            `;
 
             // Add belt, machines, and power only for the first row. Row spans the full result row.
             if (i == 0) {
-                this.querySelector('td').innerHTML = `
-            
-          `
+                this.querySelector('td').innerHTML = ` `
                 row.innerHTML += `
-            <td rowspan="`+ length + `">` + recepie_img + `<img src="` + items[machine_item].icon + `"></td>
-            <td rowspan="`+ length + `" class="pad">&times; ` + math.format(n_machines, SETTINGS.format) + `</td>
-            <td rowspan="`+ length + `" class="pad proliferator-cell"></td>
-            <td rowspan="`+ length + `">` + math.unit(power, 'kW').format(SETTINGS.format) + `</td>
-          `
+                    <td rowspan="`+ length + `">` + recepie_img + `<img src="` + items[machine_item].icon + `"></td>
+                    <td rowspan="`+ length + `" class="pad">&times; ` + math.format(n_machines, SETTINGS.format) + `</td>
+                    <td rowspan="`+ length + `" class="pad proliferator-cell"></td>
+                    <td rowspan="`+ length + `">` + math.unit(power, 'kW').format(SETTINGS.format) + `</td>
+                `
 
                 let pc = row.querySelector('.proliferator-cell');
                 let proliferator_dropdown = document.createElement('div', { is: 'proliferator-dropdown' });
+                if (proliferator_settings[recepie_id]) proliferator_dropdown.selectItem(proliferator_settings[recepie_id], false);
                 pc.appendChild(proliferator_dropdown)
             }
             // this.appendChild(row);
@@ -123,18 +128,18 @@ class SubFactoryRow extends HTMLTableRowElement {
         this.classList.add('subfactory-row')
         this.classList.add('active')
         this.innerHTML = `
-        <td></td>
-        <td>
-          <table>
-          <td><img src="icons/iron-ore.png"></td>
-          <td class="pad">&times;1.5</td>
-          <td><img src="icons/belt-1.png"></td>
-          <td class="pad">&times;1.5</td>
-          <td><img src="icons/assembler-1.png"></td>
-          <td>&times;1.5</td>
-          </table>
-        </td>  
-      `
+            <td></td>
+            <td>
+            <table>
+            <td><img src="icons/iron-ore.png"></td>
+            <td class="pad">&times;1.5</td>
+            <td><img src="icons/belt-1.png"></td>
+            <td class="pad">&times;1.5</td>
+            <td><img src="icons/assembler-1.png"></td>
+            <td>&times;1.5</td>
+            </table>
+            </td>  
+        `
     }
 }
 
