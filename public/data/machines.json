@@ -25,7 +25,7 @@
     "buildings": [2309],
     "speeds": [1],
     "powers": [{"idle": 24, "active": 720}],
-    "cost": 10
+    "cost": 100
   },
   "REFINE": {
     "name": "Refining facility",
@@ -50,7 +50,7 @@
     "buildings": [2310],
     "speeds": [1],
     "powers": [{"idle": 120, "active": 12000}],
-    "cost": 500
+    "cost": 50000000
   },
   "EXCHANGE": {
     "name": "Energy exchanger",
@@ -63,7 +63,7 @@
     "buildings": [2208],
     "speeds": [1],
     "powers": [{"idle": 0, "active": 0}],
-    "cost": 1000
+    "cost": 1000000
   },
   "FRACTIONATE": {
     "name": "Fractionation facility",
@@ -85,7 +85,7 @@
     "buildings": [1001],
     "speeds": [1],
     "powers": [{"idle": 0, "active": 0}],
-    "cost": 999
+    "cost": 99999
   },
   "MINE": {
     "name": "Miner",
@@ -99,20 +99,20 @@
     "buildings": [2306],
     "speeds": [1],
     "powers": [{"idle": 12, "active": 300}],
-    "cost": 1
+    "cost": 5
   },
   "ORBITAL_COLLECT": {
     "name": "Orbital Collector",
     "buildings": [2105],
     "speeds": [1],
     "powers": [{"idle": 0, "active": 0}],
-    "cost": 0.01
+    "cost": 1
   },
   "OIL_EXTRACT": {
     "name": "Oil extractor",
     "buildings":  [2307],
     "speeds": [2],
     "powers": [{"idle": 24, "active": 840}],
-    "cost": 100
+    "cost": 200
   }
 }

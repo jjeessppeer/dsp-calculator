@@ -22,7 +22,7 @@ class SettingsRow extends HTMLTableRowElement {
     }
 }
 
-class RecipeToggle extends SettingsRow {
+class RecipeToggleRow extends SettingsRow {
     constructor() {
         super();
         this.classList.add('recipe-toggle');
@@ -52,5 +52,49 @@ class RecipeToggle extends SettingsRow {
     }
 }
 
+class ItemSelectionRow extends SettingsRow {
+    constructor() {
+        super();
+    }
+}
+
+class ToggleButton extends HTMLImageElement {
+    constructor() {
+        super();
+        this.classList.add('toggle-button');
+
+        this.enabled = false;
+    }
+
+    setItem(imgSrc, itemId, title) {
+        this.src = imgSrc;
+        this.itemId = itemId;
+        this.title = title;
+    }
+
+    toggle(on=undefined) {
+
+    }
+
+    enable() {
+
+    }
+
+    disable() {
+
+    }
+}
+
+class RecipeToggle extends ToggleButton {
+    constructor(){
+        super();
+        this.classList.add('recipe-toggle');
+
+    }
+}
+
 customElements.define('settings-row', SettingsRow, { extends: 'tr' });
-customElements.define('recipe-toggle', RecipeToggle, { extends: 'tr' });
+customElements.define('recipe-toggle', RecipeToggleRow, { extends: 'tr' });
+
+
+customElements.define('toggle-button', ToggleButton, { extends: 'img' });

@@ -14,6 +14,7 @@ function getOutputItems() {
     document.querySelectorAll('.outputItem').forEach(el => {
         outputItems.push(el.item);
         outputRates.push(el.rate);
+        console.log(el.item, ": ", el.rate);
     });
     return [outputItems, outputRates];
 }
@@ -47,6 +48,7 @@ function getProliferatorSettings() {
 
 function applyProliferators(recipes, proliferatorSettings) {
     for (const recipe_id in proliferatorSettings) {
+        if (!recipes[recipe_id]) continue;
         let recipe = JSON.parse(JSON.stringify(recipes[recipe_id]));
         let proliferator = proliferators[proliferatorSettings[recipe_id]];
         
@@ -76,7 +78,6 @@ function addInputRecipes(recipes) {
     });
 }
 
-// output_items, output_rates, input_items, enabled_recepies, proliferator_settings
 function solveFactory() {
     const recipes = getEnabledRecipes();
     addInputRecipes(recipes);
@@ -90,7 +91,7 @@ function solveFactory() {
     const constraints = {};
     const used_recepies = {};
     const recepies_order = { 'root': [] };
-    const used_items = [];
+    let used_items = [];
 
     const [output_items, output_rates] = getOutputItems();
     for (let i = 0; i < output_items.length; i++) {
@@ -101,6 +102,8 @@ function solveFactory() {
         else constraints[item]['min'] += rate;
 
     }
+
+    used_items = getUsedItems(used_recepies);
 
     // Build production matrix constraints.
     used_items.forEach(item => {
@@ -124,16 +127,29 @@ function solveFactory() {
         variables[recepie_id] = variable;
     }
 
+    // // Optimize for minimal leftover products.
+    // let optimize = {};
+    // for (const item of used_items) {
+    //     if (output_items.includes(item)){
+    //         console.log("Skip: ", items[item].name)
+    //     }
+    //     console.log(items[item].name);
+    //     optimize[item] = 'min';
+    //     // if item
+    // }
+    // console.log(optimize);
+
     // Solve linear program to get recepie ratios
 
     let model = {
-        "optimize": "cost",
+        "optimize": 'cost',
         "opType": "min",
         "constraints": constraints,
         "variables": variables
     };
 
     const lp_results = solver.Solve(model);
+    console.log(lp_results);
 
     return [lp_results, recepies_order, recipes];
 }
@@ -167,4 +183,19 @@ function getItemRecepies(item_id, recipes){
       if(item_id in recepie.items_out) result[recepie_id] = recepie;
     }
     return result;
+}
+
+function getUsedItems(recipe_set) {
+    let items = [];
+    for (const recipe_key in recipe_set) {
+        const recipe = recipe_set[recipe_key];
+        for (const item in recipe.items_in) {
+            items.push(item);
+        }
+        for (const item in recipe.items_out) {
+            items.push(item);
+        }
+    }
+    items = [...new Set(items)];
+    return items;
 }

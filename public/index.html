@@ -8,7 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.2.0/math.min.js" type="text/javascript"></script>
-  <script src="external/solver.js"></script>
+  <!-- <script src="external/solver.js"></script> -->
+  <script src="external/solver2.js"></script>
+  <!-- <script src="https://unpkg.com/javascript-lp-solver/prod/solver.js"></script> -->
   <script language="javascript" src="external/lz-string.min.js"></script>
     
   <script src="Elements/IconDropdown.js"></script>
@@ -98,37 +100,56 @@
         <td>Advanced recepies:</td>
         <td id="special-selection">
           <img data-activates="32" data-deactivates="31" title="Graphene">
-          <img data-activates="61" data-deactivates="60" title="Diamond">
-          <img data-activates="62" data-deactivates="37" title="Crystal silicon">
-          <img data-activates="35" data-deactivates="33" title="Carbon nanotube">
+          <!-- <img data-activates="61" data-deactivates="60" title="Diamond"> -->
+          <!-- <img data-activates="62" data-deactivates="37" title="Crystal silicon"> -->
+          <!-- <img data-activates="35" data-deactivates="33" title="Carbon nanotube"> -->
           <br>
-          <img data-activates="29" data-deactivates="28" title="Casimir crystal">
-          <img data-activates="69" data-deactivates="68" title="Photon combiner">
-          <img data-activates="100" data-deactivates="99" title="Particle container">
-          <img data-activates="79" data-deactivates="78" title="Space warper">
-          <img data-activates="142" data-deactivates="25" title="Organic crystal mining">
+          <!-- <img data-activates="29" data-deactivates="28" title="Casimir crystal"> -->
+          <!-- <img data-activates="69" data-deactivates="68" title="Photon combiner"> -->
+          <!-- <img data-activates="100" data-deactivates="99" title="Particle container"> -->
+          <!-- <img data-activates="79" data-deactivates="78" title="Space warper"> -->
+          <br>
+          <!-- <img data-activates="142" data-deactivates="24" title="Sulfuric acid pumping"> -->
+          <img data-activates="121" data-deactivates="-999" title="Reforming refine">
+          <img data-activates="143" data-deactivates="-999" title="Hydrogen orbital collect">
+          <img data-activates="16" data-deactivates="-999" title="plasma">
+          <!-- <img data-activates="142" data-deactivates="25" title="Organic crystal mining"> -->
         </td>
       </tr>
-      <tr>
+      <!-- <tr>
         <td>Hydrogen source:</td>
         <td id="hydrogen-selection" class="recepieSwitch">
           <img data-recepie="58" src="icons/X-ray.png">
           <img data-recepie="143" class="active" src="icons/orbital-collector.png">
         </td>
-      </tr>
-      <tr>
+      </tr> -->
+      <!-- <tr>
+        <td>Light oil source:</td>
+        <td id="light-oil-selection" class="recepieSwitch">
+          <img data-recepie="16" class="active" src="icons/plasma-refining.png">
+          <img data-recepie="121"src="icons/reforming-refine.png">
+        </td>
+      </tr> -->
+      <!-- <tr>
         <td>Deuterium source:</td>
         <td id="deuterium-selection" class="recepieSwitch">
           <img data-recepie="40" class="active" src="icons/deuterium-formula.png">
           <img data-recepie="115" src="icons/hadron-collider.png">
           <img data-recepie="140" src="icons/orbital-collector.png">
         </td>
-      </tr>
-      <tr>
+      </tr> -->
+      <!-- <tr>
         <td>Fire ice source:</td>
         <td id="fireice-selection" class="recepieSwitch">
           <img data-recepie="133" src="icons/mining-drill.png">
           <img data-recepie="134" class="active" src="icons/orbital-collector.png">
+        </td>
+      </tr> -->
+      <tr>
+        <td>Organic Crystal source:</td>
+        <td class="recepieSwitch">
+          <img data-recepie="25" class="active" src="icons/crystal-rubber.png">
+          <img data-recepie="146" src="icons/mining-drill.png">
         </td>
       </tr>
       <tr>
@@ -180,7 +201,6 @@
   <script>
     var datasets_loaded = 0
     var items, machines, recepies_full, belts, proliferators;
-    var recepies;
     var SETTINGS_DEFAULT = {
       'machines': {
         'IMPORT': 0,
@@ -201,7 +221,8 @@
         'OIL_EXTRACT': 0
       },
       belt: 0,
-      format: {precision: 3}
+      format: {precision: 3},
+      decimals: 1
     };
     var SETTINGS = JSON.parse(JSON.stringify(SETTINGS_DEFAULT));
     var N_DATASETS_INIT = 5;
@@ -270,7 +291,6 @@
     }
 
     function initialize(){
-      console.log("INITIALIZING CALCULATOR")
       document.getElementById("addOutputBtn").addEventListener('click', event => addOutputRow());
       document.getElementById("addInputBtn").addEventListener('click', event => addInputRow());
 

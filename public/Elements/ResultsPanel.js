@@ -28,13 +28,17 @@ class ResultRowElement extends HTMLTableSectionElement {
             let row = document.createElement('tr');
             let rate_in = recepie.items_in[item_id] * rate;
             row.innerHTML = `
-          <td></td>
-          <td><img src="`+ items[item_id].icon + `"></td>
-          <td class="pad">&times;`+ math.format(rate_in, SETTINGS.format) + `</td>
-          <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
-          <td class="pad">&times;`+ math.format(rate_in / belts[SETTINGS.belt].speed, SETTINGS.format) + `</td>
-        `;
+                <td></td>
+                <td><img src="`+ items[item_id].icon + `"></td>
+                <td class="pad">&times;`+ roundUp(rate_in) + `</td>
+                <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
+                <td class="pad">&times;`+ roundUp(rate_in / belts[SETTINGS.belt].speed) + `</td>
+            `;
             this.subfactory_table.appendChild(row);
+        }
+
+        function roundUp(n) {
+            return Math.ceil(n * Math.pow(10, SETTINGS.decimals)) / Math.pow(10, SETTINGS.decimals);
         }
 
         // Add rows for item outputs and the recepie.
@@ -53,8 +57,9 @@ class ResultRowElement extends HTMLTableSectionElement {
             if (document.querySelector('#machineCeilCheck').checked) n_machines = Math.ceil(n_machines);
             let p_a = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].active;
             let p_i = machines[recepie.type].powers[SETTINGS.machines[recepie.type]].idle;
-            const active_percentage = n_machines / Math.ceil(n_machines);
-            let power = p_a * active_percentage + p_i * (1 - active_percentage);
+            let active_percentage = n_machines / Math.ceil(n_machines);
+            if (n_machines == 0) active_percentage = 0;
+            let power = (p_a * active_percentage + p_i * (1 - active_percentage)) * n_machines;
             if (proliferator_settings[recepie_id]) {
                 power *= proliferators[proliferator_settings[recepie_id]].power;
             }
@@ -88,7 +93,7 @@ class ResultRowElement extends HTMLTableSectionElement {
 
             row.innerHTML += `
                 <td><img class="item-icon`+ is_input + `" src="` + items[item_id].icon + `" title="` + items[item_id].name + `"></td>
-                <td class="pad">`+ math.format(items_per_s, SETTINGS.format) + `</td>
+                <td class="pad">`+ roundUp(items_per_s) + `</td>
                 <td><img src="`+ items[belts[SETTINGS.belt].item].icon + `"></td>
                 <td class="pad">&times; `+ math.format(n_belts, SETTINGS.format) + `</td>
             `;
@@ -98,7 +103,7 @@ class ResultRowElement extends HTMLTableSectionElement {
                 this.querySelector('td').innerHTML = ` `
                 row.innerHTML += `
                     <td rowspan="`+ length + `">` + recepie_img + `<img src="` + items[machine_item].icon + `"></td>
-                    <td rowspan="`+ length + `" class="pad">&times; ` + math.format(n_machines, SETTINGS.format) + `</td>
+                    <td rowspan="`+ length + `" class="pad">&times; ` + roundUp(n_machines) + `</td>
                     <td rowspan="`+ length + `" class="pad proliferator-cell"></td>
                     <td rowspan="`+ length + `">` + math.unit(power, 'kW').format(SETTINGS.format) + `</td>
                 `

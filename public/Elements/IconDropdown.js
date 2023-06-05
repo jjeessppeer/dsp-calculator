@@ -108,14 +108,35 @@ class ItemDropdown extends HTMLDivElement {
         this.img = this.querySelector('.dropbtn');
         this.search = this.querySelector('input');
         this.querySelector(".dropbtn").addEventListener('click', event => this.toggleDropdown(event));
+
+        // console.log(this.search);
+        this.search.addEventListener("input", evt => {
+            this.filter(evt.target.value);
+        });
+
         this.selectItem(6001)
     }
+
+    filter(text) {
+        console.log("FILTERNIUNG");
+        this.querySelectorAll('.dropdown-content img').forEach(el => {
+            if (el.title.toLowerCase().includes(text.toLowerCase())) {
+                el.style.display = 'inline';
+            }
+            else {
+                el.style.display = 'none';
+            }
+        });
+    }
+
     selectItem(item_id) {
         this.img.src = items[item_id].icon;
         this.item = item_id;
         this.dispatchEvent(new Event('item-selected'));
     }
     toggleDropdown(event) {
+        this.search.value = '';
+        this.filter('');
         this.classList.toggle('active')
         this.search.focus();
     }
