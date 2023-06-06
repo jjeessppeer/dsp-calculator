@@ -97,55 +97,71 @@ function solveFactory() {
     for (let i = 0; i < output_items.length; i++) {
         const item = output_items[i];
         const rate = output_rates[i];
-        recurseRecepies(item, used_items, used_recepies, recepies_order, 'root', recipes);
         if (!(item in constraints)) constraints[item] = { 'min': rate };
         else constraints[item]['min'] += rate;
+        recurseRecepies(item, used_items, used_recepies, recepies_order, 'root', recipes);
 
     }
 
     used_items = getUsedItems(used_recepies);
 
     // Build production matrix constraints.
+    const no_excess_product = true;
     used_items.forEach(item => {
-        if (!(item in constraints)) constraints[item] = { 'min': 0 };
+        if (!(item in constraints)){
+            constraints[item] = { 'min': 0 };
+            if (no_excess_product) constraints[item]['max'] = 0;
+        }
+        
     });
 
-    let variables = {};
+    let lp_variables = {};
     for (const [recepie_id, recepie] of Object.entries(used_recepies)) {
-        let variable = {};
+        const v = {};
         for (const [item, count] of Object.entries(recepie.items_out)) {
-            variable[item] = count;
+            v[item] = count;
         }
         for (const [item, count] of Object.entries(recepie.items_in)) {
-            if (!(item in variable)) variable[item] = 0;
-            variable[item] -= count;
+            if (!(item in v)) v[item] = 0;
+            v[item] -= count;
         }
         // if ('cost' in recepie) variable['cost'] = recepie['cost'];
         // else variable['cost'] = 1;
-        variable['cost'] = machines[recepie.type].cost;
-        // variable['cost'] = 1;
-        variables[recepie_id] = variable;
-    }
 
-    // // Optimize for minimal leftover products.
-    // let optimize = {};
-    // for (const item of used_items) {
-    //     if (output_items.includes(item)){
-    //         console.log("Skip: ", items[item].name)
-    //     }
-    //     console.log(items[item].name);
-    //     optimize[item] = 'min';
-    //     // if item
-    // }
-    // console.log(optimize);
+        
+        const machine_speed = machines[recepie.type].speeds[SETTINGS.machines[recepie.type]] * 60;
+        const n_machines = recepie.time / machine_speed;
+
+        v['cost'] = machines[recepie.type].cost * n_machines;
+        // variable['cost'] = 1;
+        lp_variables[recepie_id] = v;
+        // break;
+        // console.log(v);
+    }
+    // console.log(JSON.stringify(lp_variables));
+    // lp_variables = JSON.parse(JSON.stringify(lp_variables))
+
+    // Optimize for minimal leftover products.
+    let optimize = {};
+    for (const item of used_items) {
+        if (output_items.includes(item)){
+            // console.log("Skip: ", items[item].name)
+        }
+        // console.log(items[item].name);
+        optimize[item] = 'min';
+        // if item
+    }
+    console.log(optimize);
+    console.log(lp_variables);
+    console.log(constraints)
 
     // Solve linear program to get recepie ratios
 
     let model = {
-        "optimize": 'cost',
+        "optimize": "cost",
         "opType": "min",
         "constraints": constraints,
-        "variables": variables
+        "variables": lp_variables
     };
 
     const lp_results = solver.Solve(model);

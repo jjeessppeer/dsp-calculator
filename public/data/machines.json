@@ -113,6 +113,6 @@
     "buildings":  [2307],
     "speeds": [2],
     "powers": [{"idle": 24, "active": 840}],
-    "cost": 200
+    "cost": 1
   }
 }

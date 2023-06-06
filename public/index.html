@@ -157,6 +157,10 @@
         <td><input type="checkbox" id="machineCeilCheck" autocomplete="off"></td>
       </tr>
       <tr>
+        <td>No spill resources:</td>
+        <td><input type="checkbox" id="machineCeilCheck" autocomplete="off"></td>
+      </tr>
+      <tr>
         <td>Number precision:</td>
         <td><input id="numberPrecision" type="text" placeholder="3" value="3"></td>
       </tr>
@@ -329,11 +333,6 @@
           element.src = recepies_full[element.dataset.activates].icon;
       });
 
-
-      var active_machines = {};
-      for (const machine in machines){
-        active_machines[machine] = 0
-      }
       // getDuplicateRecipies();
 
       loadConfigFromURL();
