@@ -1,36 +1,4 @@
-function getDuplicateRecipies() {
-    const recipe_item_map = {};
-    for (const key in items) {
-        recipe_item_map[key] = [];
-    }
-    for (const key in recepies_full) {
-        // if (recepies_full[key].type == 'MINE' || recepies_full[key].type == 'PUMP') continue;
-        for (const outitem in recepies_full[key].items_out) {
-            recipe_item_map[outitem].push(key);
-            // console.log(outitem, ": ", recipe_item_map[outitem].length);
-        }
-    }
 
-    document.querySelectorAll(".settings-row").forEach(e => e.remove());
-    for (const key in recipe_item_map) {
-        if (recipe_item_map[key].length <= 1) continue;
-        // console.log(items[key]);
-        // console.log(key, ": ", recipe_item_map[key].length);
-
-        const table = document.querySelector('.settings-table');
-        const row = document.createElement('tr', { is: 'recipe-toggle' });
-        row.setRecipes(key, recipe_item_map[key]);
-        console.log(row);
-        table.append(row);
-        // const e = `<tr>
-        //     <td>test:</td>
-        //     <td class="recipe-toggle">
-        //       <img data-recepie="58" src="icons/X-ray.png">
-        //       <img data-recepie="143" class="active" src="icons/orbital-collector.png">
-        //     </td>
-        // </tr>`
-    }
-}
 
 
 function createRows(recepie_id, order, result, parents) {

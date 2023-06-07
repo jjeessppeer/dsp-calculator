@@ -151,9 +151,6 @@ function solveFactory() {
         optimize[item] = 'min';
         // if item
     }
-    console.log(optimize);
-    console.log(lp_variables);
-    console.log(constraints)
 
     // Solve linear program to get recepie ratios
 

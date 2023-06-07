@@ -1,0 +1,46 @@
+.settings-row table {
+    
+    vertical-align: center;
+    border-spacing: 0 0.75em;
+}
+.settings-row input[type="text"] {
+    width: 3em;
+}
+ 
+.settings-row table td:nth-child(1){
+    text-align: right;
+}
+
+.settings-row img {
+    height: 2.5em;
+    background-color: var(--dark);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--light);
+    border-radius: 0.3em;
+}
+
+.settings-row .toggle-button:hover {
+    border-color: var(--dark);
+    cursor: pointer;
+    
+}
+
+.settings-row .toggle-button.active {
+    border-color: var(--accent);
+}
+
+.recipe-selection-group {
+    text-align: center !important;
+}
+
+.recipe-selection-group .group-item {
+    border-color: var(--dark);
+}
+
+table.recipe-selection-table, 
+.recipe-selection-table th, 
+.recipe-selection-table td {
+    border: 2px solid var(--light);
+    border-collapse: collapse;
+}
