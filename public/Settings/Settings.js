@@ -66,8 +66,12 @@ function initializeSettings() {
     console.log(getDuplicateRecipies());
     const recipeRow = document.createElement('tr', { is: 'recipe-selection-row' });
     recipeRow.setRecipes(getDuplicateRecipies());
-    recipeRow.setTitle('Recipes:');
-    recipeRow.toggleRecipe("32", true);
+    for (const name of DEFAULT_DISABLED_RECIPES) {
+        for (const recipeId in recepies_full) {
+            if (recepies_full[recipeId].name != name) continue;
+            recipeRow.toggleRecipe(recipeId, false);
+        }
+    }
     // const r = getDuplicateRecipies();
     // for (const i in r) {
     //     console.log(items[i].name)

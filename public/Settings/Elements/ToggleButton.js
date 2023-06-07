@@ -46,9 +46,9 @@ class ToggleGroup extends HTMLDivElement {
         item.manualDisable = manualDisable;
         item.addEventListener('button-toggled', () => this.itemSelected(item, true));
 
-
         this.items.push(item);
         this.append(item);
+        return item;
     }
 
     getActiveItems() {
@@ -111,9 +111,9 @@ class RecipeSelector extends HTMLTableCellElement {
         for (const recipeId of recipeIds) {
             const src = recepies_full[recipeId].icon;
             const title = recepies_full[recipeId].name;
-            this.toggleGroup.addItem(src, recipeId, title, true)
+            const item = this.toggleGroup.addItem(src, recipeId, title, true);
+            item.toggle(true);
         }
-        this.toggleRecipe("34", true);
     }
 
     toggleRecipe(recipeId, enable) {

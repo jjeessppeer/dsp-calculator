@@ -73,6 +73,10 @@ class RecipeSelectionRow extends SettingsRow {
             group.toggleRecipe(recipeId, enable);
         }
     }
+
+    getDisabledRecipes() {
+        
+    }
 }
 
 class CheckboxRow extends SettingsRow {
