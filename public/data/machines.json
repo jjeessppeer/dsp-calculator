@@ -15,16 +15,23 @@
   },
   "SMELT": {
     "name": "Smelting facility",
-    "buildings": [2302],
-    "speeds": [1],
-    "powers": [{"idle": 12, "active": 300}],
+    "buildings": [2302, 2315],
+    "speeds": [1, 2],
+    "powers": [
+      {"idle": 12, "active": 360},
+      {"idle": 48, "active": 1440}
+
+    ],
     "cost": 1
   },
   "CHEMICAL": {
     "name": "Chemical facility",
-    "buildings": [2309],
-    "speeds": [1],
-    "powers": [{"idle": 24, "active": 720}],
+    "buildings": [2309, 2317],
+    "speeds": [1, 2],
+    "powers": [
+      {"idle": 24, "active": 720},
+      {"idle": 36, "active": 2160}
+    ],
     "cost": 100
   },
   "REFINE": {
@@ -40,8 +47,8 @@
     "speeds": [0.75, 1, 1.5],
     "powers": [
       {"idle": 12, "active": 270},
-      {"idle": 15, "active": 480},
-      {"idle": 18, "active": 780}
+      {"idle": 18, "active": 540},
+      {"idle": 24, "active": 1080}
     ],
     "cost": 10
   },
@@ -89,9 +96,12 @@
   },
   "MINE": {
     "name": "Miner",
-    "buildings": [2301],
-    "speeds": [2.5],
-    "powers": [{"idle": 24, "active": 420}],
+    "buildings": [2301, 2316],
+    "speeds": [2.5, 5],
+    "powers": [
+      {"idle": 24, "active": 420},
+      {"idle": 168, "active": 2940}
+    ],
     "cost": 10
   },
   "PUMP": {
